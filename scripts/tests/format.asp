@@ -38,3 +38,7 @@ printf_str('%7.3s', 0x33)
 
 print('"%7.7s"' % ('%X' % (33,),))
 print('"%7.7s"' % ('%7.3f' % (33.333333,),))
+
+# Unterminated format string. These cases cause run errors.
+#print('value is %' % (42,))
+#print('value is %\0d' % (42,))
