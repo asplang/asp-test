@@ -1,0 +1,7 @@
+print(3 * 'abc')
+print('xyz' * 5)
+print((1, 2, 3) * 3)
+print(3 * (7, 8, 9) * 2)
+print(() * 1000)
+print(0 * (42,))
+print(0 * 'lmnop')
