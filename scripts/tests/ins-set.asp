@@ -5,8 +5,7 @@ s<--2
 s <- 0.0
 s <- float('nan')
 s <- float('-nan')
-#for x in s:
-#    print(x)
+s <- (float('nan'), 3)
+s <- (float('nan'), 7)
 print(s)
-#del x
 del s
