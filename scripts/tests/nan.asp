@@ -1,4 +1,6 @@
 def comps(a, b):
+    print('%s is %s' % (a, b), a is b)
+    print('%s is not %s' % (a, b), a is not b)
     print('%s == %s' % (a, b), a == b)
     print('%s != %s' % (a, b), a != b)
     print('%s < %s' % (a, b), a < b)
