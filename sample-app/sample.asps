@@ -1,0 +1,24 @@
+#
+# Sample Asp application function specifications.
+#
+
+include type
+include collect
+include iter
+include math
+
+# Random number generator.
+def rng(low, high, seed = 1) = asp_rng
+def rand(rng) = asp_rand
+
+# File operations.
+def file_open(name, mode) = asp_file_open
+def file_at_end(file) = asp_file_at_end
+def file_get_line(file) = asp_file_get_line
+def file_put_line(file, s) = asp_file_put_line
+
+# General purpose print.
+def print(*values, sep = ' ', end = '\n') = asp_print
+
+# Sleep.
+def sleep(s) = asp_sleep
