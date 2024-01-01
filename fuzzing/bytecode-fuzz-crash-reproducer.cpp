@@ -7,6 +7,7 @@
 #include <exception>
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 int main(int argc, char *argv[])
 {
@@ -22,6 +23,8 @@ int main(int argc, char *argv[])
     }
 
     input.seekg(0, std::ios::end);
+    size_t fuzzDataSize = input.tellg();
+    input.seekg(0);
 
     static constexpr size_t headerSize = 12;
     static const uint8_t header[headerSize] = {
@@ -36,35 +39,36 @@ int main(int argc, char *argv[])
         (uint8_t)((AspAppSpec_fuzz.checkValue >> 0) & 0xff)
     };
 
-    size_t fuzzDataSize = input.tellg();
-    input.seekg(0);
-
     size_t byteCodeSize = fuzzDataSize - 2;
-    uint8_t *codeBuffer = (uint8_t *) malloc(byteCodeSize + headerSize);
-    input.read((char *) &codeBuffer[10], fuzzDataSize);
-    input.close();
-    size_t dataEntryCount = codeBuffer[10] + (codeBuffer[11] << 8);
+    std::vector<char> codeBuffer(byteCodeSize + headerSize);
+    if (!input.read(&codeBuffer[headerSize - 2], byteCodeSize + 2)) {
+        return -1;
+    }
+    size_t dataEntryCount = codeBuffer[headerSize - 2] + (codeBuffer[headerSize - 1] << 8);
+
+    std::memcpy(&codeBuffer[0], header, headerSize);
+
+
 
     size_t dataEntrySize = AspDataEntrySize();
     size_t dataByteSize = dataEntryCount * dataEntrySize;
 
-    // Initialize the Asp engine.
+    /* Initialize the Asp engine. */
     AspEngine engine;
-    char *data = (char *) malloc(dataByteSize);
+    std::vector<char> dataBuffer(dataByteSize);
     AspRunResult initializeResult
-        = AspInitialize(&engine, nullptr, 0, data, dataByteSize, &AspAppSpec_fuzz, nullptr);
+            = AspInitialize(&engine, nullptr, 0, dataBuffer.data(), dataByteSize, &AspAppSpec_fuzz, nullptr);
+
     if (initializeResult != AspRunResult_OK) {
-        std::free(codeBuffer);
-        std::free(data);
         if (initializeResult == AspRunResult_OutOfDataMemory) {
             return 0;
         }
 
+        // Shouldn't happen so crash the fuzzer to indicate erroneous condition
         std::terminate();
     }
 
-    std::memcpy(&codeBuffer[0], header, headerSize);
-    AspAddCodeResult sealCodeResult = AspSealCode(&engine, codeBuffer, byteCodeSize + headerSize);
+    AspAddCodeResult sealCodeResult = AspSealCode(&engine, codeBuffer.data(), codeBuffer.size());
     if (sealCodeResult != AspAddCodeResult_OK) {
         // This shouldn't never happen as we have created valid header
         std::terminate();
@@ -82,7 +86,5 @@ int main(int argc, char *argv[])
             break;
     }
 
-    free(data);
-    free(codeBuffer);
-    return 0; // Values other than 0 and -1 are reserved for future use.
+    return 0;
 }
