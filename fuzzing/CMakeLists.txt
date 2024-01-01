@@ -35,6 +35,9 @@ target_link_libraries(bytecode-fuzz-crash-reproducer PRIVATE aspe)
 target_link_libraries(bytecode-fuzz-crash-reproducer PRIVATE asp-enable_address_sanitizer)
 
 
+add_subdirectory(bytecode-tests)
+
+
 if (BUILD_FUZZ_TESTING)
     # Recompile aspe as part of the fuzz tester so that it is compiled with all the required compile and link flags
     get_target_property(aspe_src_list aspe SOURCES)
