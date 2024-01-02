@@ -28,6 +28,7 @@ set(success_test_scripts
     for-dict.asp
     for.asp
     format.asp
+    format-checked.asp
     func-group0.asp
     func-group1.asp
     func-group2.asp
