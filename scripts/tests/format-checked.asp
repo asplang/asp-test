@@ -36,3 +36,10 @@ assert ('%7.3s' % (0x33, )) == "     51"
 
 assert ('%7.7s' % ('%X' % (33,),)) == "     21"
 assert ('%7.7s' % ('%7.3f' % (33.333333,),)) == " 33.333"
+
+
+# Length specifiers are accepted but ignored
+assert ('%ls' % ("hello", )) == "hello"
+assert ('%ll1.1f' % (0.0, )) == "0.0"
+assert ('%L1.1f' % (0.0, )) == "0.0"
+
