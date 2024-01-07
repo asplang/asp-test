@@ -76,6 +76,9 @@ set(success_test_scripts
     unary.asp
     while-else.asp
     while.asp
+
+    recursive-dict.asp
+    recursive-list.asp
 )
 
 set(compiled_test_scripts)
