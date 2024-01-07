@@ -3,7 +3,7 @@ set(test_files
     timeout-symbol-tree-corruption2
     timeout-del
     crash-S-format-specifier
-    crash-$-format-specifier
+    crash-indexed-format-specifier  # Crash when $ is used to refer argument by index
     crash-del-set
 )
 
