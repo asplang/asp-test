@@ -32,5 +32,5 @@ def main():
             convert_to_aspe(in_f, out_f)
     return 0
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     sys.exit(main())
