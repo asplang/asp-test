@@ -5,8 +5,14 @@ set(test_files
     crash-S-format-specifier
     crash-indexed-format-specifier  # Crash when $ is used to refer argument by index
     crash-del-set
+    
+    timeout-assign-sequence
+    timeout-assign-sequence2
+    timeout-tree-erase-getlimitnode
+    timeout-tree-erase-getlimitnode2
 )
 
 foreach(test_data ${test_files})
     add_test(NAME "bytecode-test-${test_data}" COMMAND bytecode-fuzz-crash-reproducer "${CMAKE_CURRENT_SOURCE_DIR}/${test_data}")
+    set_tests_properties("bytecode-test-${test_data}" PROPERTIES TIMEOUT 3)
 endforeach()
