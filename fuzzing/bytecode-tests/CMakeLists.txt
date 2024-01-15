@@ -12,6 +12,7 @@ set(test_files
     timeout-tree-erase-getlimitnode2
     
     crash-recursive-deleted-insert
+    crash-make-range-and-index
 )
 
 foreach(test_data ${test_files})
