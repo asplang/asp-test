@@ -10,6 +10,8 @@ set(test_files
     timeout-assign-sequence2
     timeout-tree-erase-getlimitnode
     timeout-tree-erase-getlimitnode2
+    
+    crash-recursive-deleted-insert
 )
 
 foreach(test_data ${test_files})
