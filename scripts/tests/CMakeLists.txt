@@ -93,6 +93,8 @@ endforeach()
 add_failure_test(ins-nonmut.asp "Run error 0x0C: Unexpected type")
 add_failure_test(ins-tuple.asp  "Run error 0x0C: Unexpected type")
 
+add_failure_test(integer-overflow.asp "Run error 0x18: Divide by zero")  # TODO: add correct error type
+
 add_custom_target(asp-compile-test-scripts ALL
     DEPENDS ${compiled_test_scripts}
 )
