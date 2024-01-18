@@ -13,6 +13,8 @@ set(test_files
     
     crash-recursive-deleted-insert
     crash-make-range-and-index
+    
+    timeout-AspLib_next-symbol-tree-corrupt
 )
 
 foreach(test_data ${test_files})
