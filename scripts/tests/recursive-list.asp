@@ -22,5 +22,11 @@ def use_recursive_list():
     # This will cause OOM
     # print(d)
 
+lst1 = []
+lst1 <- lst1
+
+assert lst1 == lst1
+assert not (lst1 < lst1)
+
 for i in 0..1000:
     use_recursive_list()

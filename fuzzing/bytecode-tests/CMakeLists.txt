@@ -15,6 +15,11 @@ set(test_files
     crash-make-range-and-index
     
     timeout-AspLib_next-symbol-tree-corrupt
+    timeout-AspLib_next-symbol-tree-corrupt2
+
+    timeout-long-float-format
+    timeout-nan-subnormal
+    crash-erase
 )
 
 foreach(test_data ${test_files})
