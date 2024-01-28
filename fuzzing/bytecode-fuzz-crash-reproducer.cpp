@@ -40,11 +40,11 @@ int main(int argc, char *argv[])
     };
 
     size_t byteCodeSize = fuzzDataSize - 2;
-    std::vector<char> codeBuffer(byteCodeSize + headerSize);
-    if (!input.read(&codeBuffer[headerSize - 2], byteCodeSize + 2)) {
+    std::vector<uint8_t> codeBuffer(byteCodeSize + headerSize);
+    if (!input.read((char*)&codeBuffer[headerSize - 2], byteCodeSize + 2)) {
         return -1;
     }
-    size_t dataEntryCount = codeBuffer[headerSize - 2] + (codeBuffer[headerSize - 1] << 8);
+    size_t dataEntryCount = (size_t)codeBuffer[headerSize - 2] + ((size_t)codeBuffer[headerSize - 1] << 8);
 
     std::memcpy(&codeBuffer[0], header, headerSize);
 
