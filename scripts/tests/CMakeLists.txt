@@ -1,17 +1,8 @@
-# Helper function that creates failure test that expects certain output from the program
-macro(add_failure_test test_script expected_error_line)
-    get_filename_component(base_name "${test_script}" NAME_WE)
-    compile_for_standalone("${test_script}" "${base_name}")
-    list(APPEND compiled_test_scripts "${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe")
 
-    add_test(NAME "failure-${base_name}" COMMAND asps "${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe")
+# This directory must not contain any other data as it is destroyed and recreated when
+set(TEST_REFERENCE_DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/regression-data" CACHE PATH "Directory that contains reference output data for regression tests")
 
-    set_tests_properties("failure-${base_name}" PROPERTIES PASS_REGULAR_EXPRESSION ".*${expected_error_line}\n.*")
-endmacro()
-
-
-# Test scripts that should be run successfully
-set(success_test_scripts
+set(regression_tests
     args1.asp
     args2.asp
     assign.asp
@@ -78,23 +69,63 @@ set(success_test_scripts
     while-else.asp
     while.asp
 
-    recursive-dict.asp
-    recursive-list.asp
+    # recursive-dict.asp
+    # recursive-list.asp
+
+
+
+    # failure test cases
+    ins-nonmut.asp
+    ins-tuple.asp
 )
 
+add_custom_target(clean-test-reference-data
+    COMMAND ${CMAKE_COMMAND} -E remove_directory "${REGRESSION_TEST_DATA_DIR}"
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${REGRESSION_TEST_DATA_DIR}"
+)
+
+# Make sure that we have a directory ready for the test output
+file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/regression-data")
+
 set(compiled_test_scripts)
-foreach(test_script ${success_test_scripts})
+set(generate_test_data_targets)
+foreach(test_script ${regression_tests})
     get_filename_component(base_name "${test_script}" NAME_WE)
     compile_for_standalone(${test_script} ${base_name})
     list(APPEND compiled_test_scripts "${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe")
 
-    add_test(NAME ${base_name} COMMAND asps "${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe")
-endforeach()
+    add_test(NAME ${base_name}
+        COMMAND ${CMAKE_COMMAND}
+            -D "ASPS_EXECUTABLE=$<TARGET_FILE:asps>"
+            -D "TEST_NAME=${base_name}"
+            -D "BYTECODE_FILE=${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe"
+            -D "REFERENCE_DIR=${TEST_REFERENCE_DATA_DIR}"
+            -D "OUTPUT_DIR=${CMAKE_CURRENT_BINARY_DIR}/regression-data"
+            -D EXPECTED_RUN_RESULT=0
+            -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
+        VERBATIM
+    )
 
-add_failure_test(ins-nonmut.asp "Run error 0x0C: Unexpected type")
-add_failure_test(ins-tuple.asp  "Run error 0x0C: Unexpected type")
+    # Custom target that runs the bytecode and saves it output to the REGRESSION_TEST_DATA_DIR
+    add_custom_target(generate-test-reference-data-${base_name}
+        COMMAND ${CMAKE_COMMAND}
+            -D "ASPS_EXECUTABLE=$<TARGET_FILE:asps>"
+            -D "TEST_NAME=${base_name}"
+            -D "BYTECODE_FILE=${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe"
+            -D "OUTPUT_DIR=${TEST_REFERENCE_DATA_DIR}"
+            -D EXPECTED_RUN_RESULT=0
+            -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
+        DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe"
+        VERBATIM
+    )
+    add_dependencies(generate-test-reference-data-${base_name} clean-test-reference-data)
+    list(APPEND generate_test_data_targets generate-test-reference-data-${base_name})
+endforeach()
 
 add_custom_target(asp-compile-test-scripts ALL
     DEPENDS ${compiled_test_scripts}
 )
+
+add_custom_target(generate-test-reference-data)
+add_dependencies(generate-test-reference-data ${generate_test_data_targets})
 

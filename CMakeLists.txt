@@ -46,12 +46,9 @@ include(cmake/sanitizers.cmake)
 set(BUILD_FOR_TARGET ON CACHE INTERNAL "Force building target libs")
 set(BUILD_FOR_HOST ON CACHE INTERNAL "Force building host libs")
 set(BUILD_SHARED_LIBS OFF CACHE INTERNAL "Disable building shared libs")
+set(ENABLE_ASPS_DEBUG ON CACHE INTERNAL "Force enable asps debug data for comparing internal state in regression tests")
 add_subdirectory("${ASP_SOURCE_DIR}" asp-build)
 set(ASP_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/asp-build")
-
-if (ENABLE_ASPS_DEBUG AND BUILD_FUZZ_TESTING)
-    message(WARNING "Using ENABLE_ASPS_DEBUG with fuzz testing will result in really bad fuzzing performance")
-endif()
 
 enable_testing()
 
