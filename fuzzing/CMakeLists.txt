@@ -68,5 +68,7 @@ if (BUILD_FUZZ_TESTING)
     target_include_directories(bytecode-fuzz-test PRIVATE ${CMAKE_CURRENT_BINARY_DIR} ${aspe_include_paths})
     target_link_libraries(bytecode-fuzz-test PRIVATE asp-clang_fuzzer)
 
+    # Make sure that ASP_DEBUG isn't defined for fuzz testing
+    list(FILTER aspe_compile_definitions EXCLUDE REGEX [[:ASP_DEBUG>$]])
     target_compile_definitions(bytecode-fuzz-test PRIVATE ${aspe_compile_definitions})
 endif()
