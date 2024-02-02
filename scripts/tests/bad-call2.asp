@@ -1,0 +1,1 @@
+foo(**kwargs, *args)
