@@ -1,6 +1,7 @@
 for func in (tuple, list):
     print(func())
     print(func(..5))
+    print(func(20..10:-2))
     print(func('abcefghij'))
     print(func((1, 2, 3)))
     print(func([1, 2, 3]))
