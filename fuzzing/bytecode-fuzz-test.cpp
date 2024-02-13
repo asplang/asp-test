@@ -18,7 +18,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *fuzzData, size_t fuzzDataSi
 
     // First 2 bytes of fuzzData are used to determine data entry count
     size_t dataEntryCount = fuzzData[0] + (fuzzData[1] << 8);
-    if (dataEntryCount > maxDataEntryCount)
+    if (dataEntryCount > maxDataEntryCount || dataEntryCount == 0)
         return 0;
 
     const uint8_t *byteCode = &fuzzData[2];

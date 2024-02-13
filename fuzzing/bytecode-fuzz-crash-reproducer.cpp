@@ -48,7 +48,8 @@ int main(int argc, char *argv[])
 
     std::memcpy(&codeBuffer[0], header, headerSize);
 
-
+    if (dataEntryCount == 0)
+        return 0;
 
     size_t dataEntrySize = AspDataEntrySize();
     size_t dataByteSize = dataEntryCount * dataEntrySize;
