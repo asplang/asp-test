@@ -6,8 +6,4 @@ for i in values:
         if j == 0:
             continue
         rem = i % j
-        overflow = rem < min or rem > max
-        if not overflow:
-            print("%d %% %d = %d" % (i, j, rem));
-        else:
-            print("%d %% %d = OVERFLOW" % (i, j))
+        print("%d %% %d = %d" % (i, j, rem));
