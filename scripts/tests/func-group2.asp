@@ -7,6 +7,9 @@ def foo(a, b = 9, *args, z = 99):
     print('z =', z)
 
 t=(1,2,3)
+l=[4,5,6]
+s={'a', 'b', 'c'}
+d={`a:1, `b:2, `c:4}
 
 # Invalid case:
 # *3.14 should be caught by compiler as an attempt to pass non-tuple as a
@@ -15,6 +18,7 @@ t=(1,2,3)
 
 print('1 ---')
 foo(*t, *(10,11), 89)
+foo(*t, *[10,11], 89)
 
 print('2 ---')
 foo(2, z=42)
@@ -24,5 +28,14 @@ foo(2, 3, 4, 5)
 
 print('4 ---')
 foo(*t, *(10,11), *t)
+foo(*t, *[10,11], *l)
+foo(*t, *(10,11), *l)
+foo(*d, *[10,11], *t)
+foo(*s, *d)
+foo(*l, *{`z:10, `y:9}, *d, *t, *s)
+foo(*'abc')
+
+print('5 ---')
+foo(*..10)
 
 del t, foo

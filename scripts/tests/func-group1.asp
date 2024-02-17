@@ -1,11 +1,15 @@
-def foo(a, b = 9, *args):
+def foo(a, b = 9, *args, **kwargs):
     print(a)
     print(b)
     print('Extras:')
     for arg in args:
         print(arg)
     else:
-        print('(No extras)')
+        print('(No extra args)')
+    for k, v in kwargs:
+        print('key: %s, value: %s' % (k, v))
+    else:
+        print('(No extra kwargs)')
 
 print('1 ---')
 foo(1)
@@ -43,6 +47,16 @@ foo(*t3)
 print('16 ---')
 t4=('a', 'b', 'c', 'd')
 foo(*t4)
+d1={`x: 10, `y: 11}
+print('17 ---')
+foo(1, p=6, q=7)
+print('18 ---')
+foo(1, **d1)
+print('19 ---')
+foo(1, **d1, p=6, q=7)
+print('20 ---')
+foo(1, p=5, **d1, q=8)
 
 del t1, t2, t3
+del d1
 del foo
