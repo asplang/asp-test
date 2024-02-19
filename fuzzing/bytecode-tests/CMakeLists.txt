@@ -20,6 +20,8 @@ set(test_files
     timeout-long-float-format
     timeout-nan-subnormal
     crash-erase
+
+    crash-expand-range-with-large-step
 )
 
 foreach(test_data ${test_files})
