@@ -24,6 +24,11 @@ s <- sys
 s <- type(None) <- type([]) <- type(foo) <- type(sys) <- type(type(0))
 for x in s:
     print(x)
+for x in [None, '', (), [], {}, {:}, ((),()), ([],)]:
+    print("%r %s" % \
+        (x, \
+         "can be a KEY" if x is None or key(x) is not None else \
+         "CANNOT be a key"))
 
 del i
 del x
