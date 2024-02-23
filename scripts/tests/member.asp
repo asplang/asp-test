@@ -18,3 +18,11 @@ print('x' in '')
 print('' in 'x')
 print('x' in 'x')
 print('x' not in 'x')
+
+print(`args in sys, `args in module(), `args in ...)
+def foo(x = 3.14):
+    locals = ...
+    print(`x in locals, `foo in module(), `oops in locals)
+    print(exists(`locals), exists(`foo), exists(`args), exists(`oops))
+foo()
+print(exists(foo), exists(`foo), exists(`oops))
