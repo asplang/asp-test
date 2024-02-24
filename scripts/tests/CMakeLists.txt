@@ -36,7 +36,8 @@ set(regression_tests
     ins-set.asp
     integer-overflow.asp
     iter.asp
-    keys.asp
+    keys1.asp
+    keys2.asp
     list-assign.asp
     logical.asp
     loop0.asp
@@ -44,6 +45,8 @@ set(regression_tests
     loops.asp
     math.asp
     member.asp
+    module1.asp
+    module2.asp
     nan.asp
     power.asp
     print.asp
