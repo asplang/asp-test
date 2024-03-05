@@ -27,7 +27,7 @@ for x in s:
 for x in [None, '', (), [], {}, {:}, ((),()), ([],)]:
     print("%r %s" % \
         (x, \
-         "can be a KEY" if x is None or key(x) is not None else \
+         "can be a KEY" if key(x) is x else \
          "CANNOT be a key"))
 
 del i
