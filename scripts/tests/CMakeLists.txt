@@ -45,10 +45,8 @@ set(regression_tests
     loops.asp
     math.asp
     member.asp
-
-    # module1.asp
-    # module2.asp
-
+    module1.asp
+    module2.asp
     nan.asp
     power.asp
     print.asp
