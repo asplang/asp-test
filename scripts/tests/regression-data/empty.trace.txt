@@ -1,0 +1,9 @@
+Executing instructions indefinitely...
+@0x0000000: 0xB9 ADDMOD 56, @0x0000009
+@0x0000006: 0xBD LDMOD 56
+@0x0000009: 0xBC XMOD
+@0x0000008: 0xFF END
+---
+Executed 4 instructions
+Run error 0x01: Complete
+Program counter: 0x0000009

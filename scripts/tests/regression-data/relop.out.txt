@@ -1,0 +1,23 @@
+None: False
+...: False
+False < True: True
+0: False
+0.0: False
+0 < 1.0 True
+'' < '' False
+'' < 'abc' True
+tuple: False
+list: False
+---
+None: True
+...: True
+False >= True: False
+0: True
+0.0: True
+0 >= 1.0 False
+'' >= '' True
+'' >= 'abc' False
+tuple: True
+list: True
+---
+Done

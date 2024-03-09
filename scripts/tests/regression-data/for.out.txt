@@ -1,0 +1,57 @@
+1
+2
+3
+---
+1
+2
+3
+---
+1
+2
+3
+---
+1
+2
+3
+---
+1
+2
+3
+---
+1 one
+2 two
+3 three
+---
+1 1.0 one
+2 2.0 two
+3 3.0 three
+---
+1 1.0 one
+2 2.0 two
+3 3.0 three
+---
+1 10 1.0 one
+2 20 2.0 two
+3 30 3.0 three
+1 one
+2 two
+3 three
+---
+1 one
+2 two
+3 three
+---
+1 one
+2 two
+3 three
+---
+1 1.0 one
+2 2.0 two
+3 3.0 three
+===
+Nothing
+---
+Nothing
+---
+Nothing
+Done

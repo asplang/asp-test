@@ -1,0 +1,129 @@
+-nan
+nan
+---
+-nan is -nan True
+-nan is not -nan False
+-nan == -nan False
+-nan != -nan True
+-nan < -nan False
+-nan <= -nan False
+-nan > -nan False
+-nan >= -nan False
+---
+-nan is nan False
+-nan is not nan True
+-nan == nan False
+-nan != nan True
+-nan < nan False
+-nan <= nan False
+-nan > nan False
+-nan >= nan False
+---
+-nan is 3.14159 False
+-nan is not 3.14159 True
+-nan == 3.14159 False
+-nan != 3.14159 True
+-nan < 3.14159 False
+-nan <= 3.14159 False
+-nan > 3.14159 False
+-nan >= 3.14159 False
+---
+nan is -nan False
+nan is not -nan True
+nan == -nan False
+nan != -nan True
+nan < -nan False
+nan <= -nan False
+nan > -nan False
+nan >= -nan False
+---
+nan is nan True
+nan is not nan False
+nan == nan False
+nan != nan True
+nan < nan False
+nan <= nan False
+nan > nan False
+nan >= nan False
+---
+nan is 3.14159 False
+nan is not 3.14159 True
+nan == 3.14159 False
+nan != 3.14159 True
+nan < 3.14159 False
+nan <= 3.14159 False
+nan > 3.14159 False
+nan >= 3.14159 False
+---
+3.14159 is -nan False
+3.14159 is not -nan True
+3.14159 == -nan False
+3.14159 != -nan True
+3.14159 < -nan False
+3.14159 <= -nan False
+3.14159 > -nan False
+3.14159 >= -nan False
+---
+3.14159 is nan False
+3.14159 is not nan True
+3.14159 == nan False
+3.14159 != nan True
+3.14159 < nan False
+3.14159 <= nan False
+3.14159 > nan False
+3.14159 >= nan False
+---
+3.14159 is 3.14159 True
+3.14159 is not 3.14159 False
+3.14159 == 3.14159 True
+3.14159 != 3.14159 False
+3.14159 < 3.14159 False
+3.14159 <= 3.14159 True
+3.14159 > 3.14159 False
+3.14159 >= 3.14159 True
+---
+(1, 2, 3) is (1, 2, nan) False
+(1, 2, 3) is not (1, 2, nan) True
+(1, 2, 3) == (1, 2, nan) False
+(1, 2, 3) != (1, 2, nan) True
+(1, 2, 3) < (1, 2, nan) False
+(1, 2, 3) <= (1, 2, nan) False
+(1, 2, 3) > (1, 2, nan) False
+(1, 2, 3) >= (1, 2, nan) False
+---
+(5, (2, 0), 3) is (5, (2, 0), 3) True
+(5, (2, 0), 3) is not (5, (2, 0), 3) False
+(5, (2, 0), 3) == (5, (2, 0), 3) True
+(5, (2, 0), 3) != (5, (2, 0), 3) False
+(5, (2, 0), 3) < (5, (2, 0), 3) False
+(5, (2, 0), 3) <= (5, (2, 0), 3) True
+(5, (2, 0), 3) > (5, (2, 0), 3) False
+(5, (2, 0), 3) >= (5, (2, 0), 3) True
+---
+(5, (2, 0), 3) is (5, (2, nan), 4) False
+(5, (2, 0), 3) is not (5, (2, nan), 4) True
+(5, (2, 0), 3) == (5, (2, nan), 4) False
+(5, (2, 0), 3) != (5, (2, nan), 4) True
+(5, (2, 0), 3) < (5, (2, nan), 4) False
+(5, (2, 0), 3) <= (5, (2, nan), 4) False
+(5, (2, 0), 3) > (5, (2, nan), 4) False
+(5, (2, 0), 3) >= (5, (2, nan), 4) False
+---
+(5, (2, nan), 4) is (5, (2, nan), 4) True
+(5, (2, nan), 4) is not (5, (2, nan), 4) False
+(5, (2, nan), 4) == (5, (2, nan), 4) True
+(5, (2, nan), 4) != (5, (2, nan), 4) False
+(5, (2, nan), 4) < (5, (2, nan), 4) False
+(5, (2, nan), 4) <= (5, (2, nan), 4) True
+(5, (2, nan), 4) > (5, (2, nan), 4) False
+(5, (2, nan), 4) >= (5, (2, nan), 4) True
+---
+(5, (2, nan), 4) is (5, (2, nan), 4) False
+(5, (2, nan), 4) is not (5, (2, nan), 4) True
+(5, (2, nan), 4) == (5, (2, nan), 4) False
+(5, (2, nan), 4) != (5, (2, nan), 4) True
+(5, (2, nan), 4) < (5, (2, nan), 4) False
+(5, (2, nan), 4) <= (5, (2, nan), 4) False
+(5, (2, nan), 4) > (5, (2, nan), 4) False
+(5, (2, nan), 4) >= (5, (2, nan), 4) False
+---

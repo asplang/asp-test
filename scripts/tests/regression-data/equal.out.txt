@@ -1,0 +1,35 @@
+True
+True
+True
+True
+True
+True
+bool == int: False
+int == float: True
+bool == float: True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+True
+---
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+False
+---
+Done

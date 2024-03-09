@@ -1,0 +1,7 @@
+Inserting str
+Inserting empty tuple
+Content
+abc
+()
+End of content
+Inserting tuples with mutable contents

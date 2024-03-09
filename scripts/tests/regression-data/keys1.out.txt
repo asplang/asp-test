@@ -1,0 +1,45 @@
+None
+...
+False
+True
+-1
+0
+1
+-1.0
+0.0
+1.0
+1e+07
+..5
+..5:2
+1..5
+
+a
+aa
+()
+(None,)
+(...,)
+(0,)
+(1,)
+(None, None)
+(None, ...)
+(..., None)
+(..., ...)
+(0, 0)
+(0, 1, (2, 3))
+(0, (1, 2), 3)
+((0, 1), 2, 3)
+<func:@000010B>
+<mod:@0000000>
+<type None>
+<type list>
+<type func>
+<type mod>
+<type type>
+None can be a KEY
+'' can be a KEY
+() can be a KEY
+[] CANNOT be a key
+{} CANNOT be a key
+{:} CANNOT be a key
+((), ()) can be a KEY
+([],) CANNOT be a key

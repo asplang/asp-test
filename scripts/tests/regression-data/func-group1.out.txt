@@ -1,0 +1,125 @@
+1 ---
+1
+9
+Extras:
+(No extra args)
+(No extra kwargs)
+2 ---
+1
+2
+Extras:
+(No extra args)
+(No extra kwargs)
+3 ---
+1
+2
+Extras:
+3
+(No extra kwargs)
+4 ---
+1
+2
+Extras:
+3
+4
+(No extra kwargs)
+5 ---
+1
+9
+Extras:
+(No extra args)
+(No extra kwargs)
+6 ---
+1
+2
+Extras:
+(No extra args)
+(No extra kwargs)
+7 ---
+1
+2
+Extras:
+3
+(No extra kwargs)
+8 ---
+1
+2
+Extras:
+3
+4
+(No extra kwargs)
+9 ---
+1
+2
+Extras:
+(No extra args)
+(No extra kwargs)
+10 ---
+1
+2
+Extras:
+3
+(No extra kwargs)
+11 ---
+1
+2
+Extras:
+(No extra args)
+(No extra kwargs)
+13 ---
+a
+9
+Extras:
+(No extra args)
+(No extra kwargs)
+14 ---
+a
+b
+Extras:
+(No extra args)
+(No extra kwargs)
+15 ---
+a
+b
+Extras:
+c
+(No extra kwargs)
+16 ---
+a
+b
+Extras:
+c
+d
+(No extra kwargs)
+17 ---
+1
+9
+Extras:
+(No extra args)
+key: `69, value: 6
+key: `70, value: 7
+18 ---
+1
+9
+Extras:
+(No extra args)
+key: `42, value: 10
+key: `43, value: 11
+19 ---
+1
+9
+Extras:
+(No extra args)
+key: `42, value: 10
+key: `43, value: 11
+key: `69, value: 6
+key: `70, value: 7
+20 ---
+1
+9
+Extras:
+(No extra args)
+key: `42, value: 10
+key: `43, value: 11
+key: `69, value: 5
+key: `70, value: 8

@@ -1,0 +1,6 @@
+Deleting non-trivial dictionary
+Success 1
+Deleting dictionary with non-trivial key and trivial value
+Success 2
+Deleting dictionary with trivial key and non-trivial value
+Success 3
