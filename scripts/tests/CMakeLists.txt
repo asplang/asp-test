@@ -35,7 +35,8 @@ set(regression_tests
     ins-list.asp
     ins-set.asp
     integer-overflow.asp
-    iter.asp
+    iter1.asp
+    iter2.asp
     keys1.asp
     keys2.asp
     list-assign.asp
@@ -50,7 +51,12 @@ set(regression_tests
     nan.asp
     power.asp
     print.asp
-    range.asp
+    range-basic.asp
+    range-in.asp
+    range-index.asp
+    range-len.asp
+    range-slice.asp
+    #range-slice-big.asp # Output too big; occasionally compare with *.py.
     relop.asp
     repeat.asp
     repr.asp
@@ -67,6 +73,7 @@ set(regression_tests
     swap2.asp
     tuple-assign1.asp
     tuple-assign2.asp
+    tuple-assign3.asp
     types.asp
     unary.asp
     while-else.asp
@@ -74,8 +81,6 @@ set(regression_tests
 
     # recursive-dict.asp
     # recursive-list.asp
-
-
 
     # failure test cases
     ins-nonmut.asp

@@ -1,0 +1,106 @@
+4..45:5 [4, 9, 14, 19, 24, 29, 34, 39, 44]
+-26 is NOT in 4..45:5
+-25 is NOT in 4..45:5
+-24 is NOT in 4..45:5
+-23 is NOT in 4..45:5
+-22 is NOT in 4..45:5
+-21 is NOT in 4..45:5
+-20 is NOT in 4..45:5
+-19 is NOT in 4..45:5
+-18 is NOT in 4..45:5
+-17 is NOT in 4..45:5
+-16 is NOT in 4..45:5
+-15 is NOT in 4..45:5
+-14 is NOT in 4..45:5
+-13 is NOT in 4..45:5
+-12 is NOT in 4..45:5
+-11 is NOT in 4..45:5
+-10 is NOT in 4..45:5
+-9 is NOT in 4..45:5
+-8 is NOT in 4..45:5
+-7 is NOT in 4..45:5
+-6 is NOT in 4..45:5
+-5 is NOT in 4..45:5
+-4 is NOT in 4..45:5
+-3 is NOT in 4..45:5
+-2 is NOT in 4..45:5
+-1 is NOT in 4..45:5
+0 is NOT in 4..45:5
+1 is NOT in 4..45:5
+2 is NOT in 4..45:5
+3 is NOT in 4..45:5
+4 is IN 4..45:5
+5 is NOT in 4..45:5
+6 is NOT in 4..45:5
+7 is NOT in 4..45:5
+8 is NOT in 4..45:5
+9 is IN 4..45:5
+10 is NOT in 4..45:5
+11 is NOT in 4..45:5
+12 is NOT in 4..45:5
+13 is NOT in 4..45:5
+14 is IN 4..45:5
+15 is NOT in 4..45:5
+16 is NOT in 4..45:5
+17 is NOT in 4..45:5
+18 is NOT in 4..45:5
+19 is IN 4..45:5
+20 is NOT in 4..45:5
+21 is NOT in 4..45:5
+22 is NOT in 4..45:5
+23 is NOT in 4..45:5
+24 is IN 4..45:5
+25 is NOT in 4..45:5
+-3..-33:-3 [-3, -6, -9, -12, -15, -18, -21, -24, -27, -30]
+-26 is NOT in -3..-33:-3
+-25 is NOT in -3..-33:-3
+-24 is IN -3..-33:-3
+-23 is NOT in -3..-33:-3
+-22 is NOT in -3..-33:-3
+-21 is IN -3..-33:-3
+-20 is NOT in -3..-33:-3
+-19 is NOT in -3..-33:-3
+-18 is IN -3..-33:-3
+-17 is NOT in -3..-33:-3
+-16 is NOT in -3..-33:-3
+-15 is IN -3..-33:-3
+-14 is NOT in -3..-33:-3
+-13 is NOT in -3..-33:-3
+-12 is IN -3..-33:-3
+-11 is NOT in -3..-33:-3
+-10 is NOT in -3..-33:-3
+-9 is IN -3..-33:-3
+-8 is NOT in -3..-33:-3
+-7 is NOT in -3..-33:-3
+-6 is IN -3..-33:-3
+-5 is NOT in -3..-33:-3
+-4 is NOT in -3..-33:-3
+-3 is IN -3..-33:-3
+-2 is NOT in -3..-33:-3
+-1 is NOT in -3..-33:-3
+0 is NOT in -3..-33:-3
+1 is NOT in -3..-33:-3
+2 is NOT in -3..-33:-3
+3 is NOT in -3..-33:-3
+4 is NOT in -3..-33:-3
+5 is NOT in -3..-33:-3
+6 is NOT in -3..-33:-3
+7 is NOT in -3..-33:-3
+8 is NOT in -3..-33:-3
+9 is NOT in -3..-33:-3
+10 is NOT in -3..-33:-3
+11 is NOT in -3..-33:-3
+12 is NOT in -3..-33:-3
+13 is NOT in -3..-33:-3
+14 is NOT in -3..-33:-3
+15 is NOT in -3..-33:-3
+16 is NOT in -3..-33:-3
+17 is NOT in -3..-33:-3
+18 is NOT in -3..-33:-3
+19 is NOT in -3..-33:-3
+20 is NOT in -3..-33:-3
+21 is NOT in -3..-33:-3
+22 is NOT in -3..-33:-3
+23 is NOT in -3..-33:-3
+24 is NOT in -3..-33:-3
+25 is NOT in -3..-33:-3
