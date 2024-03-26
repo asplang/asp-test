@@ -11,7 +11,7 @@ def printall(object):
 printall(..5)
 
 # Range in negative direction.
-printall(..-5:-1)
+printall(..-6:-1)
 
 # Dictionary.
 printall({1:11,3:33,2:22})

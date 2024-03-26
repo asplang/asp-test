@@ -5,7 +5,7 @@ for x in ..5:
     print(x)
 
 # Range in negative direction.
-for x in ..-5:-1:
+for x in ..-6:-1:
     print(x)
 
 # Dictionary.

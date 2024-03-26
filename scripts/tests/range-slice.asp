@@ -8,4 +8,4 @@ for i in [-5, 1, 5]:
           for z in [-3, 1, 2]:
             slc = x..y:z
             s = r[slc]
-            print('%s[%s] = %s => %s' % (r, slc, s, list(s)))
+            print('(%s)[%s] = %s => %s' % (r, slc, s, list(s)))

@@ -2,7 +2,7 @@
 
 def range_str(r):
     return '%s..%s%s' % \
-        (r.start if r.start != 0 else '',
+        (r.start if r.start != (-1 if r.step < 0 else 0) else '',
          r.stop,
          ':%d' % r.step if r.step != 1 else '')
 
@@ -18,5 +18,5 @@ for i in range(-5, 6):
             if z == 0: continue
             slc = slice(x, y, z)
             s = r[slc]
-            print('%s[%s] = %s => %s' % \
+            print('(%s)[%s] = %s => %s' % \
               (range_str(r), range_str(slc), range_str(s), list(s)))

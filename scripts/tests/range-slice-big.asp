@@ -10,4 +10,4 @@ for i in -5..6:
             if z == 0: continue
             slc = x..y:z
             s = r[slc]
-            print('%s[%s] = %s => %s' % (r, slc, s, list(s)))
+            print('(%s)[%s] = %s => %s' % (r, slc, s, list(s)))

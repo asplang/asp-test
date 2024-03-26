@@ -5,11 +5,11 @@
 4
 <iter:range @end> False None
 ---
-0
 -1
 -2
 -3
 -4
+-5
 <iter:range @end> False None
 ---
 (1, 11)

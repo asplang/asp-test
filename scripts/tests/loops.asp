@@ -1,5 +1,5 @@
 # Range.
-for x in ..-5:-1:
+for x in ..-6:-1:
     print(x)
 del x
 
