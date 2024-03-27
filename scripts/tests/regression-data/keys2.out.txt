@@ -1,16 +1,16 @@
-None is a key <type None>
-... is a key <type ...>
-True is a key <type bool>
-0 is a key <type int>
-0.0 is a key <type float>
-`24 is a key <type ?>
-..1 is a key <type range>
-'' is a key <type str>
-() is a key <type tuple>
-'[]' is a string of [] <type list>
-'{}' is a string of {} <type set>
-'{:}' is a string of {:} <type dict>
-'<iter:range>' is a string of <iter:range> <type iter>
-<func:@000000E> is a key <type func>
-<mod:@0000009> is a key <type mod>
-<type None> is a key <type type>
+None is a key <type:None>
+... is a key <type:...>
+True is a key <type:bool>
+0 is a key <type:int>
+0.0 is a key <type:float>
+`24 is a key <type:?>
+..1 is a key <type:range>
+'' is a key <type:str>
+() is a key <type:tuple>
+'[]' is a string of [] <type:list>
+'{}' is a string of {} <type:set>
+'{:}' is a string of {:} <type:dict>
+'<iter:range>' is a string of <iter:range> <type:iter>
+<func:@000000E> is a key <type:func>
+<mod:@0000009> is a key <type:mod>
+<type:None> is a key <type:type>

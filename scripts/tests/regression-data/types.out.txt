@@ -26,4 +26,4 @@ True
 0
 <func:app:31>
 <mod:@0000000>
-Type of 3.14 is <type float>
+Type of 3.14 is <type:float>

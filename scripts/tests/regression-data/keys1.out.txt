@@ -30,11 +30,11 @@ aa
 ((0, 1), 2, 3)
 <func:@000010B>
 <mod:@0000000>
-<type None>
-<type list>
-<type func>
-<type mod>
-<type type>
+<type:None>
+<type:list>
+<type:func>
+<type:mod>
+<type:type>
 None can be a KEY
 '' can be a KEY
 () can be a KEY
