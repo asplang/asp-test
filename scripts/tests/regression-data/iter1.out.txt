@@ -1,3 +1,5 @@
+Object: ..5
+Iterating forward:
 0
 1
 2
@@ -5,6 +7,17 @@
 4
 <iter:range @end> False None
 ---
+Object: ..5
+Iterating backward:
+4
+3
+2
+1
+0
+<iter-rev:range @end> False None
+---
+Object: ..-6:-1
+Iterating forward:
 -1
 -2
 -3
@@ -12,11 +25,31 @@
 -5
 <iter:range @end> False None
 ---
+Object: ..-6:-1
+Iterating backward:
+-5
+-4
+-3
+-2
+-1
+<iter-rev:range @end> False None
+---
+Object: {1: 11, 2: 22, 3: 33}
+Iterating forward:
 (1, 11)
 (2, 22)
 (3, 33)
 <iter:dict @end> False None
 ---
+Object: {1: 11, 2: 22, 3: 33}
+Iterating backward:
+(3, 33)
+(2, 22)
+(1, 11)
+<iter-rev:dict @end> False None
+---
+Object: {4, 5, 6, 7, 8, 9}
+Iterating forward:
 4
 5
 6
@@ -25,23 +58,204 @@
 9
 <iter:set @end> False None
 ---
+Object: {4, 5, 6, 7, 8, 9}
+Iterating backward:
+9
+8
+7
+6
+5
+4
+<iter-rev:set @end> False None
+---
+Object: [14, 12, 7, 8]
+Iterating forward:
 14
 12
 7
 8
 <iter:list @end> False None
 ---
+Object: [14, 12, 7, 8]
+Iterating backward:
+8
+7
+12
+14
+<iter-rev:list @end> False None
+---
+Object: (14, 12, 7, 8)
+Iterating forward:
 14
 12
 7
 8
 <iter:tuple @end> False None
 ---
+Object: (14, 12, 7, 8)
+Iterating backward:
+8
+7
+12
+14
+<iter-rev:tuple @end> False None
+---
+Object: abcde
+Iterating forward:
 a
 b
 c
 d
 e
 <iter:str @end> False None
+---
+Object: abcde
+Iterating backward:
+e
+d
+c
+b
+a
+<iter-rev:str @end> False None
+---
+Object: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+Iterating forward:
+a
+b
+c
+d
+e
+f
+g
+h
+i
+j
+k
+l
+m
+n
+o
+p
+q
+r
+s
+t
+u
+v
+w
+x
+y
+z
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+<iter:str @end> False None
+---
+Object: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+Iterating backward:
+Z
+Y
+X
+W
+V
+U
+T
+S
+R
+Q
+P
+O
+N
+M
+L
+K
+J
+I
+H
+G
+F
+E
+D
+C
+B
+A
+z
+y
+x
+w
+v
+u
+t
+s
+r
+q
+p
+o
+n
+m
+l
+k
+j
+i
+h
+g
+f
+e
+d
+c
+b
+a
+<iter-rev:str @end> False None
+---
+Object: <iter:list>
+Iterating forward:
+42
+144
+256
+<iter:list @end> False None
+---
+Object: <iter:list>
+Iterating forward:
+42
+144
+256
+<iter:list @end> False None
+---
+Object: <iter-rev:list>
+Iterating forward:
+144
+42
+13
+<iter-rev:list @end> False None
+---
+Object: <iter-rev:list>
+Iterating forward:
+144
+42
+13
+<iter-rev:list @end> False None
 ---
 Done

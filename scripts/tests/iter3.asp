@@ -1,0 +1,8 @@
+lst = list(..6)
+it = iter(lst)
+next(it)
+it2 = iter(it)
+it3 = iter(it)
+print(tuple(it))
+print(list(it2))
+print(str(it2))

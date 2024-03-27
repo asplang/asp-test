@@ -37,6 +37,7 @@ set(regression_tests
     integer-overflow.asp
     iter1.asp
     iter2.asp
+    iter3.asp
     keys1.asp
     keys2.asp
     list-assign.asp
@@ -45,6 +46,7 @@ set(regression_tests
     loop1.asp
     loops.asp
     math.asp
+    math-neg-syntax.asp
     member.asp
     module1.asp
     module2.asp
@@ -52,11 +54,13 @@ set(regression_tests
     power.asp
     print.asp
     range-basic.asp
+    range-const.asp
     range-in.asp
     range-index.asp
     range-len.asp
     range-slice.asp
     #range-slice-big.asp # Output too big; occasionally compare with *.py.
+    range-unbounded.asp
     relop.asp
     repeat.asp
     repr.asp
