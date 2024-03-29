@@ -22,6 +22,8 @@ set(test_files
     crash-erase
 
     crash-expand-range-with-large-step
+    
+    crash-mkret-idx
 )
 
 foreach(test_data ${test_files})
