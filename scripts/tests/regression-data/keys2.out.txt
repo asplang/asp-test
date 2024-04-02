@@ -11,6 +11,7 @@ True is a key <type:bool>
 '{}' is a string of {} <type:set>
 '{:}' is a string of {:} <type:dict>
 '<iter:range>' is a string of <iter:range> <type:iter>
+'<iter-rev:range>' is a string of <iter-rev:range> <type:iter-rev>
 <func:@000000E> is a key <type:func>
 <mod:@0000009> is a key <type:mod>
 <type:None> is a key <type:type>
