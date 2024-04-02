@@ -1,0 +1,82 @@
+===
+3
+5
+True True True
+7
+False False False
+---
+7
+9
+---
+7
+5
+3
+---
+7
+9
+===
+a
+b
+True True True
+c
+False False False
+---
+c
+d
+e
+f
+g
+---
+c
+b
+a
+---
+c
+d
+e
+f
+g
+===
+10
+11
+True True True
+12
+False False False
+---
+12
+13
+---
+12
+11
+10
+---
+12
+13
+===
+None
+None
+True True True
+None
+True True True
+---
+---
+---
+===
+x
+y
+True True True
+None
+True True True
+---
+---
+---
+===
+42
+None
+True True True
+None
+True True True
+---
+---
+---
+Done
