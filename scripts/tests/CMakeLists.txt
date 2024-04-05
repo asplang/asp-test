@@ -16,6 +16,7 @@ set(regression_tests
     equal.asp
     erase-list.asp
     fill-empty.asp
+    folding.asp
     for-dict.asp
     for.asp
     format.asp

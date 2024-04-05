@@ -3,9 +3,15 @@ print(x)
 del x
 
 # Small strings.
-print('abcde' + 'pqrst')
+s1 = 'abcde'
+s2 = 'pqrst'
+print(s1 + s2)
 
 # Big strings.
-print('abcdefghijklmnopqrstruwxyz' + 'ABCDEFGHIJKLMNOPQRSTRUWXYZ')
+s1 = 'abcdefghijklmnopqrstruwxyz'
+s2 = 'ABCDEFGHIJKLMNOPQRSTRUWXYZ'
+print(s1 + s2)
+
+del s1, s2
 
 print('Done')
