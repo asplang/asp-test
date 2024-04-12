@@ -40,6 +40,7 @@ set(regression_tests
     iter2.asp
     iter3.asp
     iter4.asp
+    iter5.asp
     keys1.asp
     keys2.asp
     list-assign.asp
