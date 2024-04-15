@@ -1,0 +1,2 @@
+bad-func1.asp:2:20: Error: Duplicate tuple group parameter 'args2' (3)
+Ended in ERROR

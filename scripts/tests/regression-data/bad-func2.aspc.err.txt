@@ -1,0 +1,2 @@
+bad-func2.asp:2:12: Error: Duplicate parameter name 'a' (2 vs. 1)
+Ended in ERROR

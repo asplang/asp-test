@@ -1,0 +1,2 @@
+bad-call1.asp:1:10: Error: Positional argument 2 follows named argument
+Ended in ERROR

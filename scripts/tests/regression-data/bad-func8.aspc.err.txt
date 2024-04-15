@@ -1,0 +1,2 @@
+bad-func8.asp:2:20: Error: Parameter 'args' (2) follows dictionary group parameter
+Ended in ERROR

@@ -1,0 +1,2 @@
+bad-func7.asp:2:16: Error: Parameter 'b' (2) with no default value follows parameter(s) with default value(s)
+Ended in ERROR

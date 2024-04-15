@@ -1,0 +1,2 @@
+bad-func4.asp:2:22: Error: Parameter 'b' (3) follows dictionary group parameter
+Ended in ERROR

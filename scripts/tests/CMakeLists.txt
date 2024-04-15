@@ -92,6 +92,24 @@ set(regression_tests
     # failure test cases
     ins-nonmut.asp
     ins-tuple.asp
+
+    # Failure test cases
+
+    bad-arith.asp
+    bad-call1.asp
+    bad-call2.asp
+    bad-call3.asp
+    bad-func1.asp
+    bad-func2.asp
+    bad-func3.asp
+    bad-func4.asp
+    bad-func5.asp
+    bad-func6.asp
+    bad-func7.asp
+    bad-func8.asp
+    bad-type1.asp
+    bad-type2.asp
+    bad-type3.asp
 )
 
 add_custom_target(clean-test-reference-data
@@ -102,18 +120,18 @@ add_custom_target(clean-test-reference-data
 # Make sure that we have a directory ready for the test output
 file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/regression-data")
 
-set(compiled_test_scripts)
 set(generate_test_data_targets)
 foreach(test_script ${regression_tests})
     get_filename_component(base_name "${test_script}" NAME_WE)
-    compile_for_standalone(${test_script} ${base_name})
-    list(APPEND compiled_test_scripts "${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe")
 
     add_test(NAME ${base_name}
         COMMAND ${CMAKE_COMMAND}
             -D "ASPS_EXECUTABLE=$<TARGET_FILE:asps>"
+            -D "ASPC_EXECUTABLE=$<TARGET_FILE:aspc>"
+            -D "SOURCE_FILE=${CMAKE_CURRENT_SOURCE_DIR}/${test_script}"
             -D "TEST_NAME=${base_name}"
             -D "BYTECODE_FILE=${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe"
+            -D "ASPEC_FILE=${ASP_BINARY_DIR}/standalone/standalone.aspec"
             -D "REFERENCE_DIR=${TEST_REFERENCE_DATA_DIR}"
             -D "OUTPUT_DIR=${CMAKE_CURRENT_BINARY_DIR}/regression-data"
             -D EXPECTED_RUN_RESULT=0
@@ -125,21 +143,21 @@ foreach(test_script ${regression_tests})
     add_custom_target(generate-test-reference-data-${base_name}
         COMMAND ${CMAKE_COMMAND}
             -D "ASPS_EXECUTABLE=$<TARGET_FILE:asps>"
+            -D "ASPC_EXECUTABLE=$<TARGET_FILE:aspc>"
+            -D "SOURCE_FILE=${CMAKE_CURRENT_SOURCE_DIR}/${test_script}"
             -D "TEST_NAME=${base_name}"
             -D "BYTECODE_FILE=${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe"
+            -D "ASPEC_FILE=${ASP_BINARY_DIR}/standalone/standalone.aspec"
             -D "OUTPUT_DIR=${TEST_REFERENCE_DATA_DIR}"
             -D EXPECTED_RUN_RESULT=0
             -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
-        DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/${base_name}.aspe"
+        DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${test_script}"
         VERBATIM
     )
     add_dependencies(generate-test-reference-data-${base_name} clean-test-reference-data)
     list(APPEND generate_test_data_targets generate-test-reference-data-${base_name})
 endforeach()
 
-add_custom_target(asp-compile-test-scripts ALL
-    DEPENDS ${compiled_test_scripts}
-)
 
 add_custom_target(generate-test-reference-data)
 add_dependencies(generate-test-reference-data ${generate_test_data_targets})

@@ -1,0 +1,2 @@
+bad-func6.asp:2:24: Error: Parameter 'kwargs2' (3) follows dictionary group parameter
+Ended in ERROR
