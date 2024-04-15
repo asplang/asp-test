@@ -9,6 +9,7 @@ if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.14")
     set(extra_diff_opts --ignore-eol)
 endif()
 
+set(test_result 0)
 if (NOT ("${REFERENCE_DIR}" STREQUAL ""))
     execute_process(
         COMMAND ${CMAKE_COMMAND} -E compare_files ${extra_diff_opts} "${REFERENCE_DIR}/${TEST_NAME}.aspc.err.txt" "${OUTPUT_DIR}/${TEST_NAME}.aspc.err.txt"
@@ -16,7 +17,8 @@ if (NOT ("${REFERENCE_DIR}" STREQUAL ""))
     )
 
     if (NOT (${diff_result} EQUAL 0))
-        message(FATAL_ERROR "${TEST_NAME}: aspc output differs from the expected output file \"${REFERENCE_DIR}/${TEST_NAME}.aspc.err.txt\"")
+        set(test_result 1)
+        message(NOTICE "${TEST_NAME}: aspc output differs from the expected output file \"${REFERENCE_DIR}/${TEST_NAME}.aspc.err.txt\"")
     endif()
 endif()
 
@@ -29,7 +31,6 @@ if (${compile_result} EQUAL 0)
         )
 
     if (NOT ("${REFERENCE_DIR}" STREQUAL ""))
-        set(test_result 0)
         foreach(suffix .out.txt .trace.txt .dump.txt)
             execute_process(
                 COMMAND ${CMAKE_COMMAND} -E compare_files ${extra_diff_opts} "${REFERENCE_DIR}/${TEST_NAME}${suffix}" "${OUTPUT_DIR}/${TEST_NAME}${suffix}"
@@ -41,12 +42,12 @@ if (${compile_result} EQUAL 0)
                 message(NOTICE "${TEST_NAME}: Output \"${OUTPUT_DIR}/${TEST_NAME}${suffix}\" differs from the expected output file \"${REFERENCE_DIR}/${TEST_NAME}${suffix}\"")
             endif()
         endforeach()
-
-        if (NOT (${test_result} EQUAL 0))
-            message(FATAL_ERROR "${TEST_NAME}: Test failed")
-        endif()
     endif()
 else()
     # Delete any old output files if compile fails
     file(REMOVE "${OUTPUT_DIR}/${TEST_NAME}.dump.txt" "${OUTPUT_DIR}/${TEST_NAME}.out.txt" "${OUTPUT_DIR}/${TEST_NAME}.trace.txt")
+endif()
+
+if (NOT (${test_result} EQUAL 0))
+    message(FATAL_ERROR "${TEST_NAME}: Test failed")
 endif()
