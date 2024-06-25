@@ -20,4 +20,17 @@ False >= True: False
 tuple: True
 list: True
 ---
+None: 0
+...: 0
+False <=> True: -1
+0: 0
+0.0: 0
+0 <=> 1.0 -1
+'' <=> '' 0
+'' <=> 'abc' -1
+tuple: 1
+list: -1
+set: 1
+dict: -1
+---
 Done
