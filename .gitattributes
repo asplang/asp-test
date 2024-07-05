@@ -1,0 +1,4 @@
+# Git attributes.
+
+# Asp script source files.
+*.asp linguist-language=Asp-Script
