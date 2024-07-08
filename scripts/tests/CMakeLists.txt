@@ -70,6 +70,7 @@ set(regression_tests
     seq.asp
     short-circuit.asp
     singleton.asp
+    sleep.asp
     slice-assign.asp
     slice-del.asp
     slice-list.asp
