@@ -18,6 +18,7 @@ set(regression_tests
     fill-empty.asp
     folding.asp
     for-dict.asp
+    for-return.asp
     for.asp
     format.asp
     format-checked.asp
