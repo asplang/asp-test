@@ -6,5 +6,8 @@ def parse_value(key):
     for k, v in dictionary:
         if k == key:
             return v
+    else:
+        return None
 
 print(parse_value("10"))
+print(parse_value("50"))
