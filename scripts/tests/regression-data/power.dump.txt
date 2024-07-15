@@ -279,7 +279,7 @@ Dump:
 ---
 Program counter: 0x0000009
 Free count: 1774; next free entry: 0x000010E
-Free count low water mark: 1761
+Free count low water mark: 1759
 Stack: empty
 Modules: 0x0000001
 Current module: 0x0000003
