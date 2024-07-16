@@ -11,6 +11,7 @@
 
 struct SampleAspContext
 {
+    bool sleeping;
     clock_t expiry;
 };
 

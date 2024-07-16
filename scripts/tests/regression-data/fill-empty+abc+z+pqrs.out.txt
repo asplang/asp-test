@@ -1,0 +1,27 @@
+Inserting 
+SET: abc
+{'abc'}
+PRES: 1 0 0
+Inserting 
+SET: abc z
+{'abc', 'z'}
+PRES: 1 1 0
+Inserting 
+SET: abc pqrs z
+{'abc', 'pqrs', 'z'}
+PRES: 1 1 1
+Done inserting
+Erasing
+Deleting abc
+SET: pqrs z
+{'pqrs', 'z'}
+PRES: 0 1 1
+Deleting z
+SET: pqrs
+{'pqrs'}
+PRES: 0 0 1
+Deleting pqrs
+SET:
+{}
+PRES: 0 0 0
+Done

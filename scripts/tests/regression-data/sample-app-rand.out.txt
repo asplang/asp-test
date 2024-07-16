@@ -1,0 +1,15 @@
+<app-int:0:0> <type:app-int>
+<app-int:0:1> <type:app-int>
+1 99.585
+1 100.392
+4 99.6897
+6 99.898
+6 100.244
+2 100.06
+4 100.31
+3 100.012
+2 100.495
+5 100.467
+Deleting individuals
+Deleting set
+Done

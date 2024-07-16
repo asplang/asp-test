@@ -24,7 +24,7 @@ endif()
 
 if (${compile_result} EQUAL 0)
     execute_process(
-        COMMAND "${ASPS_EXECUTABLE}" -T 2 -u "${OUTPUT_DIR}/${TEST_NAME}.dump.txt" "${BYTECODE_FILE}"
+        COMMAND "${ASPS_EXECUTABLE}" -T 2 -u "${OUTPUT_DIR}/${TEST_NAME}.dump.txt" "${BYTECODE_FILE}" ${TEST_ARGS}
         OUTPUT_FILE "${OUTPUT_DIR}/${TEST_NAME}.out.txt"
         ERROR_FILE "${OUTPUT_DIR}/${TEST_NAME}.trace.txt"
         RESULT_VARIABLE run_result

@@ -7,6 +7,7 @@
 #include "sample.h"
 #include "scripting.hpp"
 #include "functions.hpp"
+#include <ctime>
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -24,17 +25,21 @@ using namespace std;
 
 static const size_t DEFAULT_DATA_ENTRY_COUNT = 2048;
 
+static AspRunResult LoadCodePage
+    (void *, uint32_t offset, size_t *size, void *codePage);
+
 static void Usage()
 {
     cerr
-        << "Usage:      asps [OPTION]... ["
+        << "Usage:      sample [OPTION]... ["
         << COMMAND_OPTION_PREFIXES[0] << COMMAND_OPTION_PREFIXES[0]
         << "] SCRIPT [ARG]...\n"
         << "\n"
-        << "Run the Asp script executable SCRIPT (*.aspe)."
-        << " The suffix may be omitted.\n"
-        << "If one or more ARG are given,"
-        << " they are passed as arguments to the script.\n"
+        << "Run the Asp script executable SCRIPT (*.aspe) in the sample app."
+        << " The suffix may\n"
+        << "be omitted. If one or more ARG are given,"
+        << " they are passed as arguments to the\n"
+        << "script.\n"
         << "\n"
         << "Use " << COMMAND_OPTION_PREFIXES[0] << COMMAND_OPTION_PREFIXES[0]
         << " before the SCRIPT argument if it starts with an option prefix.\n"
@@ -67,6 +72,44 @@ static void Usage()
         << "d n        Data entry count, where each entry is "
         << AspDataEntrySize() << " bytes."
         << " Default is " << DEFAULT_DATA_ENTRY_COUNT << ".\n"
+        << COMMAND_OPTION_PREFIXES[0]
+        << "p n        Code page size, in bytes. The default is 0, which"
+        << " disables paging\n"
+        << "            mode. The number of pages is this value divided by the"
+        << " code size.\n"
+        #ifdef ASP_DEBUG
+        << COMMAND_OPTION_PREFIXES[0]
+        << "n n        Number of instructions to execute before exiting."
+        << " Useful for\n"
+        << "            debugging. Available only in debug builds.\n"
+        << COMMAND_OPTION_PREFIXES[0]
+        << "t file     Trace output file."
+        << " The default is standard output. Overrides a\n"
+        << "            previous "
+        << COMMAND_OPTION_PREFIXES[0] << "t or "
+        << COMMAND_OPTION_PREFIXES[0] << "T option.\n"
+        << COMMAND_OPTION_PREFIXES[0]
+        << "T fd       Trace output file descriptor."
+        << " Only 1 or 2 may be specified. The\n"
+        << "            default is 1 (standard output)."
+        << " Overrides a previous "
+        << COMMAND_OPTION_PREFIXES[0] << "t or "
+        << COMMAND_OPTION_PREFIXES[0] << "T\n"
+        << "            option.\n"
+        << COMMAND_OPTION_PREFIXES[0]
+        << "u file     Data memory dump output file."
+        << " The default is standard output.\n"
+        << "            Overrides a previous "
+        << COMMAND_OPTION_PREFIXES[0] << "u or "
+        << COMMAND_OPTION_PREFIXES[0] << "U option.\n"
+        << COMMAND_OPTION_PREFIXES[0]
+        << "U fd       Data memory dump output file descriptor."
+        << " Only 1 or 2 may be\n"
+        << "            specified. The default is 1 (standard output)."
+        << " Overrides a previous\n"
+        << "            " << COMMAND_OPTION_PREFIXES[0] << "u or "
+        << COMMAND_OPTION_PREFIXES[0] << "U option.\n"
+        #endif
         ;
 }
 
@@ -74,9 +117,13 @@ int main(int argc, char **argv)
 {
     // Process command line options.
     bool verbose = false;
-    size_t codeByteCount = 0;
+    size_t codeByteCount = 0, codePageByteCount = 0;
     size_t dataEntryCount = DEFAULT_DATA_ENTRY_COUNT;
+    #ifdef ASP_DEBUG
     unsigned stepCountLimit = UINT_MAX;
+    string traceFileName, dumpFileName;
+    int traceFileDescriptor = 0, dumpFileDescriptor = 0;
+    #endif
     for (; argc >= 2; argc--, argv++)
     {
         string arg1 = argv[1];
@@ -109,6 +156,58 @@ int main(int argc, char **argv)
             argc--;
             dataEntryCount = static_cast<size_t>(atoi(value.c_str()));
         }
+        else if (option == "p")
+        {
+            string value = (++argv)[1];
+            argc--;
+            codePageByteCount = static_cast<size_t>(atoi(value.c_str()));
+        }
+        #ifdef ASP_DEBUG
+        else if (option == "n")
+        {
+            string value = (++argv)[1];
+            argc--;
+            stepCountLimit = static_cast<unsigned>(atoi(value.c_str()));
+        }
+        else if (option == "t")
+        {
+            traceFileName = (++argv)[1];
+            argc--;
+            traceFileDescriptor = 0;
+        }
+        else if (option == "T")
+        {
+            string value = (++argv)[1];
+            int fd = atoi(value.c_str());
+            argc--;
+            if (fd != 1 && fd != 2)
+            {
+                cerr << "Invalid trace file descriptor " << value << endl;
+                return 1;
+            }
+            traceFileDescriptor = fd;
+            traceFileName.clear();
+        }
+        else if (option == "u")
+        {
+            dumpFileName = (++argv)[1];
+            argc--;
+            dumpFileDescriptor = 0;
+        }
+        else if (option == "U")
+        {
+            string value = (++argv)[1];
+            int fd = atoi(value.c_str());
+            argc--;
+            if (fd != 1 && fd != 2)
+            {
+                cerr << "Invalid dump file descriptor " << value << endl;
+                return 1;
+            }
+            dumpFileDescriptor = fd;
+            dumpFileName.clear();
+        }
+        #endif
         else if (option == "v")
             verbose = true;
         else
@@ -133,22 +232,60 @@ int main(int argc, char **argv)
     {
         return fopen(fileName, "rb");
     };
-    FILE *fp = openExecutable(executableFileName.c_str());
+    FILE *executableFile = openExecutable(executableFileName.c_str());
     static const string executableSuffix = ".aspe";
-    if (fp == nullptr)
+    if (executableFile == nullptr)
     {
         // Try appending the appropriate suffix if the specified file did not
         // exist.
         executableFileName += executableSuffix;
-        fp = openExecutable(executableFileName.c_str());
+        executableFile = openExecutable(executableFileName.c_str());
     }
-    if (fp == nullptr)
+    if (executableFile == nullptr)
     {
         cerr
             << "Error opening " << executableFileName
             << ": " << strerror(errno) << endl;
         return 1;
     }
+
+    // Open the trace and dump files.
+    #ifdef ASP_DEBUG
+    FILE *stdFiles[] = {nullptr, stdout, stderr};
+    FILE *traceFile = stdout;
+    if (traceFileDescriptor != 0)
+        traceFile = stdFiles[traceFileDescriptor];
+    else if (!traceFileName.empty())
+    {
+        traceFile = fopen(traceFileName.c_str(), "w");
+        if (traceFile == nullptr)
+        {
+            cerr
+                << "Error opening trace file " << traceFileName
+                << ": " << strerror(errno) << endl;
+            return 1;
+        }
+    }
+    FILE *dumpFile = stdout;
+    if (dumpFileDescriptor != 0)
+        dumpFile = stdFiles[dumpFileDescriptor];
+    else if (!dumpFileName.empty())
+    {
+        if (dumpFileName == traceFileName)
+            dumpFile = traceFile;
+        else
+        {
+            dumpFile = fopen(dumpFileName.c_str(), "w");
+            if (dumpFile == nullptr)
+            {
+                cerr
+                    << "Error opening dump file " << dumpFileName
+                    << ": " << strerror(errno) << endl;
+                return 1;
+            }
+        }
+    }
+    #endif
 
     // Determine byte size of data area.
     size_t dataEntrySize = AspDataEntrySize();
@@ -160,14 +297,14 @@ int main(int argc, char **argv)
     char *code = nullptr;
     if (codeByteCount != 0)
     {
-        code = (char *)malloc(codeByteCount);
+        code = new char[codeByteCount];
         if (code == nullptr)
         {
             cerr << "Error allocating engine code area" << endl;
             return 2;
         }
     }
-    char *data = (char *)malloc(dataByteSize);
+    char *data = new char[dataByteSize];
     if (data == nullptr)
     {
         cerr << "Error allocating engine data area" << endl;
@@ -187,16 +324,26 @@ int main(int argc, char **argv)
         return 2;
     }
 
-    // Load the executable using one of two methods.
+    // Assign the trace output file.
+    #ifdef ASP_DEBUG
+    AspTraceFile(&engine, traceFile);
+    #endif
+
+    // Load the executable using one of three methods.
     char *externalCode = nullptr;
-    AspAddCodeResult sealResult = AspAddCodeResult_OK;
     if (codeByteCount == 0)
     {
+        if (codePageByteCount != 0)
+        {
+            cerr << "WARNING: Code page size ignored" << endl;
+            codePageByteCount = 0;
+        }
+
         // Determine the size of the executable file.
-        int seekResult = fseek(fp, 0, SEEK_END);
+        int seekResult = fseek(executableFile, 0, SEEK_END);
         long tellResult = 0;
         if (seekResult == 0)
-            tellResult = ftell(fp);
+            tellResult = ftell(executableFile);
         if (seekResult != 0 || tellResult < 0)
         {
             cerr
@@ -205,35 +352,46 @@ int main(int argc, char **argv)
             return 2;
         }
         size_t externalCodeSize = (size_t)tellResult;
-        externalCode = (char *)malloc(externalCodeSize);
+        externalCode = new char[externalCodeSize];
         if (externalCode == nullptr)
         {
             cerr << "Error allocating memory for executable code" << endl;
             return 2;
         }
-        rewind(fp);
+        rewind(executableFile);
 
         // Read the entire executable into memory.
-        int readResult = fread(externalCode, externalCodeSize, 1, fp);
-        if (readResult != 1 || feof(fp) || ferror(fp))
+        size_t readResult = fread
+            (externalCode, externalCodeSize, 1U, executableFile);
+        if (readResult != 1U || feof(executableFile) || ferror(executableFile))
         {
             cerr
                 << "Error reading " << executableFileName
                 << ": " << strerror(errno) << endl;
             return 2;
         }
+        fclose(executableFile);
+        executableFile = nullptr;
 
-        sealResult = AspSealCode
+        AspAddCodeResult sealResult = AspSealCode
             (&engine, externalCode, externalCodeSize);
+        if (sealResult != AspAddCodeResult_OK)
+        {
+            cerr
+                << "Seal error 0x" << hex << uppercase << setfill('0')
+                << setw(2) << sealResult << ": "
+                << AspAddCodeResultToString((int)sealResult) << endl;
+            return 2;
+        }
     }
-    else
+    else if (codePageByteCount == 0)
     {
         while (true)
         {
-            char c = fgetc(fp);
-            if (feof(fp))
+            char c = fgetc(executableFile);
+            if (feof(executableFile))
                 break;
-            if (ferror(fp))
+            if (ferror(executableFile))
             {
                 cerr
                     << "Error reading " << executableFileName
@@ -250,40 +408,84 @@ int main(int argc, char **argv)
                 return 2;
             }
         }
+        fclose(executableFile);
+        executableFile = nullptr;
+
         AspAddCodeResult sealResult = AspSeal(&engine);
+        if (sealResult != AspAddCodeResult_OK)
+        {
+            cerr
+                << "Seal error 0x" << hex << uppercase << setfill('0')
+                << setw(2) << sealResult << ": "
+                << AspAddCodeResultToString((int)sealResult) << endl;
+            return 2;
+        }
     }
-    fclose(fp);
-    if (sealResult != AspAddCodeResult_OK)
+    else
     {
-        cerr
-            << "Seal error 0x" << hex << uppercase << setfill('0')
-            << setw(2) << sealResult << ": "
-            << AspAddCodeResultToString((int)sealResult) << endl;
-        return 2;
+        size_t computedCodePageCount = codeByteCount / codePageByteCount;
+        if (computedCodePageCount == 0)
+        {
+            cerr
+                << "Code page size is larger than available code area."
+                << endl;
+            return 2;
+        }
+        uint8_t codePageCount = (uint8_t)computedCodePageCount;
+        if (codePageCount != computedCodePageCount)
+            cerr
+                << "WARNING: Number of code pages limited to "
+                << (unsigned)codePageCount << endl;
+
+        AspRunResult setPagingResult = AspSetCodePaging
+            (&engine, codePageCount, codePageByteCount, LoadCodePage);
+        if (setPagingResult != AspRunResult_OK)
+        {
+            cerr
+                << "Error 0x" << hex << uppercase << setfill('0')
+                << setw(2) << setPagingResult << " initializing code paging: "
+                << AspRunResultToString((int)setPagingResult) << endl;
+            return 2;
+        }
+
+        AspAddCodeResult pageResult = AspPageCode(&engine, executableFile);
+        if (pageResult != AspAddCodeResult_OK)
+        {
+            cerr
+                << "Error 0x" << hex << uppercase << setfill('0')
+                << setw(2) << pageResult << " loading paged code: "
+                << AspAddCodeResultToString((int)pageResult) << endl;
+            return 2;
+        }
     }
 
     // Report version information.
+    FILE *reportFile;
+    #ifdef ASP_DEBUG
+    reportFile = traceFile;
+    #else
+    reportFile = stdout;
+    #endif
     if (verbose)
     {
         uint8_t engineVersion[4], codeVersion[4];
         AspEngineVersion(engineVersion);
         AspCodeVersion(&engine, codeVersion);
-        cout << "Engine version: ";
+        fputs("Engine version: ", reportFile);
         for (unsigned i = 0; i < sizeof engineVersion; i++)
         {
             if (i != 0)
-                cout.put('.');
-            cout << static_cast<unsigned>(engineVersion[i]);
+                fputc('.', reportFile);
+            fprintf(reportFile, "%u", static_cast<unsigned>(engineVersion[i]));
         }
-        cout << endl;
-        cout << "Code version: ";
+        fputs("\nCode version: ", reportFile);
         for (unsigned i = 0; i < sizeof codeVersion; i++)
         {
             if (i != 0)
-                cout.put('.');
-            cout << static_cast<unsigned>(codeVersion[i]);
+                fputc('.', reportFile);
+            fprintf(reportFile, "%u", static_cast<unsigned>(codeVersion[i]));
         }
-        cout << endl;
+        fputc('\n', reportFile);
     }
 
     // Set arguments.
@@ -298,38 +500,71 @@ int main(int argc, char **argv)
     }
 
     // Run the code.
+    context.sleeping = false;
     AspRunResult runResult = AspRunResult_OK;
     unsigned stepCount = 0;
+    #ifdef ASP_DEBUG
+    if (stepCountLimit == UINT_MAX)
+        fputs("Executing instructions indefinitely...\n", reportFile);
+    else
+        fprintf(reportFile, "Executing %u instructions...\n", stepCountLimit);
+    #endif
     for (;
-         runResult == AspRunResult_OK &&
-         (stepCountLimit == UINT_MAX || stepCount < stepCountLimit);
-         stepCount++)
+         runResult == AspRunResult_OK
+         #ifdef ASP_DEBUG
+         && (stepCountLimit == UINT_MAX || stepCount < stepCountLimit)
+         #endif
+         ; stepCount++)
     {
         runResult = AspStep(&engine);
+        if (context.sleeping)
+        {
+            while (clock() < context.expiry) ;
+            context.sleeping = false;
+        }
     }
 
-    // Clean up application objects created during the run.
-    ScriptCleanup();
+    // Close the executable if not already done (e.g., in code paging mode).
+    if (executableFile != nullptr)
+    {
+        fclose(executableFile);
+        executableFile = nullptr;
+    }
+
+    // Dump data area in debug mode.
+    #ifdef ASP_DEBUG
+    if (dumpFile == traceFile)
+        fputs("---\n", dumpFile);
+    fputs("Dump:\n", dumpFile);
+    AspDump(&engine, dumpFile);
+    #endif
+
+    #ifdef ASP_DEBUG
+    fprintf(reportFile, "---\nExecuted %u instructions\n", stepCount);
+    if (stepCountLimit != UINT_MAX && stepCount != stepCountLimit)
+        fprintf
+            (reportFile,
+             "WARNING: Did not execute specified number of instructions (%u)\n",
+             stepCountLimit);
+    #endif
 
     // Check completion status of the run.
+    FILE *statusFile;
+    #ifdef ASP_DEBUG
+    statusFile = traceFile;
+    #else
+    statusFile = stderr;
     if (runResult != AspRunResult_Complete)
+    #endif
     {
-        auto oldFlags = cerr.flags();
-        auto oldFill = cerr.fill();
-        cerr
-            << "Run error 0x" << hex << uppercase << setfill('0')
-            << setw(2) << runResult << ": "
-            << AspRunResultToString((int)runResult) << endl;
-        cerr.flags(oldFlags);
-        cerr.fill(oldFill);
+        fprintf
+            (statusFile,
+             "Run error 0x%02X: %s\n",
+             runResult, AspRunResultToString((int)runResult));
 
         // Report the program counter.
         auto programCounter = AspProgramCounter(&engine);
-        cerr
-            << "Program counter: 0x" << hex << uppercase << setfill('0')
-            << setw(7) << programCounter;
-        cerr.flags(oldFlags);
-        cerr.fill(oldFill);
+        fprintf(statusFile, "Program counter: 0x%07zX", programCounter);
 
         // Attempt to translate the program counter into a source location
         // using the associated source info file.
@@ -345,28 +580,52 @@ int main(int argc, char **argv)
             AspSourceLocation sourceLocation = AspGetSourceLocation
                 (sourceInfo, programCounter);
             if (sourceLocation.fileName != nullptr)
-                cerr
-                    << "; " << sourceLocation.fileName << ':'
-                    << sourceLocation.line << ':' << sourceLocation.column;
+            {
+                fprintf
+                    (statusFile, "; %s:%u:%u",
+                     sourceLocation.fileName,
+                     sourceLocation.line, sourceLocation.column);
+            }
             AspUnloadSourceInfo(sourceInfo);
         }
-        cerr << endl;
+        fputc('\n', statusFile);
     }
 
     // Report low free count.
     if (verbose)
     {
-        cout
-            << "Low free count: "
-            << AspLowFreeCount(&engine)
-            << " (max " << AspMaxDataSize(&engine) << ')' << endl;
+        fprintf
+            (reportFile, "Low free count: %zu (max %zu)\n",
+             AspLowFreeCount(&engine), AspMaxDataSize(&engine));
+        if (codePageByteCount != 0)
+        {
+            fprintf
+                (reportFile, "Code page read count: %zu\n",
+                 AspCodePageReadCount(&engine, false));
+        }
     }
 
-    if (code != nullptr)
-        free(code);
-    if (externalCode != nullptr)
-        free(externalCode);
-    free(data);
+    delete [] code;
+    delete [] externalCode;
+    delete [] data;
 
     return runResult == AspRunResult_Complete ? 0 : 2;
+}
+
+static AspRunResult LoadCodePage
+    (void *id, uint32_t offset, size_t *size, void *codePage)
+{
+    FILE *executableFile = (FILE *)id;
+
+    int result = fseek(executableFile, (long)offset, SEEK_SET);
+    if (result != 0)
+        return ferror(executableFile) != 0 ?
+            AspRunResult_Application : AspRunResult_BeyondEndOfCode;
+
+    size_t readCount = fread(codePage, 1, *size, executableFile);
+    if (ferror(executableFile) != 0)
+        return AspRunResult_Application;
+    *size = readCount;
+
+    return AspRunResult_OK;
 }

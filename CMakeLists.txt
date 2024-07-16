@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.15)
 
 if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.15")
     # Set MSVC runtime library type from MSVC_RUNTIME_LIBRARY target property
@@ -52,5 +52,6 @@ set(ASP_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/asp-build")
 
 enable_testing()
 
+add_subdirectory(sample-app)
 add_subdirectory(scripts)
 add_subdirectory(fuzzing)
