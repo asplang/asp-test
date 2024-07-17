@@ -17,6 +17,7 @@ set(standalone_regression_tests
     empty.asp
     equal.asp
     erase-list.asp
+    fib.asp+10
     fill-empty.asp
     fill-empty.asp+abc+z+pqrs
     folding.asp
@@ -29,6 +30,7 @@ set(standalone_regression_tests
     func-group1.asp
     func-group2.asp
     func-mutpar.asp
+    gcd.asp+32+36
     glob1.asp
     glob2.asp
     glob3.asp
@@ -149,6 +151,7 @@ function(parse_test_spec spec test_name_var script_var args_var)
 endfunction()
 
 set(generate_test_data_targets)
+
 foreach(test_spec ${standalone_regression_tests})
     parse_test_spec("${test_spec}" test_name test_script test_args)
 

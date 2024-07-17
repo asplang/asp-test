@@ -1,0 +1,1 @@
+GCD of 32 and 36 is 4
