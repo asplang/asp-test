@@ -124,6 +124,7 @@ set(sample_app_regression_tests
     #file.asp+file-in.txt+file-out.txt
     rand.asp
     rand2.asp
+    sort.asp
 )
 
 add_custom_target(clean-test-reference-data

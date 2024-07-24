@@ -18,6 +18,9 @@ def file_at_end(file) = asp_file_at_end
 def file_get_line(file) = asp_file_get_line
 def file_put_line(file, s) = asp_file_put_line
 
+# Sort using a function callback for comparisons.
+def sort(items, compare) = asp_sort
+
 # General purpose print.
 def print(*values, sep = ' ', end = '\n') = asp_print
 

@@ -40,6 +40,7 @@ add_executable(sample
     functions-print.cpp
     functions-random.cpp
     functions-sleep.cpp
+    functions-sort.cpp
     )
 
 target_link_libraries(sample
