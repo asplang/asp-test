@@ -28,7 +28,7 @@ add_custom_command(
     COMMAND
         ${CMAKE_COMMAND} -E env
         "ASP_SPEC_INCLUDE=${CMAKE_INSTALL_PREFIX}/include/asps"
-        aspg "${PROJECT_SOURCE_DIR}/sample.asps"
+        $<TARGET_FILE:aspg> "${PROJECT_SOURCE_DIR}/sample.asps"
     )
 
 add_executable(sample
