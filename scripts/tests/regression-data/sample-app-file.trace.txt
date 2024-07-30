@@ -20,4 +20,4 @@ Executing instructions indefinitely...
 @0x0000056: 0xFE ---
 Executed 19 instructions
 Run error 0xFB: Abort
-Program counter: 0x0000057; file.asp:5:11
+Program counter: 0x0000056; file.asp:3:12

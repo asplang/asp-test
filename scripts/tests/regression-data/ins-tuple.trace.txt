@@ -14,4 +14,4 @@ Executing instructions indefinitely...
 ---
 Executed 12 instructions
 Run error 0x0C: Unexpected type
-Program counter: 0x0000018; ins-tuple.asp:3:10
+Program counter: 0x0000017; ins-tuple.asp:2:3

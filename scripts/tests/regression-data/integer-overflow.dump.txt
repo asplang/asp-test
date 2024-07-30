@@ -279,7 +279,7 @@ Dump:
 0x0000115: t=0x03(int) use=1 value=-1
 0x0000116...0x00007FF: t=0xFF(free)
 ---
-Program counter: 0x0000017
+Program counter: 0x0000016
 Free count: 1771; next free entry: 0x0000114
 Free count low water mark: 1769
 Stack: top=0x0000113, count=2

@@ -114,4 +114,4 @@ Executing instructions indefinitely...
 ---
 Executed 112 instructions
 Run error 0x0C: Unexpected type
-Program counter: 0x00000EA; ins-nonmut.asp:17:3
+Program counter: 0x00000E9; ins-nonmut.asp:17:3

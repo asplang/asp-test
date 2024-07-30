@@ -283,7 +283,7 @@ Dump:
 0x000011B: t=0x04(float) use=1 value=nan
 0x000011C...0x00007FF: t=0xFF(free)
 ---
-Program counter: 0x0000037
+Program counter: 0x0000036
 Free count: 1767; next free entry: 0x0000113
 Free count low water mark: 1763
 Stack: top=0x000010F, count=3

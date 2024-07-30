@@ -11,4 +11,4 @@ Executing instructions indefinitely...
 ---
 Executed 9 instructions
 Run error 0x19: Arithmetic overflow
-Program counter: 0x0000017; integer-overflow.asp:2:24
+Program counter: 0x0000016; integer-overflow.asp:2:24

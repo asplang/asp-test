@@ -36,4 +36,4 @@ Executing instructions indefinitely...
 ---
 Executed 34 instructions
 Run error 0x12: Value out of range
-Program counter: 0x0000039; bad-type2.asp:2:7
+Program counter: 0x0000038; bad-type2.asp:2:7

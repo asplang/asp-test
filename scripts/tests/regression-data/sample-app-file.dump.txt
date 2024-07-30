@@ -321,7 +321,7 @@ Dump:
 0x000013F: t=0x50(stkent) prev=0x0000000 val=0x000013E
 0x0000140...0x00007FF: t=0xFF(free)
 ---
-Program counter: 0x0000057
+Program counter: 0x0000056
 Free count: 1728; next free entry: 0x000014C
 Free count low water mark: 1709
 Stack: top=0x000013F, count=1
