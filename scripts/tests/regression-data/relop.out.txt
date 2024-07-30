@@ -20,4 +20,18 @@ False >= True: False
 tuple: True
 list: True
 ---
+None: 0
+...: 0
+False <=> True: -1
+True <=> False: 1
+0: 0
+0.0: 0
+0 <=> 1.0 -1
+1.0 <=> 0 1
+'' <=> '' 0
+'' <=> 'abc' -1
+'abc' <=> '' 1
+tuple: 0
+list: 0
+---
 Done

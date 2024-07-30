@@ -41,6 +41,7 @@ set(standalone_regression_tests
     ins-dict.asp
     ins-list.asp
     ins-set.asp
+    ins-str.asp
     integer-overflow.asp
     iter1.asp
     iter2.asp
@@ -124,7 +125,8 @@ set(sample_app_regression_tests
     #file.asp+file-in.txt+file-out.txt
     rand.asp
     rand2.asp
-    sort.asp
+    sort1.asp
+    sort2.asp
 )
 
 add_custom_target(clean-test-reference-data
