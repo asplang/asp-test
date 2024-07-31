@@ -22,7 +22,8 @@ set(standalone_regression_tests
     fill-empty.asp+abc+z+pqrs
     folding.asp
     for-dict.asp
-    for-return.asp
+    for-return1.asp
+    for-return2.asp
     for.asp
     format.asp
     format-checked.asp
