@@ -40,6 +40,8 @@ set(standalone_regression_tests
     index-str.asp
     index-tuple.asp
     ins-dict.asp
+    ins-iter1.asp
+    ins-iter2.asp
     ins-list.asp
     ins-set.asp
     ins-str.asp

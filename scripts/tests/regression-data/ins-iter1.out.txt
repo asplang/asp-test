@@ -1,0 +1,24 @@
+Forward
+ Before: []
+ After:  [1, 2, 3, 4, 5, 6]
+Reverse
+ Before: []
+ After:  [6, 5, 4, 3, 2, 1]
+Forward
+ Before: ['a']
+ After:  [1, 2, 'a', 3, 4, 5, 6]
+Reverse
+ Before: ['a']
+ After:  [6, 5, 4, 3, 'a', 2, 1]
+Forward
+ Before: ['a', 'b']
+ After:  [1, 2, 'a', 3, 4, 'b', 5, 6]
+Reverse
+ Before: ['a', 'b']
+ After:  [6, 5, 'a', 4, 3, 'b', 2, 1]
+Forward
+ Before: ['a', 'b', 'c']
+ After:  [1, 2, 'a', 3, 4, 'b', 5, 6, 'c']
+Reverse
+ Before: ['a', 'b', 'c']
+ After:  ['a', 6, 5, 'b', 4, 3, 'c', 2, 1]
