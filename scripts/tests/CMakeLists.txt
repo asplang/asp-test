@@ -17,6 +17,11 @@ set(standalone_regression_tests
     empty.asp
     equal.asp
     erase-list.asp
+    exit-0.asp
+    exit-None.asp
+    exit-int.asp
+    exit-main.asp
+    exit-str.asp
     fib.asp+10
     fill-empty.asp
     fill-empty.asp+abc+z+pqrs

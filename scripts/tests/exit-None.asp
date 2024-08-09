@@ -1,3 +1,3 @@
 print('Exiting')
-exit(None)
-print('error')
+exit()
+print('Error')
