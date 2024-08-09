@@ -42,7 +42,9 @@ set(standalone_regression_tests
     ins-dict.asp
     ins-iter1.asp
     ins-iter2.asp
-    ins-list.asp
+    ins-iter3.asp
+    ins-list1.asp
+    ins-list2.asp
     ins-set.asp
     ins-str.asp
     integer-overflow.asp
