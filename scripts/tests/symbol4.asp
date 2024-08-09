@@ -1,2 +1,2 @@
-# Cannot delete a symbol.
+# Compile error: Cannot delete a symbol.
 del `var

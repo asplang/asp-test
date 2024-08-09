@@ -1,0 +1,6 @@
+42 `59 {None, 42, `31, `59, `60}
+symbols compare EQUAL
+symbols compare NOT equal
+objects compare NOT equal
+symbol is NOT in
+symbol is IN

@@ -9,10 +9,29 @@ set(standalone_regression_tests
     args2.asp+you+and+me
     assign.asp
     aug.asp
+    bad-arith.asp
+    bad-call1.asp
+    bad-call2.asp
+    bad-call3.asp
+    bad-func1.asp
+    bad-func2.asp
+    bad-func3.asp
+    bad-func4.asp
+    bad-func5.asp
+    bad-func6.asp
+    bad-func7.asp
+    bad-func8.asp
+    bad-type1.asp
+    bad-type2.asp
+    bad-type3.asp
     bif-int.asp
     bitwise.asp
+    comment.asp
     concat.asp
     conditional.asp
+    cycle1.asp
+    cycle2.asp
+    cycle3.asp
     deldict.asp
     empty.asp
     equal.asp
@@ -30,11 +49,12 @@ set(standalone_regression_tests
     for-return1.asp
     for-return2.asp
     for.asp
-    format.asp
     format-checked.asp
+    format.asp
     func-group0.asp
     func-group1.asp
     func-group2.asp
+    func-group3.asp
     func-mutpar.asp
     gcd.asp+32+36
     glob1.asp
@@ -50,8 +70,10 @@ set(standalone_regression_tests
     ins-iter3.asp
     ins-list1.asp
     ins-list2.asp
+    ins-nonmut.asp
     ins-set.asp
     ins-str.asp
+    ins-tuple.asp
     integer-overflow.asp
     iter1.asp
     iter2.asp
@@ -65,8 +87,10 @@ set(standalone_regression_tests
     loop0.asp
     loop1.asp
     loops.asp
-    math.asp
+    math-divide.asp
+    math-modulo.asp
     math-neg-syntax.asp
+    math.asp
     member.asp
     module1.asp
     module2.asp
@@ -81,6 +105,8 @@ set(standalone_regression_tests
     range-slice.asp
     #range-slice-big.asp # Output too big; occasionally compare with *.py.
     range-unbounded.asp
+    #recursive-dict.asp
+    #recursive-list.asp
     relop.asp
     repeat.asp
     repr.asp
@@ -96,6 +122,10 @@ set(standalone_regression_tests
     string.asp
     swap1.asp
     swap2.asp
+    symbol1.asp
+    symbol2.asp
+    symbol3.asp
+    symbol4.asp
     tuple-assign1.asp
     tuple-assign2.asp
     tuple-assign3.asp
@@ -103,31 +133,6 @@ set(standalone_regression_tests
     unary.asp
     while-else.asp
     while.asp
-
-    # recursive-dict.asp
-    # recursive-list.asp
-
-    # failure test cases
-    ins-nonmut.asp
-    ins-tuple.asp
-
-    # Failure test cases
-
-    bad-arith.asp
-    bad-call1.asp
-    bad-call2.asp
-    bad-call3.asp
-    bad-func1.asp
-    bad-func2.asp
-    bad-func3.asp
-    bad-func4.asp
-    bad-func5.asp
-    bad-func6.asp
-    bad-func7.asp
-    bad-func8.asp
-    bad-type1.asp
-    bad-type2.asp
-    bad-type3.asp
 )
 
 set(sample_app_regression_tests

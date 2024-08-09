@@ -1,0 +1,2 @@
+symbol3.asp:2:1: Error: Cannot take address of symbol expression
+Ended in ERROR

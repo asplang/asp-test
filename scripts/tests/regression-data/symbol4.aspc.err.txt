@@ -1,0 +1,2 @@
+symbol4.asp:2:5: Error: Invalid type for del
+Ended in ERROR

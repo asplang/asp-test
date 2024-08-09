@@ -1,2 +1,2 @@
-# Cannot assign to a symbol expression.
+# Compile error: Cannot assign to a symbol expression.
 `var = 0
