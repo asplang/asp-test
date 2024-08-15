@@ -46,6 +46,7 @@ set(standalone_regression_tests
     fill-empty.asp+abc+z+pqrs
     folding.asp
     for-dict.asp
+    for-module.asp
     for-return1.asp
     for-return2.asp
     for.asp
