@@ -1,0 +1,8 @@
+Start of module 3
+pi is not here
+Start of module 4
+End of module 4
+pi is here
+pi = 3.14159
+Hello from foo4, pi = 3.14159
+End of module 3

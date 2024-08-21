@@ -95,6 +95,7 @@ set(standalone_regression_tests
     member.asp
     module1.asp
     module2.asp
+    module3.asp
     nan.asp
     power.asp
     print.asp
