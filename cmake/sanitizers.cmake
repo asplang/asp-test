@@ -39,7 +39,8 @@ if (ENABLE_ADDRESS_SANITIZER)
             target_link_libraries(asp-enable_address_sanitizer INTERFACE
                 "${clang_rt_asan_preinit}"
                 "${clang_rt_asan}"
-                "${clang_rt_asan_cxx}")
+                "${clang_rt_asan_cxx}"
+            )
         else()
             target_compile_options(asp-enable_address_sanitizer INTERFACE -fsanitize=address)
             target_link_libraries(asp-enable_address_sanitizer INTERFACE -fsanitize=address)
