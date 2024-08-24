@@ -27,7 +27,7 @@ add_custom_command(
         "${PROJECT_SOURCE_DIR}/sample.asps"
     COMMAND
         ${CMAKE_COMMAND} -E env
-        "ASP_SPEC_INCLUDE=${CMAKE_INSTALL_PREFIX}/include/asps"
+        "ASP_SPEC_INCLUDE=${ASP_SOURCE_DIR}/engine/"
         $<TARGET_FILE:aspg> "${PROJECT_SOURCE_DIR}/sample.asps"
     )
 
