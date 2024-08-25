@@ -25,6 +25,9 @@ set(test_files
     
     crash-mkret-idx
     crash-create-iterator-to-null-string
+	
+	crash-AspLib_float-nullptr
+	ub-uninitialized-engine-callReturning
 )
 
 foreach(test_data ${test_files})
