@@ -38,6 +38,10 @@ set(standalone_regression_tests
     erase-list.asp
     exit-0.asp
     exit-None.asp
+    exit-arg.asp+0x7FFFFEFE
+    exit-arg.asp+0x7FFFFEFF
+    exit-arg.asp+0x7FFFFF00
+    exit-arg.asp+-1
     exit-int.asp
     exit-main.asp
     exit-str.asp
