@@ -56,6 +56,7 @@ endif()
 if(BUILD_FUZZ_TESTING)
     if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
         add_library(asp-clang_fuzzer INTERFACE)
+        add_library(asp-clang_sanitizers INTERFACE)
         if (WIN32)
             if(clang_rt_asan_preinit AND clang_rt_asan AND clang_rt_asan_cxx AND clang_rt_fuzzer)
                 if (NOT(CMAKE_MSVC_RUNTIME_LIBRARY STREQUAL "MultiThreaded"))
@@ -74,10 +75,21 @@ if(BUILD_FUZZ_TESTING)
             )
             target_compile_options(asp-clang_fuzzer INTERFACE
                 -fsanitize=fuzzer,address)
+
+            target_compile_options(asp-clang_sanitizers INTERFACE
+                -fsanitize=address)
+            target_link_libraries(asp-clang_sanitizers INTERFACE
+                "${clang_rt_asan_preinit}"
+                "${clang_rt_asan}"
+                "${clang_rt_asan_cxx}"
+                )
         else()
             target_compile_options(asp-clang_fuzzer INTERFACE -fsanitize=fuzzer,address,undefined)
             target_link_options(asp-clang_fuzzer INTERFACE -fsanitize=fuzzer,address,undefined)
+            target_compile_options(asp-clang_sanitizers INTERFACE -fsanitize=address,undefined)
+            target_link_options(asp-clang_sanitizers INTERFACE -fsanitize=address,undefined)
         endif()
+
     else()
         message(WARNING "Fuzz testing is only available when building with clang")
     endif()

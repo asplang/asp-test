@@ -10,6 +10,7 @@ add_custom_command(
         "${ASP_SOURCE_DIR}/engine/collect.asps"
         "${ASP_SOURCE_DIR}/engine/iter.asps"
         "${ASP_SOURCE_DIR}/engine/math.asps"
+        "${ASP_SOURCE_DIR}/engine/sys.asps"
     COMMAND
         ${CMAKE_COMMAND} -E env
         "ASP_SPEC_INCLUDE=${PATH_NAME_SEPARATOR}${ASP_SOURCE_DIR}/engine"
@@ -25,14 +26,18 @@ add_executable(bytecode-fuzz-crash-reproducer
     "${CMAKE_CURRENT_BINARY_DIR}/fuzz.aspec"
     "${CMAKE_CURRENT_BINARY_DIR}/fuzz.c"
     "${CMAKE_CURRENT_BINARY_DIR}/fuzz.h"
-    fuzz.asps
-    )
+	)
 
 target_include_directories(bytecode-fuzz-crash-reproducer PRIVATE ${CMAKE_CURRENT_BINARY_DIR} "${ASP_BINARY_DIR}/engine")
 target_link_libraries(bytecode-fuzz-crash-reproducer PRIVATE aspe aspm)
 
 # Enable address sanitizer so that reproducer will catch all the same issues as the fuzzer
-target_link_libraries(bytecode-fuzz-crash-reproducer PRIVATE asp-enable_address_sanitizer)
+if (BUILD_FUZZ_TESTING)
+	target_link_libraries(bytecode-fuzz-crash-reproducer PRIVATE asp-clang_sanitizers)
+else()
+	# Enable only address sanitizer
+	target_link_libraries(bytecode-fuzz-crash-reproducer PRIVATE asp-enable_address_sanitizer)
+endif()
 
 
 add_subdirectory(bytecode-tests)
@@ -65,7 +70,6 @@ if (BUILD_FUZZ_TESTING)
         "${CMAKE_CURRENT_BINARY_DIR}/fuzz.aspec"
         "${CMAKE_CURRENT_BINARY_DIR}/fuzz.c"
         "${CMAKE_CURRENT_BINARY_DIR}/fuzz.h"
-        fuzz.asps
 
         ${aspe_absolute_src_list}
     )
