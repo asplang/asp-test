@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 """
 Simple script for converting fuzz tester crash report to .aspe file that is runnable with asps
 
@@ -7,7 +9,7 @@ Usage: python convert_fuzz_crash_to_aspe.py <input_crash_file> [<output_aspe_fil
 import os
 import sys
 
-ASPE_STANDALONE_HEADER = bytes([0x41, 0x73, 0x70, 0x45, 0x00, 0x07, 0x00, 0x00, 0xF5, 0xF1, 0x63, 0x99])
+ASPE_STANDALONE_HEADER = bytes([0x41, 0x73, 0x70, 0x45, 0x01, 0x02, 0x00, 0x00, 0x5B, 0xF5, 0x88, 0xE0])
 
 def convert_to_aspe(in_f, out_f):
     data = in_f.read()
