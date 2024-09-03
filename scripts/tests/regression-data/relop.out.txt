@@ -31,7 +31,9 @@ True <=> False: 1
 '' <=> '' 0
 '' <=> 'abc' -1
 'abc' <=> '' 1
-tuple: 0
-list: 0
+tuple: 1
+list: -1
+set: 1
+dict: -1
 ---
 Done
