@@ -91,6 +91,7 @@ set(standalone_regression_tests
     keys1.asp
     keys2.asp
     list-assign.asp
+    literals.asp
     logical.asp
     loop0.asp
     loop1.asp
