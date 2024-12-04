@@ -1,2 +1,2 @@
-print(int(float('NaN'), check = False))
-print(int(float('NaN'))) # Generates value out of range
+print(int(float('NaN')))
+print(int(float('NaN'), check = True)) # Generates value out of range

@@ -13,17 +13,20 @@ True
 4.0
 3.14
 123
+-456
 2147483647
+None
 -2147483648
 2989
 2989
 1295
+None
 -3.14e-07
 -inf
 -nan
-2147483647
--2147483648
-0
+None
+None
+None
 <func:app:31>
 <mod:@0000000>
 Type of 3.14 is <type:float>
