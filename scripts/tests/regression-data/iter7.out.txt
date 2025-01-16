@@ -1,0 +1,13 @@
+[23, 42, 57, 88, 13]
+Keeping 23
+Keeping 42
+Deleting 57
+Deleted 57
+[23, 42, 88, 13]
+Deleting 88
+Deleted 88
+[23, 42, 13]
+Deleting 13
+Deleted 13
+[23, 42]
+None

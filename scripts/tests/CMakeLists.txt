@@ -89,6 +89,7 @@ set(standalone_regression_tests
     iter4.asp
     iter5.asp
     iter6.asp
+    iter7.asp
     keys1.asp
     keys2.asp
     list-assign.asp
