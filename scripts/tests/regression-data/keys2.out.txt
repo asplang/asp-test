@@ -3,7 +3,7 @@ None is a key <type:None>
 True is a key <type:bool>
 0 is a key <type:int>
 0.0 is a key <type:float>
-`26 is a key <type:?>
+`26 is a key <type:symbol>
 ..1 is a key <type:range>
 '' is a key <type:str>
 () is a key <type:tuple>
