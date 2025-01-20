@@ -3,7 +3,7 @@ Executing instructions indefinitely...
 @0x0000006: 0xBD LDMOD 60
 @0x0000009: 0x18 PUSHAL
 @0x000000A: 0x0D PUSHY 61
-@0x000000C: 0x0D PUSHY 33
+@0x000000C: 0x0D PUSHY 34
 @0x000000E: 0x62 Binary op
 ---
 Executed 6 instructions
