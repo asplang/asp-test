@@ -1,5 +1,7 @@
+# Test cases.
 
-# This directory must not contain any other data as it is destroyed and recreated when
+# This directory must not contain any other data as it is destroyed and
+# recreated when regression data is generated.
 set(TEST_REFERENCE_DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/regression-data" CACHE PATH "Directory that contains reference output data for regression tests")
 
 set(standalone_regression_tests
@@ -83,6 +85,7 @@ set(standalone_regression_tests
     ins-str.asp
     ins-tuple.asp
     integer-overflow.asp
+    is.asp
     iter1.asp
     iter2.asp
     iter3.asp
@@ -91,6 +94,7 @@ set(standalone_regression_tests
     iter6.asp
     iter7.asp
     iter8.asp
+    iter9.asp
     keys1.asp
     keys2.asp
     list-assign.asp

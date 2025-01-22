@@ -1,0 +1,5 @@
+None True
+... True
+False True
+True True
+0 False
