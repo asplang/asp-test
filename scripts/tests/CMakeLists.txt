@@ -111,6 +111,10 @@ set(standalone_regression_tests
     module1.asp
     module2.asp
     module3.asp
+    module4.asp
+    module5.asp
+    module6.asp
+    module7.asp
     nan.asp
     power.asp
     print.asp
