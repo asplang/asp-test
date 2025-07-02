@@ -120,6 +120,8 @@ set(standalone_regression_tests
     print.asp
     range-basic.asp
     range-const.asp
+    range-empty1.asp
+    range-empty2.asp
     range-in.asp
     range-index.asp
     range-len.asp
