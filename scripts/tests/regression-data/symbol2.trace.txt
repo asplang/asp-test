@@ -4,7 +4,7 @@ Executing instructions indefinitely...
 @0x0000009: 0x18 PUSHAL
 @0x000000A: 0x0D PUSHY 61
 @0x000000C: 0x0D PUSHY 34
-@0x000000E: 0x62 Binary op
+@0x000000E: 0x62 LT
 ---
 Executed 6 instructions
 Run error 0x0C: Unexpected type

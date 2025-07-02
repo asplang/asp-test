@@ -7,7 +7,7 @@ Executing instructions indefinitely...
 @0x0000011: 0x18 PUSHAL
 @0x0000012: 0x81 LD 61
 @0x0000014: 0x05 PUSHI -1
-@0x0000016: 0x5C Binary op
+@0x0000016: 0x5C FDIV
 ---
 Executed 9 instructions
 Run error 0x19: Arithmetic overflow

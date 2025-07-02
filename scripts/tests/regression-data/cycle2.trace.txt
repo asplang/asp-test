@@ -15,7 +15,7 @@ Executing instructions indefinitely...
 @0x000001A: 0xED INSP
 @0x000001B: 0x81 LD 61
 @0x000001D: 0x81 LD 62
-@0x000001F: 0x63 Binary op
+@0x000001F: 0x63 LE
 ---
 Executed 17 instructions
 Run error 0x20: Out of data memory
