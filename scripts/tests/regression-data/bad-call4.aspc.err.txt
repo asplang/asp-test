@@ -1,0 +1,2 @@
+bad-call4.asp:4:10: Error: Invalid type for iterable group argument
+Ended in ERROR

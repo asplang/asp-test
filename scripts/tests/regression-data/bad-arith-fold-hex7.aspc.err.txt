@@ -1,0 +1,2 @@
+bad-arith-fold-hex7.asp:2:21: Error: Out of range value(s) in binary right shift expression
+Ended in ERROR

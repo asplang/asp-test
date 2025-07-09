@@ -1,0 +1,2 @@
+bad-arith-fold-dec7.asp:2:11: Error: Divide by zero in binary modulo expression
+Ended in ERROR

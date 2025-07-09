@@ -1,0 +1,2 @@
+bad-arith-fold-hex3.asp:2:20: Error: Arithmetic overflow in binary subtraction expression
+Ended in ERROR

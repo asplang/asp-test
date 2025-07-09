@@ -13,3 +13,13 @@ print(bits, 'set', n, bits | 1 << n)
 bits = 0xFFFF
 n = 3
 print(bits, 'clear', n, bits & ~(1 << n))
+
+print('---')
+
+# These perform predictable results without undefined behaviour.
+i = 0x7fffffff
+j = 0x80000000
+for shift in ..33:
+    print(i << shift)
+    print(i >> shift)
+    print(j >> shift)

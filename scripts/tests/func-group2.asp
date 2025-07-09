@@ -11,9 +11,9 @@ l=[4,5,6]
 s={'a', 'b', 'c'}
 d={`a:1, `b:2, `c:4}
 
-# Invalid case:
-# *3.14 should be caught by compiler as an attempt to pass non-tuple as a
-# group argument.
+# Invalid case (covered in bad-call*.asp).
+# *3.14 should be caught by the compiler as an attempt to pass an invalid type
+# of object as a group argument.
 #foo(*t, *3.14, 99)
 
 print('1 ---')

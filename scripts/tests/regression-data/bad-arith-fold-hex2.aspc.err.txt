@@ -1,0 +1,2 @@
+bad-arith-fold-hex2.asp:2:20: Error: Arithmetic overflow in binary addition expression
+Ended in ERROR

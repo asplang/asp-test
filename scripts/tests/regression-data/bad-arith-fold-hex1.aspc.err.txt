@@ -1,0 +1,2 @@
+bad-arith-fold-hex1.asp:2:8: Error: Arithmetic overflow in unary negation expression
+Ended in ERROR

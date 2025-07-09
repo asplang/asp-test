@@ -11,10 +11,33 @@ set(standalone_regression_tests
     args2.asp+you+and+me
     assign.asp
     aug.asp
-    bad-arith.asp
+    bad-arith-fold-dec1.asp
+    bad-arith-fold-dec2.asp
+    bad-arith-fold-dec3.asp
+    bad-arith-fold-dec4.asp
+    bad-arith-fold-dec5.asp
+    bad-arith-fold-dec6.asp
+    bad-arith-fold-dec7.asp
+    bad-arith-fold-dec8.asp
+    bad-arith-fold-dec9.asp
+    bad-arith-fold-hex1.asp
+    bad-arith-fold-hex2.asp
+    bad-arith-fold-hex3.asp
+    bad-arith-fold-hex4.asp
+    bad-arith-fold-hex5.asp
+    bad-arith-fold-hex6.asp
+    bad-arith-fold-hex7.asp
+    bad-arith-op1.asp
+    bad-arith-op2.asp
+    bad-arith-op3.asp
+    bad-arith-op4.asp
+    bad-arith-op5.asp
+    bad-arith-op6.asp
+    bad-arith-op7.asp
     bad-call1.asp
     bad-call2.asp
     bad-call3.asp
+    bad-call4.asp
     bad-func1.asp
     bad-func2.asp
     bad-func3.asp

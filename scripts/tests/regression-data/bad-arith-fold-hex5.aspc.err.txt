@@ -1,0 +1,2 @@
+bad-arith-fold-hex5.asp:2:21: Error: Arithmetic overflow in binary division expression
+Ended in ERROR

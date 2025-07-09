@@ -1,0 +1,2 @@
+bad-arith-fold-hex4.asp:2:20: Error: Arithmetic overflow in binary multiplication expression
+Ended in ERROR
