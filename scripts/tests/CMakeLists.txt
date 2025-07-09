@@ -20,6 +20,29 @@ set(standalone_regression_tests
     bad-arith-fold-dec7.asp
     bad-arith-fold-dec8.asp
     bad-arith-fold-dec9.asp
+    bad-arith-fold-expr01.asp
+    bad-arith-fold-expr02.asp
+    bad-arith-fold-expr03.asp
+    bad-arith-fold-expr04.asp
+    bad-arith-fold-expr05.asp
+    bad-arith-fold-expr06.asp
+    bad-arith-fold-expr07.asp
+    bad-arith-fold-expr08.asp
+    bad-arith-fold-expr09.asp
+    bad-arith-fold-expr10.asp
+    bad-arith-fold-expr11.asp
+    bad-arith-fold-expr12.asp
+    bad-arith-fold-expr13.asp
+    bad-arith-fold-expr14.asp
+    bad-arith-fold-expr15.asp
+    bad-arith-fold-expr16.asp
+    bad-arith-fold-expr17.asp
+    bad-arith-fold-expr18.asp
+    bad-arith-fold-expr19.asp
+    bad-arith-fold-expr20.asp
+    bad-arith-fold-expr21.asp
+    bad-arith-fold-expr22.asp
+    bad-arith-fold-expr23.asp
     bad-arith-fold-hex1.asp
     bad-arith-fold-hex2.asp
     bad-arith-fold-hex3.asp
@@ -27,17 +50,30 @@ set(standalone_regression_tests
     bad-arith-fold-hex5.asp
     bad-arith-fold-hex6.asp
     bad-arith-fold-hex7.asp
-    bad-arith-op1.asp
-    bad-arith-op2.asp
-    bad-arith-op3.asp
-    bad-arith-op4.asp
-    bad-arith-op5.asp
-    bad-arith-op6.asp
-    bad-arith-op7.asp
+    bad-arith-op01.asp
+    bad-arith-op02.asp
+    bad-arith-op03.asp
+    bad-arith-op04.asp
+    bad-arith-op05.asp
+    bad-arith-op06.asp
+    bad-arith-op07.asp
+    bad-arith-op08.asp
+    bad-arith-op09.asp
+    bad-arith-op10.asp
+    bad-assign-mismatch.asp
+    bad-assign-tuple.asp
     bad-call1.asp
     bad-call2.asp
     bad-call3.asp
     bad-call4.asp
+    bad-call5.asp
+    bad-const1.asp
+    bad-const2.asp
+    bad-format-asterisk.asp
+    bad-format-incomplete.asp
+    bad-format-n.asp
+    bad-format-null.asp
+    bad-format-p.asp
     bad-func1.asp
     bad-func2.asp
     bad-func3.asp
@@ -46,6 +82,36 @@ set(standalone_regression_tests
     bad-func6.asp
     bad-func7.asp
     bad-func8.asp
+    bad-global.asp
+    bad-index1.asp
+    bad-index2.asp
+    bad-juxta.asp
+    bad-literal-bin1.asp
+    bad-literal-bin2.asp
+    bad-literal-bin3.asp
+    bad-literal-bin4.asp
+    bad-literal-bin5.asp
+    bad-literal-bin6.asp
+    bad-literal-bin7.asp
+    bad-literal-bin8.asp
+    bad-literal-bin9.asp
+    bad-literal-dec1.asp
+    bad-literal-dec2.asp
+    bad-literal-float1.asp
+    bad-literal-float2.asp
+    bad-literal-float3.asp
+    bad-literal-float4.asp
+    bad-literal-float5.asp
+    bad-literal-float6.asp
+    bad-literal-float7.asp
+    bad-literal-float8.asp
+    bad-literal-hex1.asp
+    bad-literal-hex2.asp
+    bad-literal-hex3.asp
+    bad-literal-hex4.asp
+    bad-literal-hex5.asp
+    bad-literal-hex6.asp
+    bad-literal-hex7.asp
     bad-type1.asp
     bad-type2.asp
     bad-type3.asp
