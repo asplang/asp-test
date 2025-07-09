@@ -1,0 +1,2 @@
+# Integer constant out of range (during folding of binary comparison).
+print(2147483648>0)

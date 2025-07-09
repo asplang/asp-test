@@ -1,0 +1,2 @@
+bad-arith-fold-expr02.asp:2:8: Error: Arithmetic overflow in unary negation expression
+Ended in ERROR

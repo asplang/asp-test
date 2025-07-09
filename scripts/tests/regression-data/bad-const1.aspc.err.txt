@@ -1,0 +1,2 @@
+bad-const1.asp:2:7: Bad token encountered: '2147483649': Decimal constant out of range
+Ended in ERROR

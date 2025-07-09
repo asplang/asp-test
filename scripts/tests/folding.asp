@@ -8,7 +8,7 @@ print('abc' + 'def' + 'ghi')
 print('ABC' 'DEF' 'GHI')
 print('' 'z')
 print('a' '')
-#print(2 'abc') # bad syntax
+#print(2 'abc') # bad syntax; tested in bad-juxta.asp
 print(2 < 3)
 print(2.1 < 3.2)
 print('abc' < 'abcd')

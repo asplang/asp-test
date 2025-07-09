@@ -1,0 +1,2 @@
+bad-arith-fold-expr16.asp:2:18: Error: Integer constant out of range
+Ended in ERROR

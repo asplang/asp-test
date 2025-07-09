@@ -38,12 +38,3 @@ printf_str('%7.3s', 0x33)
 
 print('"%7.7s"' % ('%X' % (33,),))
 print('"%7.7s"' % ('%7.3f' % (33.333333,),))
-
-# Unsupported format specifiers. These cases case "invalid format" errors.
-#print('Value is... "%p"' % (100,))
-#print('Value is... "%n"' % (100,))
-#print('Value is... "%*d"' % (5, 100,))
-
-# Unterminated format string. These cases cause "invalid format" errors.
-#print('value is %' % (42,))
-#print('value is %\0d' % (42,))

@@ -1,0 +1,15 @@
+Executing instructions indefinitely...
+@0x0000000: 0xB9 ADDMOD 60, @0x0000009
+@0x0000006: 0xBD LDMOD 60
+@0x0000009: 0x18 PUSHAL
+@0x000000A: 0x11 PUSHS 17, 'Value is... "%*d"'
+@0x000001D: 0x14 PUSHTU
+@0x000001E: 0x05 PUSHI 5
+@0x0000020: 0xEE BLD
+@0x0000021: 0x05 PUSHI 100
+@0x0000023: 0xEE BLD
+@0x0000024: 0x5D MOD
+---
+Executed 10 instructions
+Run error 0x0F: Invalid format string
+Program counter: 0x0000024; bad-format-asterisk.asp:3:27

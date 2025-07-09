@@ -1,5 +1,5 @@
 # The lack of spacing in the following code is intentional in order to test
-# lexical analysis and parsing.
+# lexical analysis and parsing. Failure cases are tested elsewhere.
 a=0
 print(a)
 

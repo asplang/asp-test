@@ -1,0 +1,2 @@
+bad-literal-hex7.asp:2:1: Bad token encountered: '0xf_f.'
+Ended in ERROR

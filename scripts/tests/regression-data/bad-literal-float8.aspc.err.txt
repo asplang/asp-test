@@ -1,0 +1,2 @@
+bad-literal-float8.asp:2:1: Bad token encountered: '2_3.4_7e_'
+Ended in ERROR

@@ -1,5 +1,5 @@
 # This is a regression test to ensure that the key/value version of the list
-# insersion operator doesn't leak data memory as it once did.
+# insertion operator doesn't leak data memory as it once did.
 
 for i in ..300:
     lst=[1,3]

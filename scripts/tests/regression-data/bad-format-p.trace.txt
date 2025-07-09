@@ -1,0 +1,13 @@
+Executing instructions indefinitely...
+@0x0000000: 0xB9 ADDMOD 60, @0x0000009
+@0x0000006: 0xBD LDMOD 60
+@0x0000009: 0x18 PUSHAL
+@0x000000A: 0x11 PUSHS 16, 'Value is... "%p"'
+@0x000001C: 0x14 PUSHTU
+@0x000001D: 0x05 PUSHI 100
+@0x000001F: 0xEE BLD
+@0x0000020: 0x5D MOD
+---
+Executed 8 instructions
+Run error 0x0F: Invalid format string
+Program counter: 0x0000020; bad-format-p.asp:3:26

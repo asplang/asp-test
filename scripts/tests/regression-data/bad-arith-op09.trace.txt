@@ -1,0 +1,13 @@
+Executing instructions indefinitely...
+@0x0000000: 0xB9 ADDMOD 60, @0x0000009
+@0x0000006: 0xBD LDMOD 60
+@0x0000009: 0x10 PUSHS 0, ''
+@0x000000A: 0x85 LDA 59
+@0x000000C: 0x89 SETP
+@0x000000D: 0x18 PUSHAL
+@0x000000E: 0x81 LD 59
+@0x0000010: 0x49 NEG
+---
+Executed 8 instructions
+Run error 0x0C: Unexpected type
+Program counter: 0x0000010; bad-arith-op09.asp:3:7

@@ -1,0 +1,2 @@
+bad-literal-dec1.asp:2:1: Bad token encountered: '5a'
+Ended in ERROR

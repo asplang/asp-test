@@ -18,6 +18,6 @@ vnt = -t
 vnf = -f
 print(t, f, vt, vf, vnt, vnf)
 
-# Invalid use of unary +.
+# Invalid use of unary +; tested in bad-arith-op*.asp
 # s = ''
 # x = +s

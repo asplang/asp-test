@@ -3,7 +3,7 @@
 def foo():
     a = 1
     global a
-    #print(a) # Will cause error if a is undefined at global scope
+    #print(a) # Will cause error; tested in bad-global.asp
     a = 2
     print(a)
     local a

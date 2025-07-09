@@ -1,7 +1,7 @@
-# Literals.
+# Literals. All invalid cases are tested in bad-literal-*.asp
 
 2
-#5a
+#5a # invalid
 #5_0_ # invalid
 5_0
 

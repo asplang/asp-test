@@ -34,7 +34,7 @@ foo(1, *(2,3))
 print('11 ---')
 foo(b=2, a=1)
 #print('12 ---')
-#foo(3, b=2, a=1) # Invalid: double assignment to a
+#foo(3, b=2, a=1) # Invalid; tested in bad-call*.asp
 print('13 ---')
 t1=('a',)
 foo(*t1)

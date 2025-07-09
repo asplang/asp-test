@@ -1,0 +1,2 @@
+bad-literal-float1.asp:2:1: Bad token encountered: '2_.'
+Ended in ERROR

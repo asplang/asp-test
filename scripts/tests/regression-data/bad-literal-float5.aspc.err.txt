@@ -1,0 +1,2 @@
+bad-literal-float5.asp:2:1: Bad token encountered: '3_e'
+Ended in ERROR

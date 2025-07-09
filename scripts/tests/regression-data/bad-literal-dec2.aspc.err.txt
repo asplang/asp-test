@@ -1,0 +1,2 @@
+bad-literal-dec2.asp:2:1: Bad token encountered: '5_0_ '
+Ended in ERROR

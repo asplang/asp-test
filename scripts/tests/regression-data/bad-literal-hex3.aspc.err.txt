@@ -1,0 +1,2 @@
+bad-literal-hex3.asp:2:1: Bad token encountered: '0x_'
+Ended in ERROR

@@ -1,0 +1,2 @@
+bad-arith-fold-expr03.asp:2:9: Error: Arithmetic overflow in binary subtraction expression
+Ended in ERROR

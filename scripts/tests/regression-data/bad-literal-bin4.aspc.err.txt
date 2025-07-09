@@ -1,0 +1,2 @@
+bad-literal-bin4.asp:2:1: Bad token encountered: '0b_'
+Ended in ERROR

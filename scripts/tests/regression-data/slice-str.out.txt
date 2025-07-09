@@ -575,3 +575,8 @@
 28..-24:-1 => zyxwvutsrqponmlkjihgfed
 28..-24:-2 => zxvtrpnljhfd
 ---
+3..15: defghijklmno
+-4..-16:-1 wvutsrqponml
+1..:2 bdfhjlnprtvxz
+-2..:-2 ywusqomkigeca
+-5.. vwxyz
