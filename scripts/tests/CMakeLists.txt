@@ -9,6 +9,12 @@ set(standalone_regression_tests
     args1.asp+abc+123
     args2.asp
     args2.asp+you+and+me
+    args3.asp
+    args3.asp+jackson+5
+    assert1.asp
+    assert2.asp
+    assert3.asp
+    assert4.asp
     assign.asp
     aug.asp
     bad-arith-fold-dec1.asp
@@ -115,7 +121,7 @@ set(standalone_regression_tests
     bad-type1.asp
     bad-type2.asp
     bad-type3.asp
-    bif-int.asp
+    bif.asp
     bitwise.asp
     comment.asp
     concat.asp
@@ -159,6 +165,8 @@ set(standalone_regression_tests
     glob1.asp
     glob2.asp
     glob3.asp
+    glob4.asp
+    glob5.asp
     if.asp
     index-list.asp
     index-str.asp
@@ -204,6 +212,7 @@ set(standalone_regression_tests
     module5.asp
     module6.asp
     module7.asp
+    module8.asp
     nan.asp
     power.asp
     print.asp

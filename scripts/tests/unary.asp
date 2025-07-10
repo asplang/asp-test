@@ -18,6 +18,13 @@ vnt = -t
 vnf = -f
 print(t, f, vt, vf, vnt, vnf)
 
+print(-123++456)
+print(---123+++456)
+x=123
+y=456
+print(-x++y)
+print(---x+++y)
+
 # Invalid use of unary +; tested in bad-arith-op*.asp
 # s = ''
 # x = +s
