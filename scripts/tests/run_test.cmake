@@ -1,3 +1,5 @@
+unset(ENV{ASP_INCLUDE})
+
 execute_process(
     COMMAND "${ASPC_EXECUTABLE}" -o "${BYTECODE_FILE}" "${ASPEC_FILE}" "${SOURCE_FILE}"
     ERROR_FILE "${OUTPUT_DIR}/${TEST_NAME}.aspc.err.txt"
