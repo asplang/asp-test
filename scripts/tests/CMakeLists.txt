@@ -89,6 +89,9 @@ set(standalone_regression_tests
     bad-func7.asp
     bad-func8.asp
     bad-global.asp
+    bad-indent1.asp
+    bad-indent2.asp
+    bad-indent3.asp
     bad-index1.asp
     bad-index2.asp
     bad-juxta.asp
@@ -118,6 +121,13 @@ set(standalone_regression_tests
     bad-literal-hex5.asp
     bad-literal-hex6.asp
     bad-literal-hex7.asp
+    bad-statement1.asp
+    bad-statement2.asp
+    bad-statement3.asp
+    bad-statement4.asp
+    bad-statement5.asp
+    bad-statement6.asp
+    bad-statement7.asp
     bad-type1.asp
     bad-type2.asp
     bad-type3.asp
@@ -134,7 +144,9 @@ set(standalone_regression_tests
     equal.asp
     erase-list.asp
     exit-0.asp
+    exit-False.asp
     exit-None.asp
+    exit-True.asp
     exit-arg.asp+0x7FFFFEFE
     exit-arg.asp+0x7FFFFEFF
     exit-arg.asp+0x7FFFFF00
@@ -153,6 +165,7 @@ set(standalone_regression_tests
     for-module.asp
     for-return1.asp
     for-return2.asp
+    for-return3.asp
     for.asp
     format-checked.asp
     format.asp
@@ -231,6 +244,11 @@ set(standalone_regression_tests
     relop.asp
     repeat.asp
     repr.asp
+    semicolon1.asp
+    semicolon2.asp
+    semicolon3.asp
+    semicolon4.asp
+    semicolon5.asp
     seq.asp
     short-circuit.asp
     singleton.asp

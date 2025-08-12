@@ -1,0 +1,2 @@
+bad-indent3.asp:4:7: Unexpected indentation
+Ended in ERROR

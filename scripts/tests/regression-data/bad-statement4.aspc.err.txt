@@ -1,0 +1,2 @@
+bad-statement4.asp:9:11: Error: Syntax error
+Ended in ERROR
