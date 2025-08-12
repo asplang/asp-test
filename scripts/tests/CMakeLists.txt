@@ -89,6 +89,7 @@ set(standalone_regression_tests
     bad-func7.asp
     bad-func8.asp
     bad-global.asp
+    bad-import.asp
     bad-indent1.asp
     bad-indent2.asp
     bad-indent3.asp

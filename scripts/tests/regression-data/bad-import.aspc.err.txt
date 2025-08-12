@@ -1,0 +1,2 @@
+bad-import.asp:1:8: Error opening no_such_module.asp: No such file or directory
+Ended in ERROR
