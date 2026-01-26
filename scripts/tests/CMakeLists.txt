@@ -324,12 +324,11 @@ foreach(test_spec ${standalone_regression_tests})
             -D "ASPEC_FILE=${ASP_BINARY_DIR}/standalone/standalone.aspec"
             -D "REFERENCE_DIR=${TEST_REFERENCE_DATA_DIR}"
             -D "OUTPUT_DIR=${CMAKE_CURRENT_BINARY_DIR}/regression-data"
-            -D EXPECTED_RUN_RESULT=0
             -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
         VERBATIM
     )
 
-    # Custom target that runs the bytecode and saves it output to the TEST_REFERENCE_DATA_DIR
+    # Custom target that runs the bytecode and saves its output to the TEST_REFERENCE_DATA_DIR
     add_custom_target(generate-test-reference-data-${test_name}
         COMMAND ${CMAKE_COMMAND}
             -D "ASPS_EXECUTABLE=$<TARGET_FILE:asps>"
@@ -340,7 +339,6 @@ foreach(test_spec ${standalone_regression_tests})
             -D "TEST_ARGS=${test_args}"
             -D "ASPEC_FILE=${ASP_BINARY_DIR}/standalone/standalone.aspec"
             -D "OUTPUT_DIR=${TEST_REFERENCE_DATA_DIR}"
-            -D EXPECTED_RUN_RESULT=0
             -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
         DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${test_script}"
         VERBATIM
@@ -364,7 +362,6 @@ foreach(test_spec ${sample_app_regression_tests})
             -D "ASPEC_FILE=${sample_BINARY_DIR}/sample.aspec"
             -D "REFERENCE_DIR=${TEST_REFERENCE_DATA_DIR}"
             -D "OUTPUT_DIR=${CMAKE_CURRENT_BINARY_DIR}/regression-data"
-            -D EXPECTED_RUN_RESULT=0
             -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
         VERBATIM
     )
@@ -380,7 +377,6 @@ foreach(test_spec ${sample_app_regression_tests})
             -D "TEST_ARGS=${test_args}"
             -D "ASPEC_FILE=${sample_BINARY_DIR}/sample.aspec"
             -D "OUTPUT_DIR=${TEST_REFERENCE_DATA_DIR}"
-            -D EXPECTED_RUN_RESULT=0
             -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
         DEPENDS "${sample_SOURCE_DIR}/scripts/${test_script}"
         VERBATIM
