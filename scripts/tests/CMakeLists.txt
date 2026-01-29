@@ -68,6 +68,10 @@ set(standalone_regression_tests
     bad-arith-op10.asp
     bad-assign-mismatch.asp
     bad-assign-tuple.asp
+    bad-assign-value01.asp
+    bad-assign-value02.asp
+    bad-assign-value03.asp
+    bad-assign-value04.asp
     bad-call1.asp
     bad-call2.asp
     bad-call3.asp

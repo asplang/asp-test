@@ -1,0 +1,2 @@
+bad-assign-value03.asp:2:3: Error: Cannot take address of value expression
+Ended in ERROR
