@@ -1,0 +1,2 @@
+bad-for02.asp:1:5: Error: Syntax error
+Ended in ERROR

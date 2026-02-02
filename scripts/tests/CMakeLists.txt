@@ -79,6 +79,15 @@ set(standalone_regression_tests
     bad-call5.asp
     bad-const1.asp
     bad-const2.asp
+    bad-for01.asp
+    bad-for02.asp
+    bad-for03.asp
+    bad-for04.asp
+    bad-for05.asp
+    bad-for06.asp
+    bad-for07.asp
+    bad-for08.asp
+    bad-for09.asp
     bad-format-asterisk.asp
     bad-format-incomplete.asp
     bad-format-n.asp
@@ -171,6 +180,9 @@ set(standalone_regression_tests
     for-return1.asp
     for-return2.asp
     for-return3.asp
+    for-targets1.asp
+    for-targets2.asp
+    for-targets3.asp
     for.asp
     format-checked.asp
     format.asp
