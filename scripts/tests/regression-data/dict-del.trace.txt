@@ -86,4 +86,4 @@ Executing instructions indefinitely...
 ---
 Executed 84 instructions
 Run error 0x01: Complete
-Program counter: 0x0000009; deldict.asp:4:6
+Program counter: 0x0000009; dict-del.asp:4:6

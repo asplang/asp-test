@@ -153,7 +153,7 @@ set(standalone_regression_tests
     cycle1.asp
     cycle2.asp
     cycle3.asp
-    deldict.asp
+    dict-del.asp
     empty.asp
     equal.asp
     erase-list.asp
