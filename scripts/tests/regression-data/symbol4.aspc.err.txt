@@ -1,2 +1,2 @@
-symbol4.asp:2:5: Error: Invalid type for del
+symbol4.asp:2:5: Error: Syntax error
 Ended in ERROR

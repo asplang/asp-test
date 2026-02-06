@@ -1,0 +1,2 @@
+bad-del3.asp:3:5: Error: Syntax error
+Ended in ERROR
