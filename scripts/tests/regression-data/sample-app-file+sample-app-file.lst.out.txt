@@ -1,0 +1,278 @@
+Input file type: <type:app-ptr>
+Output file type: <type:app-ptr>
+Copying line: Instruction listing:
+Copying line: 0x0000000: ADDMOD 60 0x0000009; Add address of module file
+Copying line: 0x0000006: LDMOD 60; Load top-level module
+Copying line: 0x0000008: END; End script
+Copying line: From file.asp:1:
+Copying line: 0x0000009: PUSHAL; Push empty argument list
+Copying line: 0x000000A: LD 1; Push value of variable args
+Copying line: 0x000000C: MKARG; Make positional argument
+Copying line: 0x000000D: BLD; Add argument to argument list
+Copying line: 0x000000E: LD 32; Push value of variable len
+Copying line: 0x0000010: CALL
+Copying line: 0x0000011: PUSHI 2
+Copying line: 0x0000013: LT; Perform binary operation 0x62
+Copying line: 0x0000014: JMPF 0x0000057; Jump if false to else
+Copying line: From file.asp:2:
+Copying line: 0x0000019: PUSHAL; Push empty argument list
+Copying line: 0x000001A: PUSHS 52, 'Specify an input file, and optionally an output file'
+Copying line: 0x0000050: MKARG; Make positional argument
+Copying line: 0x0000051: BLD; Add argument to argument list
+Copying line: 0x0000052: LD 38; Push value of variable print
+Copying line: 0x0000054: CALL
+Copying line: 0x0000055: POP; Pop unused value
+Copying line: From file.asp:3:
+Copying line: 0x0000056: ABORT
+Copying line: From file.asp:5:
+Copying line: 0x0000057: LD 1; Push value of variable args
+Copying line: 0x0000059: PUSHI 1
+Copying line: 0x000005B: IDX; Get value of element
+Copying line: 0x000005C: LDA 75; Push address of variable finName
+Copying line: 0x000005E: SETP; Assign with pop
+Copying line: From file.asp:6:
+Copying line: 0x000005F: PUSHAL; Push empty argument list
+Copying line: 0x0000060: LD 75; Push value of variable finName
+Copying line: 0x0000062: MKARG; Make positional argument
+Copying line: 0x0000063: BLD; Add argument to argument list
+Copying line: 0x0000064: PUSHS 1, 'r'
+Copying line: 0x0000067: MKARG; Make positional argument
+Copying line: 0x0000068: BLD; Add argument to argument list
+Copying line: 0x0000069: LD 22; Push value of variable file_open
+Copying line: 0x000006B: CALL
+Copying line: 0x000006C: LDA 76; Push address of variable fin
+Copying line: 0x000006E: SETP; Assign with pop
+Copying line: From file.asp:7:
+Copying line: 0x000006F: LD 76; Push value of variable fin
+Copying line: 0x0000071: PUSHN
+Copying line: 0x0000072: IS; Perform binary operation 0x69
+Copying line: 0x0000073: JMPF 0x000009A; Jump if false to else
+Copying line: From file.asp:8:
+Copying line: 0x0000078: PUSHAL; Push empty argument list
+Copying line: 0x0000079: PUSHS 24, 'Error opening input file'
+Copying line: 0x0000093: MKARG; Make positional argument
+Copying line: 0x0000094: BLD; Add argument to argument list
+Copying line: 0x0000095: LD 38; Push value of variable print
+Copying line: 0x0000097: CALL
+Copying line: 0x0000098: POP; Pop unused value
+Copying line: From file.asp:9:
+Copying line: 0x0000099: ABORT
+Copying line: From file.asp:10:
+Copying line: 0x000009A: PUSHAL; Push empty argument list
+Copying line: 0x000009B: PUSHS 16, 'Input file type:'
+Copying line: 0x00000AD: MKARG; Make positional argument
+Copying line: 0x00000AE: BLD; Add argument to argument list
+Copying line: 0x00000AF: PUSHAL; Push empty argument list
+Copying line: 0x00000B0: LD 76; Push value of variable fin
+Copying line: 0x00000B2: MKARG; Make positional argument
+Copying line: 0x00000B3: BLD; Add argument to argument list
+Copying line: 0x00000B4: LD 53; Push value of variable type
+Copying line: 0x00000B6: CALL
+Copying line: 0x00000B7: MKARG; Make positional argument
+Copying line: 0x00000B8: BLD; Add argument to argument list
+Copying line: 0x00000B9: LD 38; Push value of variable print
+Copying line: 0x00000BB: CALL
+Copying line: 0x00000BC: POP; Pop unused value
+Copying line: From file.asp:12:
+Copying line: 0x00000BD: PUSHAL; Push empty argument list
+Copying line: 0x00000BE: LD 1; Push value of variable args
+Copying line: 0x00000C0: MKARG; Make positional argument
+Copying line: 0x00000C1: BLD; Add argument to argument list
+Copying line: 0x00000C2: LD 32; Push value of variable len
+Copying line: 0x00000C4: CALL
+Copying line: 0x00000C5: PUSHI 3
+Copying line: 0x00000C7: GE; Perform binary operation 0x65
+Copying line: 0x00000C8: JMPF 0x00000D7; Jump if false to false expression
+Copying line: 0x00000CD: LD 1; Push value of variable args
+Copying line: 0x00000CF: PUSHI 2
+Copying line: 0x00000D1: IDX; Get value of element
+Copying line: 0x00000D2: JMP 0x00000E1; Jump to end
+Copying line: 0x00000D7: LD 75; Push value of variable finName
+Copying line: 0x00000D9: PUSHS 5, '-copy'
+Copying line: 0x00000E0: ADD; Perform binary operation 0x58
+Copying line: 0x00000E1: LDA 77; Push address of variable foutName
+Copying line: 0x00000E3: SETP; Assign with pop
+Copying line: From file.asp:14:
+Copying line: 0x00000E4: PUSHAL; Push empty argument list
+Copying line: 0x00000E5: LD 77; Push value of variable foutName
+Copying line: 0x00000E7: MKARG; Make positional argument
+Copying line: 0x00000E8: BLD; Add argument to argument list
+Copying line: 0x00000E9: PUSHS 1, 'w'
+Copying line: 0x00000EC: MKARG; Make positional argument
+Copying line: 0x00000ED: BLD; Add argument to argument list
+Copying line: 0x00000EE: LD 22; Push value of variable file_open
+Copying line: 0x00000F0: CALL
+Copying line: 0x00000F1: LDA 78; Push address of variable fout
+Copying line: 0x00000F3: SETP; Assign with pop
+Copying line: From file.asp:15:
+Copying line: 0x00000F4: LD 78; Push value of variable fout
+Copying line: 0x00000F6: PUSHN
+Copying line: 0x00000F7: IS; Perform binary operation 0x69
+Copying line: 0x00000F8: JMPF 0x0000120; Jump if false to else
+Copying line: From file.asp:16:
+Copying line: 0x00000FD: PUSHAL; Push empty argument list
+Copying line: 0x00000FE: PUSHS 25, 'Error opening output file'
+Copying line: 0x0000119: MKARG; Make positional argument
+Copying line: 0x000011A: BLD; Add argument to argument list
+Copying line: 0x000011B: LD 38; Push value of variable print
+Copying line: 0x000011D: CALL
+Copying line: 0x000011E: POP; Pop unused value
+Copying line: From file.asp:17:
+Copying line: 0x000011F: ABORT
+Copying line: From file.asp:18:
+Copying line: 0x0000120: PUSHAL; Push empty argument list
+Copying line: 0x0000121: PUSHS 17, 'Output file type:'
+Copying line: 0x0000134: MKARG; Make positional argument
+Copying line: 0x0000135: BLD; Add argument to argument list
+Copying line: 0x0000136: PUSHAL; Push empty argument list
+Copying line: 0x0000137: LD 78; Push value of variable fout
+Copying line: 0x0000139: MKARG; Make positional argument
+Copying line: 0x000013A: BLD; Add argument to argument list
+Copying line: 0x000013B: LD 53; Push value of variable type
+Copying line: 0x000013D: CALL
+Copying line: 0x000013E: MKARG; Make positional argument
+Copying line: 0x000013F: BLD; Add argument to argument list
+Copying line: 0x0000140: LD 38; Push value of variable print
+Copying line: 0x0000142: CALL
+Copying line: 0x0000143: POP; Pop unused value
+Copying line: From file.asp:20:
+Copying line: 0x0000144: PUSHT
+Copying line: 0x0000145: JMPF 0x00001B6; Jump if false to else
+Copying line: From file.asp:21:
+Copying line: 0x000014A: PUSHAL; Push empty argument list
+Copying line: 0x000014B: LD 76; Push value of variable fin
+Copying line: 0x000014D: MKARG; Make positional argument
+Copying line: 0x000014E: BLD; Add argument to argument list
+Copying line: 0x000014F: LD 21; Push value of variable file_get_line
+Copying line: 0x0000151: CALL
+Copying line: 0x0000152: LDA 63; Push address of variable s
+Copying line: 0x0000154: SETP; Assign with pop
+Copying line: From file.asp:22:
+Copying line: 0x0000155: PUSHAL; Push empty argument list
+Copying line: 0x0000156: LD 76; Push value of variable fin
+Copying line: 0x0000158: MKARG; Make positional argument
+Copying line: 0x0000159: BLD; Add argument to argument list
+Copying line: 0x000015A: LD 20; Push value of variable file_at_end
+Copying line: 0x000015C: CALL
+Copying line: 0x000015D: JMPF 0x0000167; Jump if false to else
+Copying line: From file.asp:23:
+Copying line: 0x0000162: JMP 0x00001B6; Jump out of loop
+Copying line: From file.asp:24:
+Copying line: 0x0000167: PUSHAL; Push empty argument list
+Copying line: 0x0000168: PUSHS 13, 'Copying line:'
+Copying line: 0x0000177: MKARG; Make positional argument
+Copying line: 0x0000178: BLD; Add argument to argument list
+Copying line: 0x0000179: LD 63; Push value of variable s
+Copying line: 0x000017B: MKARG; Make positional argument
+Copying line: 0x000017C: BLD; Add argument to argument list
+Copying line: 0x000017D: LD 38; Push value of variable print
+Copying line: 0x000017F: CALL
+Copying line: 0x0000180: POP; Pop unused value
+Copying line: From file.asp:25:
+Copying line: 0x0000181: PUSHAL; Push empty argument list
+Copying line: 0x0000182: LD 78; Push value of variable fout
+Copying line: 0x0000184: MKARG; Make positional argument
+Copying line: 0x0000185: BLD; Add argument to argument list
+Copying line: 0x0000186: LD 63; Push value of variable s
+Copying line: 0x0000188: MKARG; Make positional argument
+Copying line: 0x0000189: BLD; Add argument to argument list
+Copying line: 0x000018A: LD 23; Push value of variable file_put_line
+Copying line: 0x000018C: CALL
+Copying line: 0x000018D: LNOT; Perform unary operation 0x40
+Copying line: 0x000018E: JMPF 0x00001B1; Jump if false to else
+Copying line: From file.asp:26:
+Copying line: 0x0000193: PUSHAL; Push empty argument list
+Copying line: 0x0000194: PUSHS 20, 'Error writing output'
+Copying line: 0x00001AA: MKARG; Make positional argument
+Copying line: 0x00001AB: BLD; Add argument to argument list
+Copying line: 0x00001AC: LD 38; Push value of variable print
+Copying line: 0x00001AE: CALL
+Copying line: 0x00001AF: POP; Pop unused value
+Copying line: From file.asp:27:
+Copying line: 0x00001B0: ABORT
+Copying line: From file.asp:20:
+Copying line: 0x00001B1: JMP 0x0000144; Jump to continue
+Copying line: 0x00001B6: XMOD; Exit module
+Copying line: 
+Copying line: Symbols by name:
+Copying line:     2 __main__
+Copying line:     3 abs
+Copying line:     4 acos
+Copying line:     5 acosh
+Copying line:     1 args
+Copying line:     6 asin
+Copying line:     7 asinh
+Copying line:     8 at
+Copying line:     9 atan
+Copying line:    10 atan2
+Copying line:    11 atanh
+Copying line:    65 base
+Copying line:    12 bool
+Copying line:    13 ceil
+Copying line:    66 check
+Copying line:    59 code
+Copying line:    74 compare
+Copying line:    14 cos
+Copying line:    15 cosh
+Copying line:    16 del_at
+Copying line:    56 end
+Copying line:    17 exists
+Copying line:    18 exit
+Copying line:    19 exp
+Copying line:    60 file
+Copying line:    20 file_at_end
+Copying line:    21 file_get_line
+Copying line:    22 file_open
+Copying line:    23 file_put_line
+Copying line:    76 fin
+Copying line:    75 finName
+Copying line:    24 float
+Copying line:    25 floor
+Copying line:    78 fout
+Copying line:    77 foutName
+Copying line:    71 high
+Copying line:    26 hypot
+Copying line:    27 id
+Copying line:    28 int
+Copying line:    73 items
+Copying line:    29 iter
+Copying line:    30 iterable
+Copying line:    55 iterator
+Copying line:    31 key
+Copying line:    32 len
+Copying line:    33 list
+Copying line:    34 log
+Copying line:    35 log10
+Copying line:    70 low
+Copying line:    62 mode
+Copying line:    36 module
+Copying line:    61 name
+Copying line:    37 next
+Copying line:    64 object
+Copying line:    38 print
+Copying line:    39 rand
+Copying line:    40 range_values
+Copying line:    41 repr
+Copying line:    42 reversed
+Copying line:    43 rng
+Copying line:    44 round
+Copying line:    63 s
+Copying line:    72 seed
+Copying line:    69 sep
+Copying line:    45 sin
+Copying line:    46 sinh
+Copying line:    47 sleep
+Copying line:    48 sort
+Copying line:    49 str
+Copying line:    67 stringize
+Copying line:    58 symbol
+Copying line:     0 sys
+Copying line:    50 tan
+Copying line:    51 tanh
+Copying line:    52 tuple
+Copying line:    53 type
+Copying line:    68 values
+Copying line:    54 x
+Copying line:    57 y
+Copying line: 
+Copying line: End

@@ -7,7 +7,7 @@ fin = file_open(finName, 'r')
 if fin is None:
     print('Error opening input file')
     assert False
-print(fin, type(fin))
+print('Input file type:', type(fin))
 
 foutName = args[2] if len(args) >= 3 else finName + '-copy'
 
@@ -15,7 +15,7 @@ fout = file_open(foutName, 'w')
 if fout is None:
     print('Error opening output file')
     assert False
-print(fout, type(fout))
+print('Output file type:', type(fout))
 
 while True:
     s = file_get_line(fin)

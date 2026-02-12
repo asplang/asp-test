@@ -26,5 +26,7 @@ AspRunResult ScriptString
         result.append(buffer, bufferLen);
     }
 
+    AspUnref(engine, valueString);
+
     return AspRunResult_OK;
 }

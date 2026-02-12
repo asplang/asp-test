@@ -45,6 +45,7 @@ set(BUILD_FOR_TARGET ON CACHE INTERNAL "Force building target libs")
 set(BUILD_FOR_HOST ON CACHE INTERNAL "Force building host libs")
 set(BUILD_SHARED_LIBS OFF CACHE INTERNAL "Disable building shared libs")
 set(ENABLE_DEBUG ON CACHE INTERNAL "Force enable debug data for comparing internal state in regression tests")
+set(BUILD_FOR_REGRESSION_TEST ON CACHE INTERNAL "Force build to generate sane regression data")
 add_subdirectory("${ASP_SOURCE_DIR}" asp-build)
 set(ASP_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/asp-build")
 

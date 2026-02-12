@@ -299,7 +299,7 @@ set(standalone_regression_tests
 
 set(sample_app_regression_tests
     file.asp
-    #file.asp+file-in.txt+file-out.txt
+    file.asp+sample-app-file.lst
     rand.asp
     rand2.asp
     sort1.asp
