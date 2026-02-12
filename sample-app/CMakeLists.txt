@@ -35,7 +35,6 @@ add_executable(sample
     main.cpp
     sample.c
     scripting.cpp
-    functions.cpp
     functions-file.cpp
     functions-print.cpp
     functions-random.cpp

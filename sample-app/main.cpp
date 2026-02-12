@@ -6,7 +6,6 @@
 #include "asp-info.h"
 #include "sample.h"
 #include "scripting.hpp"
-#include "functions.hpp"
 #include <ctime>
 #include <iostream>
 #include <iomanip>
@@ -604,6 +603,9 @@ int main(int argc, char **argv)
                  AspCodePageReadCount(&engine, false));
         }
     }
+
+    // Reset the engine, destroying any residual application objects.
+    AspReset(&engine);
 
     delete [] code;
     delete [] externalCode;

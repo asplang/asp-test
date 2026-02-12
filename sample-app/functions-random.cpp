@@ -136,14 +136,9 @@ extern "C" AspRunResult asp_rand
         AspRunResult_OutOfDataMemory : AspRunResult_OK;
 }
 
-void ScriptRandomNumberCleanup()
-{
-    gObjects.clear();
-    gNextObjectIndex = 0;
-}
-
 static void DestroyObject(AspEngine *engine, int16_t type, int32_t value)
 {
     (void)engine;
+    (void)type;
     gObjects.erase(value);
 }

@@ -14,7 +14,6 @@
 using namespace std;
 
 static const size_t BufferSize = 16;
-static set<FILE *> gObjects;
 
 static void DestroyObject(AspEngine *, int16_t type, void *value);
 
@@ -39,8 +38,6 @@ extern "C" AspRunResult asp_file_open
     if (fp == 0)
         return AspRunResult_OK;
 
-    gObjects.insert(fp);
-
     *returnValue = AspNewAppPointerObject
         (engine,
          static_cast<int16_t>(ScriptObjectType::OpenFile),
@@ -64,9 +61,6 @@ extern "C" AspRunResult asp_file_at_end
         return AspRunResult_UnexpectedType;
 
     auto fp = reinterpret_cast<FILE *>(objectValue);
-    auto iter = gObjects.find(fp);
-    if (iter == gObjects.end())
-        return AspRunResult_Application;
 
     *returnValue = AspNewBoolean(engine, feof(fp));
     return AspRunResult_OK;
@@ -87,9 +81,6 @@ extern "C" AspRunResult asp_file_get_line
         return AspRunResult_UnexpectedType;
 
     auto fp = reinterpret_cast<FILE *>(objectValue);
-    auto iter = gObjects.find(fp);
-    if (iter == gObjects.end())
-        return AspRunResult_Application;
 
     string s;
     while (!feof(fp) && !ferror(fp))
@@ -130,9 +121,6 @@ extern "C" AspRunResult asp_file_put_line
         return AspRunResult_UnexpectedType;
 
     auto fp = reinterpret_cast<FILE *>(objectValue);
-    auto iter = gObjects.find(fp);
-    if (iter == gObjects.end())
-        return AspRunResult_Application;
 
     string sValue;
     result = ScriptString(engine, s, sValue);
@@ -146,19 +134,10 @@ extern "C" AspRunResult asp_file_put_line
         AspRunResult_OutOfDataMemory : AspRunResult_OK;
 }
 
-void ScriptFileCleanup()
-{
-    for (auto iter = gObjects.begin(); iter != gObjects.end(); iter++)
-    {
-        FILE *fp = reinterpret_cast<FILE *>(*iter);
-        fclose(fp);
-    }
-
-    gObjects.clear();
-}
-
 static void DestroyObject(AspEngine *engine, int16_t type, void *value)
 {
     (void)engine;
-    gObjects.erase(reinterpret_cast<FILE *>(value));
+    (void)type;
+    auto fp = reinterpret_cast<FILE *>(value);
+    fclose(fp);
 }

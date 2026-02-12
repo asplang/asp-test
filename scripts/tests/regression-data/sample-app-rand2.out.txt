@@ -10,6 +10,4 @@
 3 100.012
 2 100.495
 5 100.467
-Deleting individuals
-Deleting set
 Done
