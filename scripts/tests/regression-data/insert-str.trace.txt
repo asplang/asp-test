@@ -10,4 +10,4 @@ Executing instructions indefinitely...
 ---
 Executed 8 instructions
 Run error 0x0C: Unexpected type
-Program counter: 0x0000012; ins-str.asp:2:3
+Program counter: 0x0000012; insert-str.asp:2:3

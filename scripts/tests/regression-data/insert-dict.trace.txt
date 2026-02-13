@@ -47,4 +47,4 @@ Executing instructions indefinitely...
 ---
 Executed 45 instructions
 Run error 0x01: Complete
-Program counter: 0x0000009; ins-dict.asp:1:4
+Program counter: 0x0000009; insert-dict.asp:1:4

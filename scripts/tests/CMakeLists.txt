@@ -207,16 +207,19 @@ set(standalone_regression_tests
     index-list.asp
     index-str.asp
     index-tuple.asp
-    ins-dict.asp
-    ins-iter1.asp
-    ins-iter2.asp
-    ins-iter3.asp
-    ins-list1.asp
-    ins-list2.asp
-    ins-nonmut.asp
-    ins-set.asp
-    ins-str.asp
-    ins-tuple.asp
+    insert-dict.asp
+    insert-iter1.asp
+    insert-iter2.asp
+    insert-iter3.asp
+    insert-list1.asp
+    insert-list2.asp
+    insert-nonmut.asp
+    insert-range1.asp
+    insert-range2.asp
+    insert-range3.asp
+    insert-set.asp
+    insert-str.asp
+    insert-tuple.asp
     integer-overflow.asp
     is.asp
     iter1.asp
