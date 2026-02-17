@@ -1,0 +1,2 @@
+bad-walrus-prec3.asp:1:17: Error: Invalid target of an assignment expression; must be a variable
+Ended in ERROR

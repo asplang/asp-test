@@ -1,0 +1,2 @@
+bad-walrus-func2.asp:3:16: Error: Unparenthesized assignment expression is not allowed as a parameter default value
+Ended in ERROR

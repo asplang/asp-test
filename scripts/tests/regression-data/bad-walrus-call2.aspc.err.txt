@@ -1,0 +1,2 @@
+bad-walrus-call2.asp:3:29: Error: Unparenthesized assignment expression is not allowed as a keyword argument value
+Ended in ERROR

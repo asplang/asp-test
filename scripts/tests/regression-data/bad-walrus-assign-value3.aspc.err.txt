@@ -1,0 +1,2 @@
+bad-walrus-assign-value3.asp:4:8: Error: Unparenthesized assignment expression is not allowed as the value of an assignment
+Ended in ERROR

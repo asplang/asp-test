@@ -150,6 +150,58 @@ set(standalone_regression_tests
     bad-type1.asp
     bad-type2.asp
     bad-type3.asp
+    bad-walrus-assign-target01.asp
+    bad-walrus-assign-target02.asp
+    bad-walrus-assign-target03.asp
+    bad-walrus-assign-target04.asp
+    bad-walrus-assign-target05.asp
+    bad-walrus-assign-target06.asp
+    bad-walrus-assign-target07.asp
+    bad-walrus-assign-target08.asp
+    bad-walrus-assign-target09.asp
+    bad-walrus-assign-target10.asp
+    bad-walrus-assign-value1.asp
+    bad-walrus-assign-value2.asp
+    bad-walrus-assign-value3.asp
+    bad-walrus-assoc.asp
+    bad-walrus-call1.asp
+    bad-walrus-call2.asp
+    bad-walrus-del1.asp
+    bad-walrus-del2.asp
+    bad-walrus-del3.asp
+    bad-walrus-del4.asp
+    bad-walrus-del5.asp
+    bad-walrus-for-target1.asp
+    bad-walrus-for-target2.asp
+    bad-walrus-func1.asp
+    bad-walrus-func2.asp
+    bad-walrus-global1.asp
+    bad-walrus-global2.asp
+    bad-walrus-import1.asp
+    bad-walrus-import2.asp
+    bad-walrus-import3.asp
+    bad-walrus-insert-target1.asp
+    bad-walrus-insert-target2.asp
+    bad-walrus-insert-target3.asp
+    bad-walrus-insert-target4.asp
+    bad-walrus-local1.asp
+    bad-walrus-local2.asp
+    bad-walrus-prec1.asp
+    bad-walrus-prec2.asp
+    bad-walrus-prec3.asp
+    bad-walrus-prec4.asp
+    bad-walrus-prec5.asp
+    bad-walrus-prec6.asp
+    bad-walrus-statement1.asp
+    bad-walrus-statement2.asp
+    bad-walrus-statement3.asp
+    bad-walrus-syntax1.asp
+    bad-walrus-syntax2.asp
+    bad-walrus-syntax3.asp
+    bad-walrus-syntax4.asp
+    bad-walrus-syntax5.asp
+    bad-walrus-target1.asp
+    bad-walrus-target2.asp
     bif.asp
     bitwise.asp
     comment.asp

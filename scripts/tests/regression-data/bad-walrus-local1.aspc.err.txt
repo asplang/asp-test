@@ -1,0 +1,2 @@
+bad-walrus-local1.asp:3:11: Error: Syntax error
+Ended in ERROR

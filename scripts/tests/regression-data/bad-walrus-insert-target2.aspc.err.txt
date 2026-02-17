@@ -1,0 +1,2 @@
+bad-walrus-insert-target2.asp:3:11: Error: Assignment expression is not allowed as the target of an insertion
+Ended in ERROR

@@ -1,0 +1,2 @@
+bad-walrus-func1.asp:1:7: Error: Syntax error
+Ended in ERROR

@@ -1,0 +1,2 @@
+bad-walrus-global1.asp:2:12: Error: Syntax error
+Ended in ERROR

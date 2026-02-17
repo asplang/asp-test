@@ -1,0 +1,2 @@
+bad-walrus-del2.asp:2:6: Error: Syntax error
+Ended in ERROR

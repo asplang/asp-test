@@ -1,0 +1,2 @@
+bad-walrus-syntax5.asp:2:8: Error: Syntax error
+Ended in ERROR

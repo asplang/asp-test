@@ -1,0 +1,3 @@
+bad-walrus-syntax3.asp:1:17: Error: Invalid target of an assignment expression; must be a variable
+bad-walrus-syntax3.asp:1:17: Error: Syntax error
+Ended in ERROR

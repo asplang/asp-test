@@ -1,0 +1,2 @@
+bad-walrus-import3.asp:1:8: Error: Syntax error
+Ended in ERROR

@@ -1,0 +1,2 @@
+bad-walrus-assign-target09.asp:1:18: Error: Assignment expression is not allowed as the target of an assignment
+Ended in ERROR

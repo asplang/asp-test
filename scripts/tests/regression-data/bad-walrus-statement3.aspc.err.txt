@@ -1,0 +1,2 @@
+bad-walrus-statement3.asp:4:13: Error: Unparenthesized assignment expression is not allowed as a statement
+Ended in ERROR
