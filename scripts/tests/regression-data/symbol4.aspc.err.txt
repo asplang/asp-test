@@ -1,2 +1,2 @@
-symbol4.asp:2:5: Error: Syntax error
+symbol4.asp:2:5: Error: Cannot delete value expression
 Ended in ERROR

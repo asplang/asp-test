@@ -1,2 +1,2 @@
-bad-del3.asp:3:5: Error: Syntax error
+bad-del3.asp:3:7: Error: Cannot delete value expression
 Ended in ERROR

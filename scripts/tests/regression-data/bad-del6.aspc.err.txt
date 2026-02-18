@@ -1,0 +1,2 @@
+bad-del6.asp:3:5: Error: Cannot delete value expression
+Ended in ERROR

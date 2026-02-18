@@ -84,6 +84,7 @@ set(standalone_regression_tests
     bad-del3.asp
     bad-del4.asp
     bad-del5.asp
+    bad-del6.asp
     bad-for01.asp
     bad-for02.asp
     bad-for03.asp
@@ -210,6 +211,7 @@ set(standalone_regression_tests
     cycle1.asp
     cycle2.asp
     cycle3.asp
+    del-element.asp
     del-member.asp
     dict-del.asp
     empty.asp
