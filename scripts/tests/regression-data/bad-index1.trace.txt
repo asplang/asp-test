@@ -4,11 +4,12 @@ Executing instructions indefinitely...
 @0x0000009: 0x11 PUSHS 5, 'abcde'
 @0x0000010: 0x85 LDA 59
 @0x0000012: 0x89 SETP
-@0x0000013: 0x18 PUSHAL
-@0x0000014: 0x81 LD 59
-@0x0000016: 0x05 PUSHI 5
-@0x0000018: 0xF0 IDX
+@0x0000013: 0x81 LD 34
+@0x0000015: 0x18 PUSHAL
+@0x0000016: 0x81 LD 59
+@0x0000018: 0x05 PUSHI 5
+@0x000001A: 0xF0 IDX
 ---
-Executed 9 instructions
+Executed 10 instructions
 Run error 0x12: Value out of range
-Program counter: 0x0000018; bad-index1.asp:2:9
+Program counter: 0x000001A; bad-index1.asp:2:9

@@ -1,2 +1,2 @@
-bad-walrus-del1.asp:2:5: Error: Syntax error
+bad-walrus-del1.asp:2:7: Error: Syntax error
 Ended in ERROR

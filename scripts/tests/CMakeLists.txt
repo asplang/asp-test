@@ -231,6 +231,13 @@ set(standalone_regression_tests
     exit-main.asp
     exit-nan.asp
     exit-str.asp
+    eval-order-assign.asp
+    eval-order-call.asp
+    eval-order-del.asp
+    eval-order-dict.asp
+    eval-order-index.asp
+    eval-order-insert.asp
+    eval-order-range.asp
     fib.asp+10
     fill-empty.asp
     fill-empty.asp+abc+z+pqrs

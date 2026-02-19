@@ -341,7 +341,7 @@ Dump:
 0x0000153...0x00007FF: t=0xFF(free)
 ---
 Program counter: 0x0000056
-Free count: 1709; next free entry: 0x000015F
+Free count: 1709; next free entry: 0x0000160
 Free count low water mark: 1690
 Stack: top=0x0000152, count=1
 Modules: 0x0000001

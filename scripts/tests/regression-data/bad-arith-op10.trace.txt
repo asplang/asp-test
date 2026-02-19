@@ -4,11 +4,12 @@ Executing instructions indefinitely...
 @0x0000009: 0x04 PUSHI 0
 @0x000000A: 0x85 LDA 61
 @0x000000C: 0x89 SETP
-@0x000000D: 0x18 PUSHAL
-@0x000000E: 0x81 LD 61
-@0x0000010: 0x07 PUSHI -2147483648
-@0x0000015: 0x59 SUB
+@0x000000D: 0x81 LD 34
+@0x000000F: 0x18 PUSHAL
+@0x0000010: 0x81 LD 61
+@0x0000012: 0x07 PUSHI -2147483648
+@0x0000017: 0x59 SUB
 ---
-Executed 9 instructions
+Executed 10 instructions
 Run error 0x19: Arithmetic overflow
-Program counter: 0x0000015; bad-arith-op10.asp:3:8
+Program counter: 0x0000017; bad-arith-op10.asp:3:8

@@ -1,11 +1,12 @@
 Executing instructions indefinitely...
 @0x0000000: 0xB9 ADDMOD 60, @0x0000009
 @0x0000006: 0xBD LDMOD 60
-@0x0000009: 0x18 PUSHAL
-@0x000000A: 0x0D PUSHY 61
-@0x000000C: 0x0D PUSHY 34
-@0x000000E: 0x62 LT
+@0x0000009: 0x81 LD 34
+@0x000000B: 0x18 PUSHAL
+@0x000000C: 0x0D PUSHY 61
+@0x000000E: 0x0D PUSHY 34
+@0x0000010: 0x62 LT
 ---
-Executed 6 instructions
+Executed 7 instructions
 Run error 0x0C: Unexpected type
-Program counter: 0x000000E; symbol2.asp:2:22
+Program counter: 0x0000010; symbol2.asp:2:22
