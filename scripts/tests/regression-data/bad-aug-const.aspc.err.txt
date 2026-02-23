@@ -1,0 +1,2 @@
+bad-aug-const.asp:1:1: Error: Cannot take address of constant expression
+Ended in ERROR

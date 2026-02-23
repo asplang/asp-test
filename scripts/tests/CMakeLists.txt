@@ -72,6 +72,14 @@ set(standalone_regression_tests
     bad-assign-value02.asp
     bad-assign-value03.asp
     bad-assign-value04.asp
+    bad-aug-call.asp
+    bad-aug-const.asp
+    bad-aug-list.asp
+    bad-aug-range.asp
+    bad-aug-tuple.asp
+    bad-aug-value1.asp
+    bad-aug-value2.asp
+    bad-aug-value3.asp
     bad-call1.asp
     bad-call2.asp
     bad-call3.asp
@@ -161,6 +169,8 @@ set(standalone_regression_tests
     bad-walrus-assign-target08.asp
     bad-walrus-assign-target09.asp
     bad-walrus-assign-target10.asp
+    bad-walrus-assign-target11.asp
+    bad-walrus-assign-target12.asp
     bad-walrus-assign-value1.asp
     bad-walrus-assign-value2.asp
     bad-walrus-assign-value3.asp
@@ -231,7 +241,10 @@ set(standalone_regression_tests
     exit-main.asp
     exit-nan.asp
     exit-str.asp
-    eval-order-assign.asp
+    eval-order-assign1.asp
+    eval-order-assign2.asp
+    eval-order-aug1.asp
+    eval-order-aug2.asp
     eval-order-call.asp
     eval-order-del.asp
     eval-order-dict.asp

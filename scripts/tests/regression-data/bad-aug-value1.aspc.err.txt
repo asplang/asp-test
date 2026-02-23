@@ -1,0 +1,2 @@
+bad-aug-value1.asp:1:3: Error: Cannot take address of value expression
+Ended in ERROR

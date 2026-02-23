@@ -1,0 +1,2 @@
+bad-aug-tuple.asp:2:9: Error: Cannot apply augmented assignment to sequence
+Ended in ERROR

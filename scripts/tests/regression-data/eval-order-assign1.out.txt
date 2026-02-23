@@ -1,0 +1,12 @@
+[0, 0, 0, 0, 0, 0, 7]
+Eval 6
+Eval 0
+Eval 2
+Eval 4
+Eval 13
+Eval 42
+Eval 1
+Eval 3
+Eval 5
+Eval 6
+[7, 13, 7, 42, 7, 13, 42]

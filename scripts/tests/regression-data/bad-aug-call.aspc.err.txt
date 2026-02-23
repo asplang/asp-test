@@ -1,0 +1,2 @@
+bad-aug-call.asp:1:1: Error: Cannot take address of function call
+Ended in ERROR
