@@ -370,6 +370,23 @@ set(standalone_regression_tests
     tuple-assign3.asp
     types.asp
     unary.asp
+    walrus-assert.asp
+    walrus-assign.asp
+    walrus-call.asp
+    walrus-dict.asp
+    walrus-discouraged.asp
+    walrus-if-else.asp
+    walrus-if.asp
+    walrus-index.asp
+    walrus-insert.asp
+    walrus-list.asp
+    walrus-param-default.asp
+    walrus-return.asp
+    walrus-set.asp
+    walrus-short-circuit.asp
+    walrus-subexpr.asp
+    walrus-tuple.asp
+    walrus-while.asp
     while-else.asp
     while.asp
 )

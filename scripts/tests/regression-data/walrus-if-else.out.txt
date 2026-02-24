@@ -1,0 +1,4 @@
+Upper case A found at 0
+Lower case q found at 16
+Digit 7 found at 7
+Character # not found

@@ -1,0 +1,6 @@
+Zero length string
+0 is less than 3
+0 is less than 7
+Length of abcde is 5
+5 is greater than 3
+5 is less than 7
