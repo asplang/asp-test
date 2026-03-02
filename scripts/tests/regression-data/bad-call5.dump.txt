@@ -320,7 +320,7 @@ Dump:
 0x000013E: t=0x7D(lrnode) l=0x0000130 r=0x000013B
 0x000013F...0x00007FF: t=0xFF(free)
 ---
-Program counter: 0x0000039
+Program counter: 0x0000038
 Free count: 1730; next free entry: 0x000013C
 Free count low water mark: 1729
 Stack: top=0x0000120, count=1

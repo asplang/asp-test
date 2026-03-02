@@ -317,7 +317,7 @@ Dump:
 0x000013B: t=0x62(elem) prev=0x000013A next=0x0000000 val=0x0000134
 0x000013C...0x00007FF: t=0xFF(free)
 ---
-Program counter: 0x0000094
+Program counter: 0x0000093
 Free count: 1732; next free entry: 0x000013C
 Free count low water mark: 1731
 Stack: top=0x0000120, count=1
