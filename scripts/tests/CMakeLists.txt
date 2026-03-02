@@ -326,7 +326,13 @@ set(standalone_regression_tests
     module6.asp
     module7.asp
     module8.asp
+    module-members1.asp
+    module-members2.asp
     nan.asp
+    object-members1.asp
+    object-members2.asp
+    object-members3.asp+0
+    object-members3.asp+1
     power.asp
     print.asp
     range-basic.asp
