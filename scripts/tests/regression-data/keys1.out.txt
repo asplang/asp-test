@@ -29,7 +29,7 @@ aa
 (0, (1, 2), 3)
 ((0, 1), 2, 3)
 <func:@000010B>
-<mod:@0000000>
+<mod:app:0>
 <type:None>
 <type:list>
 <type:func>

@@ -1,4 +1,4 @@
-42 `61 {None, 42, `34, `61, `62}
+42 `122 {None, 42, `95, `122, `123}
 symbols compare EQUAL
 symbols compare NOT equal
 objects compare NOT equal
