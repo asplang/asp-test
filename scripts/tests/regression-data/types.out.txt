@@ -28,5 +28,5 @@ None
 None
 None
 <func:app:34>
-<mod:@0000000>
+<mod:app:0>
 Type of 3.14 is <type:float>
