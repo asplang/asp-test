@@ -38,6 +38,13 @@ if (MSVC)
         add_compile_options(/Zc:preprocessor)
     endif()
 endif()
+if (CMAKE_C_COMPILER_ID STREQUAL "Clang")
+    add_compile_options(
+        -Wno-parentheses -Wno-switch
+        -Wno-shift-op-parentheses
+        -Wno-unqualified-std-cast-call
+        )
+endif()
 
 include(cmake/sanitizers.cmake)
 
