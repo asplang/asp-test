@@ -1,4 +1,4 @@
-<mod:@0000291> id=0x11F mod:{`0 = <mod:app:0>}
+<mod:0x000011F@0x0000291> id=0x11F mod:{`0 = <mod:app:0>}
 ---
 True False
 mod:{`0 = <mod:app:0>, i = 13}
