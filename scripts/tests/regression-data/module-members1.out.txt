@@ -1,19 +1,19 @@
-<mod:0x000011F@0x0000291> id=0x11F mod:{`0 = <mod:app:0>}
+<module at 0x000011F, code @0x0000291> id=0x11F mod:{`0 = <app module 0>}
 ---
 True False
-mod:{`0 = <mod:app:0>, i = 13}
-mod:{`0 = <mod:app:0>, i = 42, j = 4, k = 17}
+mod:{`0 = <app module 0>, i = 13}
+mod:{`0 = <app module 0>, i = 42, j = 4, k = 17}
 ---
 10 10
 11 11
-mod:{`0 = <mod:app:0>, i = 10, j = 11, k = 17}
+mod:{`0 = <app module 0>, i = 10, j = 11, k = 17}
 ---
 20 20
 21 21
-mod:{`0 = <mod:app:0>, i = 10, j = 11, k = 17, p = 20, q = 21}
+mod:{`0 = <app module 0>, i = 10, j = 11, k = 17, p = 20, q = 21}
 ---
 False
-mod:{`0 = <mod:app:0>, j = 11, k = 17, p = 20, q = 21}
+mod:{`0 = <app module 0>, j = 11, k = 17, p = 20, q = 21}
 ---
 True
 0

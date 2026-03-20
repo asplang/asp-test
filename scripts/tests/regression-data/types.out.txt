@@ -27,6 +27,6 @@ None
 None
 None
 None
-<func:app:95>
-<mod:app:0>
-Type of 3.14 is <type:float>
+<app function 95>
+<app module 0>
+Type of 3.14 is <type 'float'>

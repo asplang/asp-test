@@ -10,7 +10,7 @@ abc
 {13, 23, 42, 57, 88}
 {13: None, 23: None, 42: False, 57: True, 88: ...}
 {13: None, 23: None, 42: False, 57: True, 88: ...}
-<mod:app:0>
-<mod:app:0>
+<app module 0>
+<app module 0>
 ...
 ...

@@ -1,5 +1,5 @@
-Input file type: <type:app-ptr>
-Output file type: <type:app-ptr>
+Input file type: <type 'app pointer object'>
+Output file type: <type 'app pointer object'>
 Copying line: Instruction listing:
 Copying line: 0x0000000: ADDMOD 121 0x0000009; Add address of module file
 Copying line: 0x0000006: LDMOD 121; Load top-level module

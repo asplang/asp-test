@@ -21,7 +21,7 @@ abc
 {1: 'a'}
 {1: 'a', 2: 'b'}
 {2: '\ab', (1,): '\a\n'}
-<func:0x0000137@0x0000165>
-{(<func:0x0000137@0x0000165>,), (<mod:app:0>,), <func:0x0000137@0x0000165>, <mod:app:0>}
+<function at 0x0000137, code @0x0000165>
+{(<function at 0x0000137, code @0x0000165>,), (<app module 0>,), <function at 0x0000137, code @0x0000165>, <app module 0>}
 123
 1::2::3---1//2//3Done

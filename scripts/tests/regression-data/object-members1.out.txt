@@ -1,4 +1,4 @@
-<obj:0x000013E> id=0x13E {=}
+<object at 0x000013E> id=0x13E {=}
 ---
 True False
 3 2

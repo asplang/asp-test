@@ -1,5 +1,5 @@
-<app-int:0:0> <type:app-int>
-<app-int:0:1> <type:app-int>
+<app int object of type 0, value 0> <type 'app int object'>
+<app int object of type 0, value 1> <type 'app int object'>
 1 99.585
 1 100.392
 4 99.6897

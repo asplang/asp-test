@@ -5,7 +5,7 @@ Iterating forward:
 2
 3
 4
-<iter:range @end> False None
+<range iterator @end> False None
 ---
 Object: ..5
 Iterating backward:
@@ -14,7 +14,7 @@ Iterating backward:
 2
 1
 0
-<iter-rev:range @end> False None
+<range reverse iterator @end> False None
 ---
 Object: ..-6:-1
 Iterating forward:
@@ -23,7 +23,7 @@ Iterating forward:
 -3
 -4
 -5
-<iter:range @end> False None
+<range iterator @end> False None
 ---
 Object: ..-6:-1
 Iterating backward:
@@ -32,21 +32,21 @@ Iterating backward:
 -3
 -2
 -1
-<iter-rev:range @end> False None
+<range reverse iterator @end> False None
 ---
 Object: {1: 11, 2: 22, 3: 33}
 Iterating forward:
 (1, 11)
 (2, 22)
 (3, 33)
-<iter:dict @end> False None
+<dict iterator @end> False None
 ---
 Object: {1: 11, 2: 22, 3: 33}
 Iterating backward:
 (3, 33)
 (2, 22)
 (1, 11)
-<iter-rev:dict @end> False None
+<dict reverse iterator @end> False None
 ---
 Object: {4, 5, 6, 7, 8, 9}
 Iterating forward:
@@ -56,7 +56,7 @@ Iterating forward:
 7
 8
 9
-<iter:set @end> False None
+<set iterator @end> False None
 ---
 Object: {4, 5, 6, 7, 8, 9}
 Iterating backward:
@@ -66,7 +66,7 @@ Iterating backward:
 6
 5
 4
-<iter-rev:set @end> False None
+<set reverse iterator @end> False None
 ---
 Object: [14, 12, 7, 8]
 Iterating forward:
@@ -74,7 +74,7 @@ Iterating forward:
 12
 7
 8
-<iter:list @end> False None
+<list iterator @end> False None
 ---
 Object: [14, 12, 7, 8]
 Iterating backward:
@@ -82,7 +82,7 @@ Iterating backward:
 7
 12
 14
-<iter-rev:list @end> False None
+<list reverse iterator @end> False None
 ---
 Object: (14, 12, 7, 8)
 Iterating forward:
@@ -90,7 +90,7 @@ Iterating forward:
 12
 7
 8
-<iter:tuple @end> False None
+<tuple iterator @end> False None
 ---
 Object: (14, 12, 7, 8)
 Iterating backward:
@@ -98,7 +98,7 @@ Iterating backward:
 7
 12
 14
-<iter-rev:tuple @end> False None
+<tuple reverse iterator @end> False None
 ---
 Object: abcde
 Iterating forward:
@@ -107,7 +107,7 @@ b
 c
 d
 e
-<iter:str @end> False None
+<str iterator @end> False None
 ---
 Object: abcde
 Iterating backward:
@@ -116,7 +116,7 @@ d
 c
 b
 a
-<iter-rev:str @end> False None
+<str reverse iterator @end> False None
 ---
 Object: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 Iterating forward:
@@ -172,7 +172,7 @@ W
 X
 Y
 Z
-<iter:str @end> False None
+<str iterator @end> False None
 ---
 Object: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
 Iterating backward:
@@ -228,34 +228,34 @@ d
 c
 b
 a
-<iter-rev:str @end> False None
+<str reverse iterator @end> False None
 ---
-Object: <iter:list>
+Object: <list iterator>
 Iterating forward:
 42
 144
 256
-<iter:list @end> False None
+<list iterator @end> False None
 ---
-Object: <iter:list>
+Object: <list iterator>
 Iterating forward:
 42
 144
 256
-<iter:list @end> False None
+<list iterator @end> False None
 ---
-Object: <iter-rev:list>
+Object: <list reverse iterator>
 Iterating forward:
 144
 42
 13
-<iter-rev:list @end> False None
+<list reverse iterator @end> False None
 ---
-Object: <iter-rev:list>
+Object: <list reverse iterator>
 Iterating forward:
 144
 42
 13
-<iter-rev:list @end> False None
+<list reverse iterator @end> False None
 ---
 Done

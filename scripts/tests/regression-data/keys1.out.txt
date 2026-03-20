@@ -28,13 +28,13 @@ aa
 (0, 1, (2, 3))
 (0, (1, 2), 3)
 ((0, 1), 2, 3)
-<func:0x0000199@0x000010B>
-<mod:app:0>
-<type:None>
-<type:list>
-<type:func>
-<type:mod>
-<type:type>
+<function at 0x0000199, code @0x000010B>
+<app module 0>
+<type 'None'>
+<type 'list'>
+<type 'function'>
+<type 'module'>
+<type 'type'>
 None can be a KEY
 '' can be a KEY
 () can be a KEY

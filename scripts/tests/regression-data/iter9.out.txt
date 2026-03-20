@@ -1,1 +1,1 @@
-(`0, <mod:app:0>)
+(`0, <app module 0>)
