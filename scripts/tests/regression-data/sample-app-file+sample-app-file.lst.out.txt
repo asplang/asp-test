@@ -195,7 +195,6 @@ Copying line: 0x00001BF: JMP 0x000014F; Jump to continue
 Copying line: 0x00001C4: XMOD; Exit module
 Copying line: 
 Copying line: Symbols by name:
-Copying line:     3 __init__
 Copying line:     2 __main__
 Copying line:    64 abs
 Copying line:    65 acos
