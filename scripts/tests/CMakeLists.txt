@@ -1,9 +1,5 @@
 # Test cases.
 
-# This directory must not contain any other data as it is destroyed and
-# recreated when regression data is generated.
-set(TEST_REFERENCE_DATA_DIR "${CMAKE_CURRENT_SOURCE_DIR}/regression-data" CACHE PATH "Directory that contains reference output data for regression tests")
-
 set(standalone_regression_tests
     args1.asp
     args1.asp+abc+123
@@ -397,6 +393,9 @@ set(standalone_regression_tests
     while.asp
 )
 
+set(standalone_oo_regression_tests
+)
+
 set(sample_app_regression_tests
     file.asp
     file.asp+sample-app-file.lst
@@ -406,6 +405,14 @@ set(sample_app_regression_tests
     sort2.asp
 )
 
+# This directory must not contain any other data as it is destroyed and
+# recreated when regression data is generated.
+set(TEST_REFERENCE_DATA_DIR
+    "${CMAKE_CURRENT_SOURCE_DIR}/regression-data"
+    CACHE PATH
+    "Directory containing reference output data for regression tests"
+)
+
 add_custom_target(clean-test-reference-data
     COMMAND ${CMAKE_COMMAND} -E rm -Rf "${TEST_REFERENCE_DATA_DIR}"
     COMMAND ${CMAKE_COMMAND} -E make_directory "${TEST_REFERENCE_DATA_DIR}"
@@ -413,6 +420,56 @@ add_custom_target(clean-test-reference-data
 
 # Make sure that we have a directory ready for the test output
 file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/regression-data")
+
+set(generate_test_data_targets)
+
+function(define_tests test_name_prefix aspec_file script_dir asps_executable)
+    set(local_generate_test_data_targets)
+    foreach(test_spec ${ARGN})
+        parse_test_spec("${test_spec}" test_name test_script test_args)
+        if(test_name_prefix)
+            set(test_name ${test_name_prefix}-${test_name})
+        endif()
+
+        add_test(NAME ${test_name}
+            COMMAND ${CMAKE_COMMAND}
+                -D "TEST_NAME=${test_name}"
+                -D "TEST_ARGS=${test_args}"
+                -D "ASPC_EXECUTABLE=$<TARGET_FILE:aspc>"
+                -D "ASPEC_FILE=${aspec_file}"
+                -D "SOURCE_FILE=${script_dir}/${test_script}"
+                -D "ASPS_EXECUTABLE=${asps_executable}"
+                -D "BYTECODE_FILE=${CMAKE_CURRENT_BINARY_DIR}/${test_name}.aspe"
+                -D "OUTPUT_DIR=${CMAKE_CURRENT_BINARY_DIR}/regression-data"
+                -D "REFERENCE_DIR=${TEST_REFERENCE_DATA_DIR}"
+                -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
+            VERBATIM
+        )
+
+        # Custom target that saves all its output to the
+        # TEST_REFERENCE_DATA_DIR directory.
+        add_custom_target(generate-test-reference-data-${test_name}
+            COMMAND ${CMAKE_COMMAND}
+                -D "TEST_NAME=${test_name}"
+                -D "TEST_ARGS=${test_args}"
+                -D "ASPC_EXECUTABLE=$<TARGET_FILE:aspc>"
+                -D "ASPEC_FILE=${aspec_file}"
+                -D "SOURCE_FILE=${script_dir}/${test_script}"
+                -D "ASPS_EXECUTABLE=${asps_executable}"
+                -D "BYTECODE_FILE=${CMAKE_CURRENT_BINARY_DIR}/${test_name}.aspe"
+                -D "OUTPUT_DIR=${TEST_REFERENCE_DATA_DIR}"
+                -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
+            DEPENDS "${script_dir}/${test_script}"
+            VERBATIM
+        )
+        add_dependencies(generate-test-reference-data-${test_name}
+            clean-test-reference-data)
+        list(APPEND local_generate_test_data_targets
+            generate-test-reference-data-${test_name})
+    endforeach()
+    set(generate_test_data_targets "${generate_test_data_targets}"
+        "${local_generate_test_data_targets}" PARENT_SCOPE)
+endfunction()
 
 function(parse_test_spec spec test_name_var script_var args_var)
     string(REPLACE "+" ";" list "${spec}")
@@ -430,82 +487,29 @@ function(parse_test_spec spec test_name_var script_var args_var)
     set(${args_var} "${list}" PARENT_SCOPE)
 endfunction()
 
-set(generate_test_data_targets)
+define_tests(
+    ""
+    "${ASP_BINARY_DIR}/standalone/standalone.aspec"
+    "${CMAKE_CURRENT_SOURCE_DIR}"
+    "$<TARGET_FILE:asps>"
+    ${standalone_regression_tests}
+)
 
-foreach(test_spec ${standalone_regression_tests})
-    parse_test_spec("${test_spec}" test_name test_script test_args)
+define_tests(
+    ""
+    "${ASP_BINARY_DIR}/standalone/standalone-oo.aspec"
+    "${CMAKE_CURRENT_SOURCE_DIR}"
+    "$<TARGET_FILE:asps>"
+    ${standalone_oo_regression_tests}
+)
 
-    add_test(NAME ${test_name}
-        COMMAND ${CMAKE_COMMAND}
-            -D "ASPS_EXECUTABLE=$<TARGET_FILE:asps>"
-            -D "ASPC_EXECUTABLE=$<TARGET_FILE:aspc>"
-            -D "SOURCE_FILE=${CMAKE_CURRENT_SOURCE_DIR}/${test_script}"
-            -D "TEST_NAME=${test_name}"
-            -D "BYTECODE_FILE=${CMAKE_CURRENT_BINARY_DIR}/${test_name}.aspe"
-            -D "TEST_ARGS=${test_args}"
-            -D "ASPEC_FILE=${ASP_BINARY_DIR}/standalone/standalone.aspec"
-            -D "REFERENCE_DIR=${TEST_REFERENCE_DATA_DIR}"
-            -D "OUTPUT_DIR=${CMAKE_CURRENT_BINARY_DIR}/regression-data"
-            -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
-        VERBATIM
-    )
-
-    # Custom target that runs the bytecode and saves its output to the TEST_REFERENCE_DATA_DIR
-    add_custom_target(generate-test-reference-data-${test_name}
-        COMMAND ${CMAKE_COMMAND}
-            -D "ASPS_EXECUTABLE=$<TARGET_FILE:asps>"
-            -D "ASPC_EXECUTABLE=$<TARGET_FILE:aspc>"
-            -D "SOURCE_FILE=${CMAKE_CURRENT_SOURCE_DIR}/${test_script}"
-            -D "TEST_NAME=${test_name}"
-            -D "BYTECODE_FILE=${CMAKE_CURRENT_BINARY_DIR}/${test_name}.aspe"
-            -D "TEST_ARGS=${test_args}"
-            -D "ASPEC_FILE=${ASP_BINARY_DIR}/standalone/standalone.aspec"
-            -D "OUTPUT_DIR=${TEST_REFERENCE_DATA_DIR}"
-            -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
-        DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${test_script}"
-        VERBATIM
-    )
-    add_dependencies(generate-test-reference-data-${test_name} clean-test-reference-data)
-    list(APPEND generate_test_data_targets generate-test-reference-data-${test_name})
-endforeach()
-
-foreach(test_spec ${sample_app_regression_tests})
-    parse_test_spec("${test_spec}" base_name test_script test_args)
-    set(test_name sample-app-${base_name})
-
-    add_test(NAME ${test_name}
-        COMMAND ${CMAKE_COMMAND}
-            -D "ASPS_EXECUTABLE=$<TARGET_FILE:sample>"
-            -D "ASPC_EXECUTABLE=$<TARGET_FILE:aspc>"
-            -D "SOURCE_FILE=${sample_SOURCE_DIR}/scripts/${test_script}"
-            -D "TEST_NAME=${test_name}"
-            -D "BYTECODE_FILE=${CMAKE_CURRENT_BINARY_DIR}/${test_name}.aspe"
-            -D "TEST_ARGS=${test_args}"
-            -D "ASPEC_FILE=${sample_BINARY_DIR}/sample.aspec"
-            -D "REFERENCE_DIR=${TEST_REFERENCE_DATA_DIR}"
-            -D "OUTPUT_DIR=${CMAKE_CURRENT_BINARY_DIR}/regression-data"
-            -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
-        VERBATIM
-    )
-
-    # Custom target that runs the bytecode and saves it output to the TEST_REFERENCE_DATA_DIR
-    add_custom_target(generate-test-reference-data-${test_name}
-        COMMAND ${CMAKE_COMMAND}
-            -D "ASPS_EXECUTABLE=$<TARGET_FILE:sample>"
-            -D "ASPC_EXECUTABLE=$<TARGET_FILE:aspc>"
-            -D "SOURCE_FILE=${sample_SOURCE_DIR}/scripts/${test_script}"
-            -D "TEST_NAME=${test_name}"
-            -D "BYTECODE_FILE=${CMAKE_CURRENT_BINARY_DIR}/${test_name}.aspe"
-            -D "TEST_ARGS=${test_args}"
-            -D "ASPEC_FILE=${sample_BINARY_DIR}/sample.aspec"
-            -D "OUTPUT_DIR=${TEST_REFERENCE_DATA_DIR}"
-            -P "${CMAKE_CURRENT_SOURCE_DIR}/run_test.cmake"
-        DEPENDS "${sample_SOURCE_DIR}/scripts/${test_script}"
-        VERBATIM
-    )
-    add_dependencies(generate-test-reference-data-${test_name} clean-test-reference-data)
-    list(APPEND generate_test_data_targets generate-test-reference-data-${test_name})
-endforeach()
+define_tests(
+    sample-app
+    "${sample_BINARY_DIR}/sample.aspec"
+    "${sample_SOURCE_DIR}/scripts"
+    "$<TARGET_FILE:sample>"
+    ${sample_app_regression_tests}
+)
 
 add_custom_target(generate-test-reference-data)
 add_dependencies(generate-test-reference-data ${generate_test_data_targets})
