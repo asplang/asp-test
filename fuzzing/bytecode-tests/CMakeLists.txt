@@ -3,17 +3,20 @@ set(test_files
     timeout-symbol-tree-corruption2
     timeout-del
     crash-S-format-specifier
-    crash-indexed-format-specifier  # Crash when $ is used to refer argument by index
+
+    # Crash when $ is used to refer argument by index.
+    crash-indexed-format-specifier
+
     crash-del-set
-    
+
     timeout-assign-sequence
     timeout-assign-sequence2
     timeout-tree-erase-getlimitnode
     timeout-tree-erase-getlimitnode2
-    
+
     crash-recursive-deleted-insert
     crash-make-range-and-index
-    
+
     timeout-AspLib_next-symbol-tree-corrupt
     timeout-AspLib_next-symbol-tree-corrupt2
 
@@ -22,15 +25,19 @@ set(test_files
     crash-erase
 
     crash-expand-range-with-large-step
-    
+
     crash-mkret-idx
     crash-create-iterator-to-null-string
-	
-	crash-AspLib_float-nullptr
-	ub-uninitialized-engine-callReturning
+
+    crash-AspLib_float-nullptr
+    ub-uninitialized-engine-callReturning
 )
 
 foreach(test_data ${test_files})
-    add_test(NAME "bytecode-test-${test_data}" COMMAND bytecode-fuzz-crash-reproducer "${CMAKE_CURRENT_SOURCE_DIR}/${test_data}")
+    add_test(NAME "bytecode-test-${test_data}"
+        COMMAND
+            bytecode-fuzz-crash-reproducer
+            "${CMAKE_CURRENT_SOURCE_DIR}/${test_data}"
+    )
     set_tests_properties("bytecode-test-${test_data}" PROPERTIES TIMEOUT 3)
 endforeach()
