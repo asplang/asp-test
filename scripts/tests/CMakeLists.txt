@@ -396,9 +396,12 @@ set(standalone_regression_tests
 set(standalone_oo_regression_tests
 )
 
+# Copy the test file required for the sample app file test.
+configure_file(test-file.txt test-file.txt COPYONLY)
+
 set(sample_app_regression_tests
     file.asp
-    file.asp+sample-app-file.lst
+    file.asp+test-file.txt # Requires test-file.txt to exist
     rand.asp
     rand2.asp
     sort1.asp
