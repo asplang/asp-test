@@ -1,0 +1,2 @@
+bad-class-return2.asp:6:9: Error: return outside function
+Ended in ERROR

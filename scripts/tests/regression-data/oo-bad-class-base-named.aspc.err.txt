@@ -1,0 +1,2 @@
+bad-class-base-named.asp:9:9: Error: Named argument is not allowed as a base class
+Ended in ERROR

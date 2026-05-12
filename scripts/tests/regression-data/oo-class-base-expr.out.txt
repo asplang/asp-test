@@ -1,0 +1,4 @@
+<object at 0x000015C of <class at 0x0000140>>
+A::foo <object at 0x000015C of <class at 0x0000140>>
+<object at 0x0000161 of <class at 0x000015A>>
+B::bar <object at 0x0000161 of <class at 0x000015A>>

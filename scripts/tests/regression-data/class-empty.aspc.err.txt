@@ -1,0 +1,2 @@
+class-empty.asp:1:10: Error: Classes are not supported
+Ended in ERROR

@@ -5,15 +5,18 @@
 <type 'bool'>
 <type 'int'>
 <type 'float'>
+<type 'symbol'>
 <type 'range'>
 <type 'str'>
 <type 'tuple'>
 <type 'list'>
 <type 'set'>
 <type 'dict'>
-<type 'iterator'>
+<type 'object'>
 <type 'function'>
 <type 'module'>
+<type 'reverse iterator'>
+<type 'iterator'>
 <type 'type'>
 
 6

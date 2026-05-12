@@ -1,0 +1,19 @@
+class ids: A=0x157 B=0x14A C=0x16B D=0x15E
+A.__init__
+---
+A.__init__
+---
+super: <super: <class at 0x000016B>, <object at 0x0000178 of <class at 0x000015E>>>
+super().__init__ <bound method <class at 0x0000157>.<function at 0x000014F, code @0x00001D4> of <object at 0x0000178 of <class at 0x000015E>>>
+A.__init__
+C.__init__ 0
+---
+issubclass(A, A) True
+issubclass(A, B) False
+issubclass(B, A) True
+issubclass(A, D) False
+issubclass(A, (B, C, D)) False
+issubclass(D, A) True
+issubclass(B, (C, D)) False
+issubclass(B, (D, (C, A))) True
+---

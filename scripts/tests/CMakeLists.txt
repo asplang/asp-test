@@ -393,8 +393,55 @@ set(standalone_regression_tests
     while.asp
 )
 
-set(standalone_oo_regression_tests
-)
+if(NOT ENABLE_FEATURE_CLASS)
+
+    list(APPEND standalone_regression_tests
+        class.asp
+        )
+
+else()
+
+    list(APPEND standalone_regression_tests
+        class-empty.asp
+        )
+
+    set(standalone_oo_regression_tests
+        bad-class-base-0.asp
+        bad-class-base-None.asp
+        bad-class-base-group1.asp
+        bad-class-base-group2.asp
+        bad-class-base-named.asp
+        bad-class-multi.asp
+        bad-class-return1.asp
+        bad-class-return2.asp
+        bif-class.asp
+        class-aug.asp
+        class-base-expr.asp
+        class-empty.asp
+        class-leak.asp
+        index-class.asp
+        insert-class.asp
+        isinstance1.asp
+        isinstance2.asp
+        isinstance3.asp
+        issubclass1.asp
+        issubclass2.asp
+        issubclass3.asp
+        iter1-class.asp
+        polynomial.asp
+        relop-class.asp
+        relop-instance.asp
+        relop-method.asp
+        super1.asp
+        super2.asp
+        super3.asp
+        super4.asp
+        super5.asp
+        super6.asp
+        super7.asp
+    )
+
+endif()
 
 # Copy the test file required for the sample app file test.
 configure_file(test-file.txt test-file.txt COPYONLY)
@@ -498,13 +545,15 @@ define_tests(
     ${standalone_regression_tests}
 )
 
-define_tests(
-    ""
-    "${ASP_BINARY_DIR}/standalone/standalone-oo.aspec"
-    "${CMAKE_CURRENT_SOURCE_DIR}"
-    "$<TARGET_FILE:asps>"
-    ${standalone_oo_regression_tests}
-)
+if(ENABLE_FEATURE_CLASS)
+    define_tests(
+        oo
+        "${ASP_BINARY_DIR}/standalone/standalone-oo.aspec"
+        "${CMAKE_CURRENT_SOURCE_DIR}"
+        "$<TARGET_FILE:asps>"
+        ${standalone_oo_regression_tests}
+    )
+endif()
 
 define_tests(
     sample-app

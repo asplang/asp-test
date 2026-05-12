@@ -230,6 +230,20 @@ b
 a
 <str reverse iterator @end> False None
 ---
+Object: <object at 0x0000159>
+Iterating forward:
+(`125, 1)
+(`126, 'two')
+(`127, ..3)
+<object iterator @end> False None
+---
+Object: <object at 0x0000159>
+Iterating backward:
+(`127, ..3)
+(`126, 'two')
+(`125, 1)
+<object reverse iterator @end> False None
+---
 Object: <list iterator>
 Iterating forward:
 42

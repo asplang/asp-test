@@ -1,0 +1,4 @@
+<class at 0x0000149>
+<type 'class'>
+<type 'bound method'>
+<type 'super'>

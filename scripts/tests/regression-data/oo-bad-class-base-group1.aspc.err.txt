@@ -1,0 +1,2 @@
+bad-class-base-group1.asp:10:10: Error: Group argument is not allowed as a base class
+Ended in ERROR

@@ -1,0 +1,10 @@
+Executing instructions indefinitely...
+@0x0000000: 0xBA ADDMOD 129, @0x000000B
+@0x0000007: 0xBE LDMOD 129
+@0x000000B: 0x81 LD 106
+@0x000000D: 0x18 PUSHAL
+@0x000000E: 0xB6 CALL
+---
+Executed 5 instructions
+Run error 0x0A: Invalid context
+Program counter: 0x000000E; super1.asp:3:5

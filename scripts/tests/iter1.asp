@@ -13,40 +13,49 @@ def printall(object, reversed):
     print(it, bool(it), next(it))
     print('---')
 
-# Range in forward direction.
-test(..5)
+def run_tests():
 
-# Range in negative direction.
-test(..-6:-1)
+    # Range in forward direction.
+    test(..5)
 
-# Dictionary.
-test({1:11,3:33,2:22})
+    # Range in reverse direction.
+    test(..-6:-1)
 
-# Set.
-test({6,5,4,7,9,8})
+    # Dictionary.
+    test({1:11,3:33,2:22})
 
-# List.
-test([14,12,7,8])
+    # Set.
+    test({6,5,4,7,9,8})
 
-# Tuple.
-test((14,12,7,8))
+    # List.
+    test([14,12,7,8])
 
-# Small string.
-test('abcde')
+    # Tuple.
+    test((14,12,7,8))
 
-# Large string.
-test('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    # Small string.
+    test('abcde')
 
-# Iterator and reversed iterator.
-lst = [13, 42, 144, 256]
-it = iter(lst)
-next(it)
-printall(it, False)
-printall(it, False)
-it = reversed(lst)
-next(it)
-printall(it, False)
-printall(it, False)
-del it, lst
+    # Large string.
+    test('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
 
-print('Done')
+    # Simple object.
+    test({a=1,b='two',c=..3})
+
+    # Iterator and reversed iterator.
+    lst = [13, 42, 144, 256]
+    it = iter(lst)
+    next(it)
+    printall(it, False)
+    printall(it, False)
+    it = reversed(lst)
+    next(it)
+    printall(it, False)
+    printall(it, False)
+    del it, lst
+
+if module() is __main__:
+    run_tests()
+    print('Done')
+
+del run_tests

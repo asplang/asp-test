@@ -1,0 +1,2 @@
+bad-class-multi.asp:9:9: Error: Multiple inheritance is not supported
+Ended in ERROR

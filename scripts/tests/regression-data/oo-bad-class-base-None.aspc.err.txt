@@ -1,0 +1,2 @@
+bad-class-base-None.asp:3:16: Error: Invalid type for base class
+Ended in ERROR
