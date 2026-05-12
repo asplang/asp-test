@@ -1,4 +1,8 @@
+#ifdef ASP_FEATURE_CLASS
+#include "fuzz-oo.h"
+#else
 #include "fuzz.h"
+#endif
 #include <asp.h>
 #include <asp-ver.h>
 #include <cstdint>
@@ -26,6 +30,14 @@ int main(int argc, char *argv[])
     size_t fuzzDataSize = input.tellg();
     input.seekg(0);
 
+    const auto appSpec =
+        #ifdef ASP_FEATURE_CLASS
+        &AspAppSpec_fuzz_oo
+        #else
+        &AspAppSpec_fuzz
+        #endif
+        ;
+
     static constexpr size_t headerSize = 12;
     static const uint8_t header[headerSize] = {
         'A', 's', 'p', 'E',
@@ -33,10 +45,10 @@ int main(int argc, char *argv[])
         (ASP_VERSION >> 16) & 0xff,
         0,
         0,
-        (uint8_t)((AspAppSpec_fuzz.checkValue >> 24) & 0xff),
-        (uint8_t)((AspAppSpec_fuzz.checkValue >> 16) & 0xff),
-        (uint8_t)((AspAppSpec_fuzz.checkValue >> 8) & 0xff),
-        (uint8_t)((AspAppSpec_fuzz.checkValue >> 0) & 0xff)
+        (uint8_t)((appSpec->checkValue >> 24) & 0xff),
+        (uint8_t)((appSpec->checkValue >> 16) & 0xff),
+        (uint8_t)((appSpec->checkValue >> 8) & 0xff),
+        (uint8_t)((appSpec->checkValue >> 0) & 0xff)
     };
 
     size_t byteCodeSize = fuzzDataSize - 2;
@@ -57,8 +69,9 @@ int main(int argc, char *argv[])
     /* Initialize the Asp engine. */
     AspEngine engine;
     std::vector<char> dataBuffer(dataByteSize);
-    AspRunResult initializeResult
-            = AspInitialize(&engine, nullptr, 0, dataBuffer.data(), dataByteSize, &AspAppSpec_fuzz, nullptr);
+    AspRunResult initializeResult = AspInitialize
+        (&engine, nullptr, 0, dataBuffer.data(), dataByteSize,
+         appSpec, nullptr);
 
     if (initializeResult != AspRunResult_OK) {
         if (initializeResult == AspRunResult_OutOfDataMemory) {

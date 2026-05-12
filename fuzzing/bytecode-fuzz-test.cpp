@@ -1,4 +1,8 @@
+#ifdef ASP_FEATURE_CLASS
+#include "fuzz-oo.h"
+#else
 #include "fuzz.h"
+#endif
 #include <asp-ver.h>
 #include <asp.h>
 #include <cstdint>
@@ -30,13 +34,16 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *fuzzData, size_t fuzzDataSi
     /* Initialize the Asp engine. */
     AspEngine engine;
     std::vector<char> dataBuffer(dataByteSize);
-    AspRunResult initializeResult = AspInitialize(&engine,
-                                                  nullptr,
-                                                  0,
-                                                  dataBuffer.data(),
-                                                  dataByteSize,
-                                                  &AspAppSpec_fuzz,
-                                                  nullptr);
+    const auto appSpec =
+        #ifdef ASP_FEATURE_CLASS
+        &AspAppSpec_fuzz_oo
+        #else
+        &AspAppSpec_fuzz
+        #endif
+        ;
+    AspRunResult initializeResult = AspInitialize
+        (&engine, nullptr, 0, dataBuffer.data(), dataByteSize,
+         appSpec, nullptr);
     if (initializeResult != AspRunResult_OK) {
         if (initializeResult == AspRunResult_OutOfDataMemory) {
             return 0;
@@ -53,10 +60,10 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *fuzzData, size_t fuzzDataSi
         (ASP_VERSION >> 16) & 0xff,
         0,
         0,
-        (uint8_t)((AspAppSpec_fuzz.checkValue >> 24) & 0xff),
-        (uint8_t)((AspAppSpec_fuzz.checkValue >> 16) & 0xff),
-        (uint8_t)((AspAppSpec_fuzz.checkValue >> 8) & 0xff),
-        (uint8_t)((AspAppSpec_fuzz.checkValue >> 0) & 0xff)
+        (uint8_t)((appSpec->checkValue >> 24) & 0xff),
+        (uint8_t)((appSpec->checkValue >> 16) & 0xff),
+        (uint8_t)((appSpec->checkValue >> 8) & 0xff),
+        (uint8_t)((appSpec->checkValue >> 0) & 0xff)
     };
 
     /* Allocate separate buffer code so that we can include valid header
