@@ -419,6 +419,11 @@ else()
         class-base-expr.asp
         class-empty.asp
         class-leak.asp
+        del-class1.asp
+        del-class2.asp
+        del-class3.asp
+        del-class4.asp
+        del-class5.asp
         index-class.asp
         insert-class.asp
         isinstance1.asp

@@ -349,7 +349,7 @@ Dump:
 ---
 Program counter: 0x000000B
 Free count: 1706; next free entry: 0x000013F
-Free count low water mark: 1691
+Free count low water mark: 1690
 Stack: empty
 Modules: 0x0000001
 Current module: 0x0000003
