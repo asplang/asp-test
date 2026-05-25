@@ -6,7 +6,6 @@ add_custom_command(
         "${CMAKE_CURRENT_BINARY_DIR}/fuzz.c"
         "${CMAKE_CURRENT_BINARY_DIR}/fuzz.h"
     DEPENDS
-        aspg
         fuzz.asps
         "${ASP_SOURCE_DIR}/engine/type.asps"
         "${ASP_SOURCE_DIR}/engine/collect.asps"
@@ -27,7 +26,6 @@ if(ENABLE_FEATURE_CLASS)
             "${CMAKE_CURRENT_BINARY_DIR}/fuzz-oo.c"
             "${CMAKE_CURRENT_BINARY_DIR}/fuzz-oo.h"
         DEPENDS
-            aspg
             fuzz-oo.asps
             "${ASP_SOURCE_DIR}/engine/type.asps"
             "${ASP_SOURCE_DIR}/engine/collect.asps"
