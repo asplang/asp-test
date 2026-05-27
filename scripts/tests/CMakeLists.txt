@@ -322,14 +322,15 @@ set(standalone_regression_tests
     module6.asp
     module7.asp
     module8.asp
-    module9.asp
     module-members1.asp
     module-members2.asp
+    module-members3.asp
     nan.asp
     object-members1.asp
     object-members2.asp
     object-members3.asp+0
     object-members3.asp+1
+    object-members4.asp
     power.asp
     print.asp
     range-basic.asp
@@ -420,6 +421,9 @@ else()
         class-base-expr.asp
         class-empty.asp
         class-leak.asp
+        class-members1.asp
+        class-members2.asp
+        class-members3.asp
         del-class1.asp
         del-class2.asp
         del-class3.asp
@@ -427,6 +431,9 @@ else()
         del-class5.asp
         index-class.asp
         insert-class.asp
+        instance-members1.asp
+        instance-members2.asp
+        instance-members3.asp
         isinstance1.asp
         isinstance2.asp
         isinstance3.asp
@@ -445,6 +452,7 @@ else()
         super5.asp
         super6.asp
         super7.asp
+        super-members.asp
     )
 
 endif()

@@ -1,0 +1,3 @@
+Calling base foo
+Hello from class A
+Calling base missing
