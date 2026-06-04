@@ -1,13 +1,9 @@
 class A:
-    def __init__(self):
-        self.x = 42
-    def X(self):
-        return self.x
+    x = 42
 
 class B(A):
     pass
 
-b = B()
-b.x += 1
-
-print(b.x, b.X())
+print(A.x, B.x)
+B.x += 1
+print(A.x, B.x)

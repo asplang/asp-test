@@ -431,6 +431,8 @@ else()
         del-class5.asp
         index-class.asp
         insert-class.asp
+        instance-aug1.asp
+        instance-aug2.asp
         instance-members1.asp
         instance-members2.asp
         instance-members3.asp
