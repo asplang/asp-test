@@ -436,6 +436,9 @@ else()
         instance-members1.asp
         instance-members2.asp
         instance-members3.asp
+        instance-shadow1.asp
+        instance-shadow2.asp
+        instance-shadow3.asp
         isinstance1.asp
         isinstance2.asp
         isinstance3.asp
