@@ -1,5 +1,5 @@
-<class at 0x0000140>
-<object at 0x0000142 of <class at 0x0000140>>
-<super: <class at 0x0000140>, <object at 0x0000142 of <class at 0x0000140>>>
+<class at 0x0000169>
+<object at 0x000016B of <class at 0x0000169>>
+<super: <class at 0x0000169>, <object at 0x000016B of <class at 0x0000169>>>
 True
 False

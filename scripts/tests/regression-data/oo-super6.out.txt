@@ -1,9 +1,9 @@
-A: <class at 0x0000140> <object at 0x000014A of <class at 0x0000140>>
-B: <class at 0x0000144> <object at 0x000014F of <class at 0x0000144>>
-C: <class at 0x0000148> <object at 0x000014E of <class at 0x0000148>>
-<super: <class at 0x0000140>, <object at 0x000014F of <class at 0x0000144>>>
-<super: <class at 0x0000140>, <object at 0x000014F of <class at 0x0000144>>>
-<super: <class at 0x0000140>, <object at 0x000014E of <class at 0x0000148>>>
+A: <class at 0x0000169> <object at 0x0000173 of <class at 0x0000169>>
+B: <class at 0x000016D> <object at 0x0000178 of <class at 0x000016D>>
+C: <class at 0x0000171> <object at 0x0000177 of <class at 0x0000171>>
+<super: <class at 0x0000169>, <object at 0x0000178 of <class at 0x000016D>>>
+<super: <class at 0x0000169>, <object at 0x0000178 of <class at 0x000016D>>>
+<super: <class at 0x0000169>, <object at 0x0000177 of <class at 0x0000171>>>
 True
 False
 True

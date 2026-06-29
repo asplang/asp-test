@@ -1,13 +1,13 @@
-class ids: A=0x157 B=0x14A C=0x16B D=0x15E
+class ids: A=0x180 B=0x173 C=0x194 D=0x187
 A.__init__
 ---
 A.__init__
 ---
-super: <super: <class at 0x000016B>, <object at 0x0000178 of <class at 0x000015E>>>
-super().__init__ <bound method <class at 0x0000157>.<function at 0x000014F, code @0x0000062> of <object at 0x0000178 of <class at 0x000015E>>>
+super: <super: <class at 0x0000194>, <object at 0x00001A1 of <class at 0x0000187>>>
+super().__init__ <bound method <class at 0x0000180>.<function at 0x0000178, code @0x0000062> of <object at 0x00001A1 of <class at 0x0000187>>>
 A.__init__
 C.__init__ 0
 ---
 0
-<function at 0x000014F, code @0x0000062>
-<function at 0x0000155, code @0x000008F>
+<function at 0x0000178, code @0x0000062>
+<function at 0x000017E, code @0x000008F>

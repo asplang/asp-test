@@ -1,13 +1,13 @@
 isinstance(0, type(0)) True
 isinstance(0.0, type(0)) False
 ---
-class ids: A=0x14F B=0x155 C=0x16B D=0x15E
+class ids: A=0x178 B=0x17E C=0x194 D=0x187
 A.__init__
 ---
 A.__init__
 ---
-super: <super: <class at 0x000016B>, <object at 0x0000174 of <class at 0x000015E>>>
-super().__init__ <bound method <class at 0x000014F>.<function at 0x0000151, code @0x00003AD> of <object at 0x0000174 of <class at 0x000015E>>>
+super: <super: <class at 0x0000194>, <object at 0x000019D of <class at 0x0000187>>>
+super().__init__ <bound method <class at 0x0000178>.<function at 0x000017A, code @0x00003AD> of <object at 0x000019D of <class at 0x0000187>>>
 A.__init__
 C.__init__ 0
 ---

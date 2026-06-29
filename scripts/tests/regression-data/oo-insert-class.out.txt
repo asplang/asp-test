@@ -1,6 +1,6 @@
-<class at 0x0000140>
-(`3, <function at 0x000014A, code @0x000002C>)
-(`112, 0)
-init <object at 0x0000150 of <class at 0x0000140>>
-<object at 0x0000150 of <class at 0x0000140>>
-(`112, 42)
+<class at 0x0000169>
+(`3, <function at 0x0000173, code @0x000002C>)
+(`114, 0)
+init <object at 0x0000179 of <class at 0x0000169>>
+<object at 0x0000179 of <class at 0x0000169>>
+(`114, 42)

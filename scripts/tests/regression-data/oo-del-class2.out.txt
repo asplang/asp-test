@@ -1,1 +1,1 @@
-foo <object at 0x000014B of <class at 0x0000149>>
+foo <object at 0x0000174 of <class at 0x0000172>>
