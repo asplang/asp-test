@@ -3,8 +3,8 @@ A.__init__
 ---
 A.__init__
 ---
-super: <super: <class at 0x0000194>, <object at 0x00001A1 of <class at 0x0000187>>>
-super().__init__ <bound method <class at 0x0000180>.<function at 0x0000178, code @0x0000062> of <object at 0x00001A1 of <class at 0x0000187>>>
+super: <super: <class at 0x0000194>, <object at 0x00001AF of <class at 0x0000187>>>
+super().__init__ <bound method <class at 0x0000180>.<function at 0x0000178, code @0x0000062> of <object at 0x00001AF of <class at 0x0000187>>>
 A.__init__
 C.__init__ 0
 ---
