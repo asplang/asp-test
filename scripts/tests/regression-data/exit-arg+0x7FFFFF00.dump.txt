@@ -318,3 +318,4 @@ Current module: 0x0000120
 System namespace: 0x0000002
 Current global namespace: 0x000011E
 Current local namespace: 0x000011E
+Current local closures: none

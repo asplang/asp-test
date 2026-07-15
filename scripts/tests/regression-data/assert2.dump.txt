@@ -299,3 +299,4 @@ Current module: 0x000011A
 System namespace: 0x0000002
 Current global namespace: 0x0000112
 Current local namespace: 0x0000112
+Current local closures: none
