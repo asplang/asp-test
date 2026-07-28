@@ -1,0 +1,9 @@
+Executing instructions indefinitely...
+@0x0000000: 0xB9 ADDMOD 121, @0x0000009
+@0x0000006: 0xBD LDMOD 121
+@0x0000009: 0x85 LDA 122
+@0x000000B: 0x8A AUG
+---
+Executed 4 instructions
+Run error 0x10: Name not found
+Program counter: 0x000000B; aug-undef-loc.asp:3:3
