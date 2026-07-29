@@ -1,0 +1,9 @@
+<closure at 0x000012A, code @0x0000013>
+---
+<closure at 0x000012A, code @0x0000013>
+<closure at 0x000012A, code @0x0000013>
+None
+---
+<closure at 0x0000127, code @0x0000013>
+<closure at 0x0000127, code @0x0000013>
+None

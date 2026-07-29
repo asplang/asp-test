@@ -16,6 +16,7 @@ set(standalone_regression_tests
     aug-undef-glob1.asp
     aug-undef-glob2.asp
     aug-undef-loc.asp
+    aug-undef-nonloc.asp
     bad-arith-fold-dec1.asp
     bad-arith-fold-dec2.asp
     bad-arith-fold-dec3.asp
@@ -214,6 +215,21 @@ set(standalone_regression_tests
     bad-walrus-target2.asp
     bif.asp
     bitwise.asp
+    closure01.asp
+    closure02.asp
+    closure03.asp
+    closure04.asp
+    closure05.asp
+    closure06.asp
+    closure07.asp
+    closure08.asp
+    closure09.asp
+    closure10.asp
+    closure11.asp
+    closure12.asp
+    closure13.asp
+    closure14.asp
+    closure15.asp
     comment.asp
     concat.asp
     conditional.asp
@@ -427,6 +443,8 @@ else()
         class-members1.asp
         class-members2.asp
         class-members3.asp
+        closure-class01.asp
+        closure-class02.asp
         del-class1.asp
         del-class2.asp
         del-class3.asp
