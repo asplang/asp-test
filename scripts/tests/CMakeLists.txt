@@ -13,6 +13,9 @@ set(standalone_regression_tests
     assert4.asp
     assign.asp
     aug.asp
+    aug-undef-glob1.asp
+    aug-undef-glob2.asp
+    aug-undef-loc.asp
     bad-arith-fold-dec1.asp
     bad-arith-fold-dec2.asp
     bad-arith-fold-dec3.asp
