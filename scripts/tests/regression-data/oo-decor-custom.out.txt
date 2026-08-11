@@ -1,0 +1,22 @@
+BoundMethod = <class at 0x0000195>
+A = <class at 0x00001C3>
+a = <object at 0x00001C8 of <class at 0x00001C3>>
+---
+Calling A.sm <function at 0x00001B3, code @0x0000145>
+A.sm: arg=x
+---
+Calling a.sm <function at 0x00001B3, code @0x0000145>
+A.sm: arg=y
+---
+Calling A.cm <object at 0x00001CF of <class at 0x0000195>>
+A.cm: cls=<class at 0x00001C3>, arg=x
+---
+Calling a.cm <object at 0x00001C9 of <class at 0x0000195>>
+A.cm: cls=<class at 0x00001C3>, arg=y
+---
+Calling A.m <function at 0x00001C5, code @0x00001C3>
+A.m: self=None, arg=x
+---
+Calling a.m <bound method <class at 0x00001C3>.<function at 0x00001C5, code @0x00001C3> of <object at 0x00001C8 of <class at 0x00001C3>>>
+A.m: self=<object at 0x00001C8 of <class at 0x00001C3>>, arg=y
+---

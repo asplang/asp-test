@@ -1,0 +1,15 @@
+Defining class A
+Defining class A content
+End of class A content
+Applying decorator2
+Applying decorator1
+End of class A
+---
+Creating A instance
+Entering decorator1
+Entering decorator2
+Exiting decorator2
+Exiting decorator1
+---
+Calling A method
+foo: self=<object at 0x00001C3 of <class at 0x0000197>>

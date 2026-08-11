@@ -1,0 +1,2 @@
+bad-decor9.asp:4:1: Error: Syntax error
+Ended in ERROR

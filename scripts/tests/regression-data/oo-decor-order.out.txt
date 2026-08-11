@@ -1,0 +1,18 @@
+Defining class
+Defining method
+Applying decorator3
+Applying decorator2
+Applying decorator1
+End of method definition
+End of class definition
+---
+Creating instance
+---
+Calling method
+Entering decorator1
+Entering decorator2
+Entering decorator3
+Hello
+Exiting decorator3
+Exiting decorator2
+Exiting decorator1

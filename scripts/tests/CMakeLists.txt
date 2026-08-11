@@ -86,6 +86,15 @@ set(standalone_regression_tests
     bad-call5.asp
     bad-const1.asp
     bad-const2.asp
+    bad-decor1.asp
+    bad-decor2.asp
+    bad-decor3.asp
+    bad-decor4.asp
+    bad-decor5.asp
+    bad-decor6.asp
+    bad-decor7.asp
+    bad-decor8.asp
+    bad-decor9.asp
     bad-del1.asp
     bad-del2.asp
     bad-del3.asp
@@ -427,6 +436,11 @@ else()
         class-members1.asp
         class-members2.asp
         class-members3.asp
+        decor-class.asp
+        decor-custom.asp
+        decor-order.asp
+        decor-std.asp
+        decor-syntax.asp
         del-class1.asp
         del-class2.asp
         del-class3.asp
